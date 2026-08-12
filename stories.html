@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stories of Hope | Afya Sickle Cell Foundation</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="./assets/logo.png" alt="Afya Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
+                <span class="logo-fallback">Afya <span>Foundation</span></span>
+            </a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+            <nav class="nav-links" id="navLinks">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="programs.html">Programs</a>
+                <a href="stories.html" class="active">Stories of Hope</a>
+                <a href="contact.html" class="nav-btn">Get Connected</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Subpage Hero Banner -->
+    <section class="hero" style="padding: 4.5rem 0; background: linear-gradient(135deg, rgba(138, 11, 30, 0.88), rgba(30, 41, 59, 0.92)), url('./assets/hope.jpg') center/cover no-repeat;">
+        <div class="container hero-content">
+            <h1>Voices of Courage</h1>
+            <p class="hero-subtitle">Real stories of resilience, strength, and victory from our warriors and loving caregivers.</p>
+        </div>
+    </section>
+
+    <!-- Featured Story Section -->
+    <section style="background-color: var(--white); padding: 4.5rem 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2>A Mother's Journey to Hope</h2>
+                <div class="divider"></div>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; align-items: center;">
+                <div>
+                    <img src="./assets/community.jpg" alt="Mother and Child" style="width: 100%; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.08);" onerror="this.src='https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=600&q=80';">
+                </div>
+                <div>
+                    <span style="color: var(--primary-red); font-weight: 700; text-transform: uppercase; font-size: 0.85rem;">Caregiver Testimonial</span>
+                    <h3 style="font-size: 1.6rem; margin: 0.5rem 0 1rem; color: var(--text-dark);">"We No Longer Walk This Path Alone"</h3>
+                    <p style="margin-bottom: 1rem; color: var(--text-muted);">"When my child was diagnosed, I felt completely lost. The endless hospital visits and financial strain brought so much fear into our lives. Discovering the Afya Sickle Cell Foundation gave us a community that truly understands our pain."</p>
+                    <p style="color: var(--text-muted);">"Through routine reviews with Afya Medicare and the support circles with other mothers, my child is thriving today. Pain crises are far less frequent, and our home is filled with joy again."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Warrior Testimonial Grid -->
+    <section class="mission-highlight">
+        <div class="container">
+            <div class="section-header">
+                <h2>Warrior Testimonials</h2>
+                <div class="divider"></div>
+                <p class="section-lead">Every story proves that sickle cell disease may be part of life, but it never limits purpose.</p>
+            </div>
+
+            <div class="cards-grid">
+                <!-- Story 1 -->
+                <div class="card" style="padding: 2rem;">
+                    <div style="color: var(--accent-warm); font-size: 2rem; line-height: 1; margin-bottom: 0.5rem;">“</div>
+                    <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">"Living with sickle cell used to make me feel isolated in school. Being part of the Afya Foundation showed me that I am a warrior. The education on staying hydrated and taking care of my body has kept me out of the hospital for months."</p>
+                    <div>
+                        <strong style="color: var(--text-dark); display: block;">Brian, Age 14</strong>
+                        <span style="color: var(--gray-text); font-size: 0.85rem;">Sickle Cell Warrior</span>
+                    </div>
+                </div>
+
+                <!-- Story 2 -->
+                <div class="card" style="padding: 2rem;">
+                    <div style="color: var(--accent-warm); font-size: 2rem; line-height: 1; margin-bottom: 0.5rem;">“</div>
+                    <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">"As a father, seeing the founders, Kittengo Alysious and Nanyonjo Noeline, turn their own grief into a foundation inspired me. Their story gave me the strength to stand strong for my own daughter."</p>
+                    <div>
+                        <strong style="color: var(--text-dark); display: block;">David M.</strong>
+                        <span style="color: var(--gray-text); font-size: 0.85rem;">Parent & Support Member</span>
+                    </div>
+                </div>
+
+                <!-- Story 3 -->
+                <div class="card" style="padding: 2rem;">
+                    <div style="color: var(--accent-warm); font-size: 2rem; line-height: 1; margin-bottom: 0.5rem;">“</div>
+                    <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">"The routine reviews at Afya Medicare made all the difference. Having medical professionals who truly care and check on our progress regularly has given us peace of mind."</p>
+                    <div>
+                        <strong style="color: var(--text-dark); display: block;">Grace K.</strong>
+                        <span style="color: var(--gray-text); font-size: 0.85rem;">Foundation Member</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Banner -->
+    <section class="quote-banner">
+        <div class="container">
+            <blockquote>
+                "Our stories are not about the pain we endure, but the courage we discover together."
+            </blockquote>
+            <p class="quote-author">— Afya Sickle Cell Foundation</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <h3>Afya Sickle Cell Foundation</h3>
+                <p>Empowering warriors, advocating for care, and inspiring hope.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="stories.html">Stories of Hope</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2026 Afya Sickle Cell Foundation. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
