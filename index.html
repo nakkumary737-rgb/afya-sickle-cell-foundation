@@ -1,424 +1,1213 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
+    <!-- =====================================================
+         BASIC DOCUMENT SETTINGS
+    ====================================================== -->
+
     <meta charset="UTF-8">
 
     <meta name="viewport"
           content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
-          content="AFYA Sickle Cell Foundation — creating awareness, supporting families and promoting better care for people living with sickle cell disease.">
+          content="AFYA Sickle Cell Foundation — creating understanding, supporting families and building hope for people living with sickle cell disease.">
 
-    <meta name="theme-color" content="#8f1838">
+    <meta name="theme-color"
+          content="#741735">
 
-    <title>AFYA Sickle Cell Foundation | Hope, Knowledge & Care</title>
+    <title>
+        AFYA Sickle Cell Foundation
+    </title>
 
-    <!-- Main website stylesheet -->
-    <link rel="stylesheet" href="css/style.css">
 
-    <!-- Homepage stylesheet -->
-    <link rel="stylesheet" href="css/home.css">
+    <!-- =====================================================
+         FONTS
+    ====================================================== -->
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
           rel="stylesheet">
+
+
+    <!-- =====================================================
+         WEBSITE CSS
+    ====================================================== -->
+
+    <link rel="stylesheet"
+          href="css/style.css">
+
+    <link rel="stylesheet"
+          href="css/home.css">
+
 </head>
+
 
 <body>
 
+
 <!-- =========================================================
-     HEADER
+     SITE NAVIGATION
 ========================================================= -->
 
-<header class="site-header">
+<header class="topbar">
 
-    <div class="container nav-container">
+    <div class="topbar-inner">
 
-        <a href="index.html" class="brand">
 
-            <div class="brand-mark">
-                <img src="assets/logos/afya-logo.png"
-                     alt="AFYA Sickle Cell Foundation logo">
+        <!-- -------------------------------------------------
+             BRAND
+        -------------------------------------------------- -->
+
+        <a href="index.html"
+           class="site-brand"
+           aria-label="AFYA Sickle Cell Foundation Home">
+
+
+            <div class="brand-logo">
+
+                <img
+                    src="assets/logos/afya-logo.png"
+                    alt="AFYA Sickle Cell Foundation logo">
+
             </div>
 
-            <div class="brand-text">
-                <strong>AFYA</strong>
-                <span>Sickle Cell Foundation</span>
+
+            <div class="brand-name">
+
+                <strong>
+                    AFYA
+                </strong>
+
+                <span>
+                    Sickle Cell Foundation
+                </span>
+
             </div>
+
 
         </a>
 
 
-        <button class="menu-toggle"
-                type="button"
-                aria-label="Open navigation"
-                aria-expanded="false">
+        <!-- -------------------------------------------------
+             DESKTOP NAVIGATION
+        -------------------------------------------------- -->
+
+        <nav class="desktop-nav"
+             aria-label="Main navigation">
+
+
+            <a href="index.html"
+               class="nav-active">
+
+                Home
+
+            </a>
+
+
+            <a href="about.html">
+
+                Our Story
+
+            </a>
+
+
+            <a href="education.html">
+
+                Learn
+
+            </a>
+
+
+            <a href="services.html">
+
+                Our Work
+
+            </a>
+
+
+        </nav>
+
+
+        <!-- -------------------------------------------------
+             MENU BUTTON
+        -------------------------------------------------- -->
+
+        <button
+            class="menu-button"
+            id="menuButton"
+            type="button"
+            aria-label="Open website menu"
+            aria-expanded="false">
+
 
             <span></span>
+
             <span></span>
-            <span></span>
+
 
         </button>
 
-
-        <nav class="main-nav" aria-label="Main navigation">
-
-            <a href="index.html" class="active">Home</a>
-
-            <a href="about.html">About Us</a>
-
-            <a href="education.html">Learn</a>
-
-            <a href="services.html">Our Work</a>
-
-            <a href="contact.html">Contact</a>
-
-            <a href="education/what-is-sickle-cell.html"
-               class="nav-button">
-                Understand Sickle Cell
-            </a>
-
-        </nav>
 
     </div>
 
 </header>
 
 
-<main>
 
 <!-- =========================================================
-     HERO
+     SLIDE-OUT MENU
 ========================================================= -->
 
-<section class="hero">
+<div
+    class="menu-backdrop"
+    id="menuBackdrop">
+</div>
 
-    <div class="hero-background">
 
-        <img src="assets/images/foundation-hero.jpg"
-             alt="Family and community standing together"
-             loading="eager">
+<aside
+    class="slide-menu"
+    id="slideMenu"
+    aria-hidden="true">
+
+
+    <!-- -------------------------------------------------
+         MENU HEADER
+    -------------------------------------------------- -->
+
+    <div class="slide-menu-top">
+
+
+        <span>
+            AFYA
+        </span>
+
+
+        <button
+            class="menu-close"
+            id="menuClose"
+            type="button"
+            aria-label="Close website menu">
+
+            ×
+
+        </button>
+
 
     </div>
 
 
-    <div class="hero-overlay"></div>
+
+    <!-- -------------------------------------------------
+         MENU INTRODUCTION
+    -------------------------------------------------- -->
+
+    <div class="slide-menu-intro">
 
 
-    <div class="container hero-content">
+        <small>
+            EXPLORE AFYA
+        </small>
+
+
+        <h2>
+
+            A place to
+            <em>understand.</em>
+
+        </h2>
+
+
+    </div>
+
+
+
+    <!-- -------------------------------------------------
+         MAIN MENU LINKS
+    -------------------------------------------------- -->
+
+    <nav
+        class="slide-navigation"
+        aria-label="Website navigation">
+
+
+        <a
+            href="index.html"
+            class="slide-link active">
+
+
+            <span class="slide-number">
+                01
+            </span>
+
+
+            <span>
+                Home
+            </span>
+
+
+            <strong>
+                →
+            </strong>
+
+
+        </a>
+
+
+
+        <a
+            href="about.html"
+            class="slide-link">
+
+
+            <span class="slide-number">
+                02
+            </span>
+
+
+            <span>
+                Our Story
+            </span>
+
+
+            <strong>
+                →
+            </strong>
+
+
+        </a>
+
+
+
+        <a
+            href="education.html"
+            class="slide-link">
+
+
+            <span class="slide-number">
+                03
+            </span>
+
+
+            <span>
+                Learn About Sickle Cell
+            </span>
+
+
+            <strong>
+                →
+            </strong>
+
+
+        </a>
+
+
+
+        <a
+            href="services.html"
+            class="slide-link">
+
+
+            <span class="slide-number">
+                04
+            </span>
+
+
+            <span>
+                Our Work
+            </span>
+
+
+            <strong>
+                →
+            </strong>
+
+
+        </a>
+
+
+
+        <a
+            href="contact.html"
+            class="slide-link">
+
+
+            <span class="slide-number">
+                05
+            </span>
+
+
+            <span>
+                Connect With Us
+            </span>
+
+
+            <strong>
+                →
+            </strong>
+
+
+        </a>
+
+
+    </nav>
+
+
+
+    <!-- -------------------------------------------------
+         MENU FOOTER
+    -------------------------------------------------- -->
+
+    <div class="slide-menu-bottom">
+
+        <span>
+            KNOWLEDGE • CARE • HOPE
+        </span>
+
+    </div>
+
+
+</aside>
+
+
+
+<!-- =========================================================
+     MAIN WEBSITE CONTENT
+========================================================= -->
+
+<main>
+
+
+
+<!-- =========================================================
+     HERO SECTION
+========================================================= -->
+
+<section class="home-hero">
+
+
+    <!-- -------------------------------------------------
+         HERO IMAGE
+
+         Put your main homepage image here:
+
+         assets/images/foundation-hero.jpg
+    -------------------------------------------------- -->
+
+    <div class="hero-photo">
+
+
+        <img
+            src="assets/images/foundation-hero.jpg"
+            alt="People living, learning and growing together"
+            fetchpriority="high">
+
+
+    </div>
+
+
+
+    <!-- Dark image overlay -->
+
+    <div class="hero-shade"></div>
+
+
+
+    <!-- -------------------------------------------------
+         HERO CONTENT
+    -------------------------------------------------- -->
+
+    <div class="hero-inner">
+
 
         <div class="hero-copy">
 
-            <span class="eyebrow">
+
+            <!-- Small heading -->
+
+            <div class="hero-tag">
+
+
+                <span></span>
+
+
                 AFYA SICKLE CELL FOUNDATION
-            </span>
+
+
+            </div>
+
+
+
+            <!-- Main message -->
 
             <h1>
-                Every life deserves
-                <span>hope, understanding and care.</span>
+
+                There is a life
+
+                <span>
+                    beyond the diagnosis.
+                </span>
+
             </h1>
 
-            <p class="hero-text">
-                We are building a community where people living with
-                sickle cell disease are understood, supported and given
-                the knowledge and care they need to live full lives.
+
+
+            <!-- Supporting message -->
+
+            <p>
+
+                For every child who dreams,
+                every parent who worries,
+                and every person learning to
+                live boldly with sickle cell.
+
             </p>
 
 
-            <div class="hero-actions">
 
-                <a href="education.html"
-                   class="btn btn-primary">
-                    Learn About Sickle Cell
+            <!-- Hero actions -->
+
+            <div class="hero-buttons">
+
+
+                <a
+                    href="education.html"
+                    class="hero-main-button">
+
+                    Start Understanding
+
+                    <span>
+                        →
+                    </span>
+
                 </a>
 
-                <a href="about.html"
-                   class="btn btn-light">
+
+
+                <a
+                    href="about.html"
+                    class="hero-story-button">
+
                     Our Story
+
                 </a>
 
-            </div>
-
-
-            <div class="hero-note">
-
-                <span class="hero-note-icon">♥</span>
-
-                <p>
-                    Because sickle cell is more than a diagnosis.
-                    It is a life, a family and a future.
-                </p>
 
             </div>
+
 
         </div>
 
+
+
+        <!-- -------------------------------------------------
+             HERO BELIEF TILE
+        -------------------------------------------------- -->
+
+        <div class="hero-side-tile">
+
+
+            <span class="tile-kicker">
+
+                OUR BELIEF
+
+            </span>
+
+
+            <div class="tile-heart">
+
+                ♥
+
+
+            </div>
+
+
+            <p>
+
+                A diagnosis may become part
+                of someone's story, but it
+                should never become the whole
+                story.
+
+            </p>
+
+
+        </div>
+
+
     </div>
+
+
+
+    <!-- -------------------------------------------------
+         HERO SCROLL INDICATOR
+    -------------------------------------------------- -->
+
+    <div class="hero-scroll">
+
+
+        <span>
+            SCROLL TO EXPLORE
+        </span>
+
+
+        <i></i>
+
+
+    </div>
+
 
 </section>
 
 
+
 <!-- =========================================================
-     INTRODUCTION
+     WHY AFYA EXISTS
 ========================================================= -->
 
-<section class="foundation-intro">
+<section class="heart-section">
 
-    <div class="container intro-grid">
 
-        <div class="intro-image">
+    <div class="heart-layout">
 
-            <img src="assets/images/children-smiling.jpg"
-                 alt="Children smiling together"
-                 loading="lazy">
 
-            <div class="image-badge">
+        <!-- Section label -->
 
-                <strong>Knowledge</strong>
-                <span>changes lives</span>
+        <div class="heart-label">
 
-            </div>
+            <span>
+                WHY WE EXIST
+            </span>
 
         </div>
 
 
-        <div class="intro-content">
 
-            <span class="section-label">
-                WHY AFYA EXISTS
-            </span>
+        <!-- Message -->
+
+        <div class="heart-message">
+
 
             <h2>
-                We believe no one should face sickle cell alone.
+
+                Behind every diagnosis
+                is a <em>person.</em>
+
             </h2>
 
-            <p>
-                Sickle cell disease can affect childhood, education,
-                work, relationships and family life. Yet many of its
-                challenges become easier to face when people have the
-                right information, timely care and a supportive
-                community.
-            </p>
+
 
             <p>
-                AFYA Sickle Cell Foundation exists to bring those
-                pieces together — through education, advocacy,
-                practical support and a commitment to better sickle
-                cell care.
+
+                A child who wants to play.
+                A student who wants to learn.
+                A mother who wants to see her
+                child grow. A young person with
+                plans, dreams and a future worth
+                fighting for.
+
             </p>
 
 
-            <a href="about.html" class="text-link">
-                Discover our mission
-                <span>→</span>
+
+            <p>
+
+                AFYA exists because people
+                living with sickle cell deserve
+                more than medical information.
+                They deserve understanding,
+                dignity, support and hope.
+
+            </p>
+
+
+
+            <a
+                href="about.html"
+                class="minimal-link">
+
+                Why AFYA exists
+
+                <span>
+                    →
+                </span>
+
             </a>
 
+
         </div>
+
 
     </div>
 
 </section>
 
 
+
 <!-- =========================================================
-     WHAT WE STAND FOR
+     EXPLORE AFYA
 ========================================================= -->
 
-<section class="values-section">
+<section class="explore-section">
 
-    <div class="container">
 
-        <div class="section-heading centered">
+    <!-- -------------------------------------------------
+         SECTION INTRO
+    -------------------------------------------------- -->
 
-            <span class="section-label">
-                WHAT WE STAND FOR
+    <div class="explore-heading">
+
+
+        <div>
+
+
+            <span class="small-label">
+
+                EXPLORE AFYA
+
             </span>
 
+
             <h2>
-                Care that sees the person,
-                not just the condition.
+
+                Find what
+                <em>you need.</em>
+
             </h2>
 
-            <p>
-                Our work is built around people, families and
-                communities.
-            </p>
 
         </div>
 
 
-        <div class="values-grid">
 
-            <article class="value-card">
+        <p>
 
-                <div class="value-icon">♥</div>
+            Whether you are learning for yourself,
+            supporting someone you love or simply
+            seeking to understand sickle cell better.
 
-                <h3>Compassion</h3>
+        </p>
 
-                <p>
-                    Every person living with sickle cell deserves
-                    dignity, understanding and someone who listens.
-                </p>
-
-            </article>
-
-
-            <article class="value-card">
-
-                <div class="value-icon">✦</div>
-
-                <h3>Knowledge</h3>
-
-                <p>
-                    Clear, trustworthy information helps families
-                    recognize problems early and make informed
-                    decisions.
-                </p>
-
-            </article>
-
-
-            <article class="value-card">
-
-                <div class="value-icon">◎</div>
-
-                <h3>Prevention</h3>
-
-                <p>
-                    Good routine care can help prevent complications
-                    and support healthier lives for people with
-                    sickle cell disease.
-                </p>
-
-            </article>
-
-
-            <article class="value-card">
-
-                <div class="value-icon">↗</div>
-
-                <h3>Hope</h3>
-
-                <p>
-                    A sickle cell diagnosis should never be the end
-                    of someone's dreams, education or ambitions.
-                </p>
-
-            </article>
-
-        </div>
 
     </div>
 
-</section>
 
 
-<!-- =========================================================
-     LEARNING SECTION
-========================================================= -->
+    <!-- =================================================
+         TILE GRID
+    ================================================== -->
 
-<section class="learn-section">
-
-    <div class="container learn-grid">
-
-        <div class="learn-content">
-
-            <span class="section-label">
-                START HERE
-            </span>
-
-            <h2>
-                Understanding sickle cell
-                starts with knowledge.
-            </h2>
-
-            <p>
-                Whether you are newly diagnosed, caring for a child,
-                supporting a loved one or simply want to understand
-                sickle cell disease better, our education centre is
-                designed to make reliable information easier to
-                understand.
-            </p>
+    <div class="tile-grid">
 
 
-            <div class="learn-links">
 
-                <a href="education/what-is-sickle-cell.html"
-                   class="learn-link">
+        <!-- =============================================
+             TILE 01 — EDUCATION
+        ============================================== -->
 
-                    <span>What is sickle cell disease?</span>
-                    <strong>→</strong>
-
-                </a>
-
-
-                <a href="education/children.html"
-                   class="learn-link">
-
-                    <span>Sickle cell in children</span>
-                    <strong>→</strong>
-
-                </a>
+        <a
+            href="education.html"
+            class="feature-tile tile-education">
 
 
-                <a href="education/crisis.html"
-                   class="learn-link">
-
-                    <span>Understanding pain crises</span>
-                    <strong>→</strong>
-
-                </a>
+            <div class="tile-image">
 
 
-                <a href="education/routine-care.html"
-                   class="learn-link">
+                <img
+                    src="assets/images/blood-cells.jpg"
+                    alt="Illustration of red blood cells"
+                    loading="lazy">
 
-                    <span>Routine care and prevention</span>
-                    <strong>→</strong>
-
-                </a>
 
             </div>
 
 
-            <a href="education.html"
-               class="btn btn-dark">
-                Explore the Education Centre
-            </a>
-
-        </div>
+            <div class="tile-overlay"></div>
 
 
-        <div class="learn-visual">
 
-            <img src="assets/images/blood-cells.jpg"
-                 alt="Illustration of red blood cells"
-                 loading="lazy">
+            <div class="feature-tile-content">
 
-            <div class="floating-card">
 
-                <span>REMEMBER</span>
+                <span class="tile-number">
 
-                <strong>
-                    Sickle cell is inherited.
-                    It is not contagious.
+                    01
+
+                </span>
+
+
+
+                <div>
+
+
+                    <small>
+
+                        EDUCATION
+
+                    </small>
+
+
+                    <h3>
+
+                        Understand
+                        sickle cell.
+
+                    </h3>
+
+
+                </div>
+
+
+
+                <strong class="tile-arrow">
+
+                    →
+
                 </strong>
 
+
             </div>
 
-        </div>
+
+        </a>
+
+
+
+        <!-- =============================================
+             TILE 02 — OUR STORY
+        ============================================== -->
+
+        <a
+            href="about.html"
+            class="feature-tile tile-story">
+
+
+            <div class="feature-tile-content">
+
+
+                <span class="tile-number">
+
+                    02
+
+                </span>
+
+
+
+                <div>
+
+
+                    <small>
+
+                        OUR STORY
+
+                    </small>
+
+
+                    <h3>
+
+                        Why we
+                        started.
+
+                    </h3>
+
+
+                    <p>
+
+                        Learn about the heart
+                        behind AFYA.
+
+                    </p>
+
+
+                </div>
+
+
+
+                <strong class="tile-arrow">
+
+                    →
+
+                </strong>
+
+
+            </div>
+
+
+        </a>
+
+
+
+        <!-- =============================================
+             TILE 03 — FAMILIES
+        ============================================== -->
+
+        <a
+            href="education/children.html"
+            class="feature-tile tile-children">
+
+
+            <div class="tile-image">
+
+
+                <img
+                    src="assets/images/children-smiling.jpg"
+                    alt="Children smiling together"
+                    loading="lazy">
+
+
+            </div>
+
+
+            <div class="tile-overlay"></div>
+
+
+
+            <div class="feature-tile-content">
+
+
+                <span class="tile-number">
+
+                    03
+
+                </span>
+
+
+
+                <div>
+
+
+                    <small>
+
+                        FOR FAMILIES
+
+                    </small>
+
+
+                    <h3>
+
+                        Growing up
+                        with sickle cell.
+
+                    </h3>
+
+
+                </div>
+
+
+
+                <strong class="tile-arrow">
+
+                    →
+
+                </strong>
+
+
+            </div>
+
+
+        </a>
+
+
+
+        <!-- =============================================
+             TILE 04 — OUR WORK
+        ============================================== -->
+
+        <a
+            href="services.html"
+            class="feature-tile tile-work">
+
+
+            <div class="feature-tile-content">
+
+
+                <span class="tile-number">
+
+                    04
+
+                </span>
+
+
+
+                <div>
+
+
+                    <small>
+
+                        OUR WORK
+
+                    </small>
+
+
+                    <h3>
+
+                        Turning awareness
+                        into action.
+
+                    </h3>
+
+
+                    <p>
+
+                        See how AFYA is making
+                        a difference.
+
+                    </p>
+
+
+                </div>
+
+
+
+                <strong class="tile-arrow">
+
+                    →
+
+                </strong>
+
+
+            </div>
+
+
+        </a>
+
 
     </div>
+
 
 </section>
 
 
+
 <!-- =========================================================
-     OUR WORK
+     HUMAN STORY SECTION
 ========================================================= -->
+
+<section class="human-section">
+
+
+    <!-- -------------------------------------------------
+         IMAGE
+    -------------------------------------------------- -->
+
+    <div class="human-image">
+
+
+        <img
+            src="assets/images/sickle-cell-family.jpg"
+            alt="Family spending time together"
+            loading="lazy">
+
+
+    </div>
+
+
+
+    <!-- -------------------------------------------------
+         TEXT
+    -------------------------------------------------- -->
+
+    <div class="human-content">
+
+
+        <span class="small-label">
+
+            TO EVERYONE LIVING WITH SICKLE CELL
+
+        </span>
+
+
+
+        <h2>
+
+            You are not
+            your sickle cell.
+
+        </h2>
+
+
+
+        <div class="quote-line"></div>
+
+
+
+        <p class="human-lead">
+
+            You are a person with dreams,
+            talents, relationships and a
+            future.
+
+        </p>
+
+
+
+        <p>
+
+            Sickle cell may ask you to live
+            differently at times. It may bring
+            difficult days. But difficult days
+            do not erase the beautiful life
+            that can exist beyond them.
+
+        </p>
+
+
+
+        <a
+            href="education.html"
+            class="dark-link">
+
+            Learn how to live well
+
+            <span>
+                →
+            </span>
+
+        </a>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     CLOSING MESSAGE
+========================================================= -->
+
+<section class="closing-section">
+
+
+    <div class="closing-inner">
+
+
+        <span class="small-label">
+
+            AFYA
+
+        </span>
+
+
+
+        <h2>
+
+            Together, we can make
+            sickle cell understood.
+
+        </h2>
+
+
+
+        <p>
+
+            Because when knowledge reaches a family,
+            fear can become confidence. When support
+            reaches a child, hope can become possibility.
+
+        </p>
+
+
+
+        <a
+            href="education.html"
+            class="closing-button">
+
+            Enter the AFYA Education Centre
+
+            <span>
+                →
+            </span>
+
+        </a>
+
+
+    </div>
+
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="simple-footer">
+
+
+    <div class="footer-inner">
+
+
+        <!-- Brand -->
+
+        <div class="footer-brand">
+
+
+            <img
+                src="assets/logos/afya-logo.png"
+                alt="AFYA Sickle Cell Foundation logo">
+
+
+            <span>
+
+                AFYA Sickle Cell Foundation
+
+            </span>
+
+
+        </div>
+
+
+
+        <!-- Motto -->
+
+        <p>
+
+            Knowledge • Care • Hope
+
+        </p>
+
+
+
+        <!-- Copyright -->
+
+        <p>
+
+            © 2026 AFYA Sickle Cell Foundation
+
+        </p>
+
+
+    </div>
+
+
+</footer>
+
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="js/main.js"></script>
+
+
+</body>
+
+    </html>=========================================== -->
 
 <section class="work-section">
 
