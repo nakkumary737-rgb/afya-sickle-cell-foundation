@@ -1,76 +1,100 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 
-    const menuToggle = document.querySelector(".menu-toggle");
-    const mainNav = document.querySelector(".main-nav");
+    const menuButton = document.getElementById("menuButton");
+    const menuClose = document.getElementById("menuClose");
 
+    const slideMenu = document.getElementById("slideMenu");
+    const menuBackdrop = document.getElementById("menuBackdrop");
 
-    if (!menuToggle || !mainNav) {
+    if (
+        !menuButton ||
+        !menuClose ||
+        !slideMenu ||
+        !menuBackdrop
+    ) {
         return;
     }
 
 
-    menuToggle.addEventListener("click", () => {
+    function openMenu() {
 
-        const isOpen = mainNav.classList.toggle("open");
+        slideMenu.classList.add("open");
+        menuBackdrop.classList.add("visible");
 
-        menuToggle.setAttribute(
+        slideMenu.setAttribute(
+            "aria-hidden",
+            "false"
+        );
+
+        menuButton.setAttribute(
             "aria-expanded",
-            String(isOpen)
+            "true"
+        );
+
+        document.body.style.overflow = "hidden";
+    }
+
+
+    function closeMenu() {
+
+        slideMenu.classList.remove("open");
+        menuBackdrop.classList.remove("visible");
+
+        slideMenu.setAttribute(
+            "aria-hidden",
+            "true"
+        );
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        document.body.style.overflow = "";
+    }
+
+
+    menuButton.addEventListener(
+        "click",
+        openMenu
+    );
+
+
+    menuClose.addEventListener(
+        "click",
+        closeMenu
+    );
+
+
+    menuBackdrop.addEventListener(
+        "click",
+        closeMenu
+    );
+
+
+    const menuLinks =
+        slideMenu.querySelectorAll("a");
+
+
+    menuLinks.forEach(function (link) {
+
+        link.addEventListener(
+            "click",
+            closeMenu
         );
 
     });
 
 
-    /*
-     * Close mobile navigation when a link is selected.
-     */
+    document.addEventListener(
+        "keydown",
+        function (event) {
 
-    const navLinks = mainNav.querySelectorAll("a");
-
-    navLinks.forEach(link => {
-
-        link.addEventListener("click", () => {
-
-            mainNav.classList.remove("open");
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-        });
-
-    });
-
-
-    /*
-     * Close navigation if the user clicks outside it.
-     */
-
-    document.addEventListener("click", event => {
-
-        const clickedInsideNav =
-            mainNav.contains(event.target);
-
-        const clickedMenuButton =
-            menuToggle.contains(event.target);
-
-
-        if (
-            !clickedInsideNav &&
-            !clickedMenuButton &&
-            mainNav.classList.contains("open")
-        ) {
-
-            mainNav.classList.remove("open");
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
+            if (event.key === "Escape") {
+                closeMenu();
+            }
 
         }
-
-    });
+    );
 
 });
