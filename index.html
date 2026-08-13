@@ -3,20 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Afya Sickle Cell Foundation | Hope, Strength & Support</title>
+    <title>Afya Sickle Cell Foundation | Hope, Strength & Healthcare</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts for professional typography -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- Header / Navigation Bar -->
+    <!-- Emergency/Quick Alert Bar -->
+    <div class="emergency-bar">
+        <div class="container emergency-flex">
+            <span>🚨 <strong>In Pain Crisis?</strong> Keep warm, hydrate immediately, and reach Afya Medicare support.</span>
+            <a href="contact.html" class="emergency-link">Get Urgent Guidance &rarr;</a>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
     <header class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">
-                <img src="./assets/logo.png" alt="Afya Sickle Cell Foundation Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <img src="./assets/logo.png" alt="Afya Sickle Cell Foundation Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
                 <span class="logo-fallback">Afya <span>Foundation</span></span>
             </a>
             <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
@@ -32,60 +40,108 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" style="background-image: linear-gradient(rgba(150, 0, 20, 0.75), rgba(20, 20, 20, 0.85)), url('./assets/hero-bg.jpg');">
+    <!-- Modern Hero Section -->
+    <section class="hero-section">
+        <div class="hero-overlay"></div>
         <div class="container hero-content">
-            <h1>Beyond the Pain, <br>There is Hope & Strength</h1>
-            <p class="hero-subtitle">At Afya Sickle Cell Foundation, we stand with warrior families. Together, we amplify voices, fight stigma, and pave pathways toward healthier, brighter tomorrows.</p>
+            <div class="badge-tag">Uganda's Beacon of Hope</div>
+            <h1>Beyond the Pain, <br>There is <span class="highlight-text">Strength & Life</span></h1>
+            <p class="hero-lead">Founded out of love by Kittengo Alysious & Nanyonjo Noeline, we stand with every sickle cell warrior in Uganda. Providing routine clinical care via Afya Medicare, breaking myths, and pouring unconditional love into every family.</p>
             <div class="hero-actions">
-                <a href="about.html" class="btn btn-primary">Discover Our Mission</a>
-                <a href="programs.html" class="btn btn-outline">Explore Programs</a>
+                <a href="about.html" class="btn btn-primary">Our Story & Mission</a>
+                <a href="programs.html" class="btn btn-secondary">Explore Health Programs</a>
             </div>
         </div>
     </section>
 
-    <!-- Message & Impact Highlights Section -->
-    <section class="mission-highlight">
+    <!-- Impact & Trust Statistics Counter -->
+    <section class="stats-bar">
+        <div class="container stats-grid">
+            <div class="stat-item">
+                <span class="stat-number">1,000+</span>
+                <span class="stat-label">Warriors Supported</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Dedicated Community Care</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">Afya Medicare</span>
+                <span class="stat-label">Clinical Health Partner</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">24/7</span>
+                <span class="stat-label">Love & Advocacy</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founders & Purpose Spotlight -->
+    <section class="founders-spotlight">
+        <div class="container founders-grid">
+            <div class="founders-image">
+                <img src="./assets/hero-bg.jpg" alt="Ugandan Sickle Cell Warrior Family" onerror="this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80';">
+                <div class="floating-badge">
+                    <span>Partnered with</span>
+                    <strong>Afya Medicare</strong>
+                </div>
+            </div>
+            <div class="founders-text">
+                <span class="section-subtitle">Born From Personal Strength</span>
+                <h2>Turning Pain into a Light for Thousands</h2>
+                <div class="divider-left"></div>
+                <p>When founders <strong>Kittengo Alysious</strong> and <strong>Nanyonjo Noeline</strong> learned their firstborn daughter was living with sickle cell disease, they experienced the denial, emotional weight, and medical strain firsthand.</p>
+                <p>They built the <strong>Afya Sickle Cell Foundation</strong> to ensure no parent walks that path alone. Attached directly to <strong>Afya Medicare</strong>, we combine heartfelt parental compassion with medical reviews, routine care, and public screening drives.</p>
+                <a href="about.html" class="btn-text">Read the Full Founders' Journey &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Pillars Grid -->
+    <section class="pillars-section">
         <div class="container">
             <div class="section-header">
-                <h2>Standing Together with Every Warrior</h2>
+                <h2>Our Comprehensive Care Pillars</h2>
                 <div class="divider"></div>
-                <p class="section-lead">Sickle cell disease is a lifelong journey, but no warrior or family should ever have to walk it alone.</p>
+                <p class="section-lead">Holistic support tailored for Ugandan families—from clinical check-ups to community empowerment.</p>
             </div>
 
             <div class="cards-grid">
-                <!-- Card 1 -->
+                <!-- Pillar 1 -->
                 <div class="card">
-                    <div class="card-image">
-                        <img src="./assets/community.jpg" alt="Community support group gathering" onerror="this.src='https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=600&q=80';">
+                    <div class="card-img-wrap">
+                        <img src="./assets/support.jpg" alt="Afya Medicare Routine Care" onerror="this.src='https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=600&q=80';">
                     </div>
                     <div class="card-body">
-                        <h3>A Loving Community</h3>
-                        <p>We build safe, compassionate spaces where individuals and families share experiences, find empathy, and gain strength from one another.</p>
-                        <a href="about.html" class="text-link">Learn about us &rarr;</a>
+                        <span class="card-tag">Medical Care</span>
+                        <h3>Routine Clinical Reviews</h3>
+                        <p>Direct partnership with Afya Medicare providing registered members with routine check-ups, lab tests, and medication guidance.</p>
+                        <a href="programs.html" class="text-link">Explore care plans &rarr;</a>
                     </div>
                 </div>
 
-                <!-- Card 2 -->
+                <!-- Pillar 2 -->
                 <div class="card">
-                    <div class="card-image">
-                        <img src="./assets/support.jpg" alt="Medical assistance and guidance" onerror="this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80';">
+                    <div class="card-img-wrap">
+                        <img src="./assets/community.jpg" alt="Ugandan Community Awareness" onerror="this.src='https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=600&q=80';">
                     </div>
                     <div class="card-body">
-                        <h3>Advocacy & Awareness</h3>
-                        <p>Breaking myths and educating communities to foster early intervention, equal care, and dignity for every sickle cell warrior.</p>
-                        <a href="programs.html" class="text-link">View our initiatives &rarr;</a>
+                        <span class="card-tag">Advocacy</span>
+                        <h3>Community & Genotype Screening</h3>
+                        <p>Sensitizing schools and communities across Uganda to break social stigma and conduct early genotype screening drives.</p>
+                        <a href="programs.html" class="text-link">View outreach work &rarr;</a>
                     </div>
                 </div>
 
-                <!-- Card 3 -->
+                <!-- Pillar 3 -->
                 <div class="card">
-                    <div class="card-image">
-                        <img src="./assets/hope.jpg" alt="Smiling sickle cell warrior" onerror="this.src='https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=600&q=80';">
+                    <div class="card-img-wrap">
+                        <img src="./assets/hope.jpg" alt="Caregiver Support Circles" onerror="this.src='https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=600&q=80';">
                     </div>
                     <div class="card-body">
-                        <h3>Inspiring Courage</h3>
-                        <p>Every story of resilience inspires the next generation. Read how our warriors overcome daily pain with unyielding hope.</p>
+                        <span class="card-tag">Support</span>
+                        <h3>Parent & Warrior Circles</h3>
+                        <p>Safe spaces where parents and warriors exchange encouragement, practical home crisis management tips, and strength.</p>
                         <a href="stories.html" class="text-link">Read warrior stories &rarr;</a>
                     </div>
                 </div>
@@ -93,11 +149,12 @@
         </div>
     </section>
 
-    <!-- Heart-touching Quote Banner -->
+    <!-- Heart-Touching Quote Banner -->
     <section class="quote-banner">
-        <div class="container">
+        <div class="container quote-container">
+            <div class="quote-icon">“</div>
             <blockquote>
-                "Pain may be part of our story, but it will never define our power. We are warriors, thriving together."
+                Pain may be part of our story, but it will never define our power. Together in love, every warrior thrives.
             </blockquote>
             <p class="quote-author">— The Afya Foundation Family</p>
         </div>
@@ -108,21 +165,22 @@
         <div class="container footer-content">
             <div class="footer-brand">
                 <h3>Afya Sickle Cell Foundation</h3>
-                <p>Empowering warriors, advocating for equitable care, and inspiring hope in every heart.</p>
+                <p>Empowering warriors, providing clinical support with Afya Medicare, and spreading hope across Uganda.</p>
             </div>
             <div class="footer-links">
-                <h4>Quick Navigation</h4>
+                <h4>Navigation</h4>
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="programs.html">Programs</a></li>
                     <li><a href="stories.html">Stories of Hope</a></li>
+                    <li><a href="contact.html">Get Connected</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="container">
-                <p>&copy; 2026 Afya Sickle Cell Foundation. All Rights Reserved.</p>
+                <p>&copy; 2026 Afya Sickle Cell Foundation. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -130,225 +188,7 @@
     <script src="main.js"></script>
 </body>
 </html>
-very diagnosis
-                is a <em>person.</em>
-
-            </h2>
-
-
-
-            <p>
-
-                A child who wants to play.
-                A student who wants to learn.
-                A mother who wants to see her
-                child grow. A young person with
-                plans, dreams and a future worth
-                fighting for.
-
-            </p>
-
-
-
-            <p>
-
-                AFYA exists because people
-                living with sickle cell deserve
-                more than medical information.
-                They deserve understanding,
-                dignity, support and hope.
-
-            </p>
-
-
-
-            <a
-                href="about.html"
-                class="minimal-link">
-
-                Why AFYA exists
-
-                <span>
-                    →
-                </span>
-
-            </a>
-
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- =========================================================
-     EXPLORE AFYA
-========================================================= -->
-
-<section class="explore-section">
-
-
-    <!-- -------------------------------------------------
-         SECTION INTRO
-    -------------------------------------------------- -->
-
-    <div class="explore-heading">
-
-
-        <div>
-
-
-            <span class="small-label">
-
-                EXPLORE AFYA
-
-            </span>
-
-
-            <h2>
-
-                Find what
-                <em>you need.</em>
-
-            </h2>
-
-
-        </div>
-
-
-
-        <p>
-
-            Whether you are learning for yourself,
-            supporting someone you love or simply
-            seeking to understand sickle cell better.
-
-        </p>
-
-
-    </div>
-
-
-
-    <!-- =================================================
-         TILE GRID
-    ================================================== -->
-
-    <div class="tile-grid">
-
-
-
-        <!-- =============================================
-             TILE 01 — EDUCATION
-        ============================================== -->
-
-        <a
-            href="education.html"
-            class="feature-tile tile-education">
-
-
-            <div class="tile-image">
-
-
-                <img
-                    src="assets/images/blood-cells.jpg"
-                    alt="Illustration of red blood cells"
-                    loading="lazy">
-
-
-            </div>
-
-
-            <div class="tile-overlay"></div>
-
-
-
-            <div class="feature-tile-content">
-
-
-                <span class="tile-number">
-
-                    01
-
-                </span>
-
-
-
-                <div>
-
-
-                    <small>
-
-                        EDUCATION
-
-                    </small>
-
-
-                    <h3>
-
-                        Understand
-                        sickle cell.
-
-                    </h3>
-
-
-                </div>
-
-
-
-                <strong class="tile-arrow">
-
-                    →
-
-                </strong>
-
-
-            </div>
-
-
-        </a>
-
-
-
-        <!-- =============================================
-             TILE 02 — OUR STORY
-        ============================================== -->
-
-        <a
-            href="about.html"
-            class="feature-tile tile-story">
-
-
-            <div class="feature-tile-content">
-
-
-                <span class="tile-number">
-
-                    02
-
-                </span>
-
-
-
-                <div>
-
-
-                    <small>
-
-                        OUR STORY
-
-                    </small>
-
-
-                    <h3>
-
-                        Why we
-                        started.
-
-                    </h3>
+                </h3>
 
 
                     <p>
