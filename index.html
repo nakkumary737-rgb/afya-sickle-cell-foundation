@@ -15,7 +15,7 @@
     <!-- Emergency / Quick Alert Bar -->
     <div class="emergency-bar">
         <div class="container emergency-flex">
-            <span>🚨 <strong>In Pain Crisis?</strong> Keep warm, hydrate immediately, and reach Afya Medicare support.</span>
+            <span class="emergency-text">🚨 <strong>In Pain Crisis?</strong> Keep warm, hydrate immediately, and reach out for guidance.</span>
             <a href="contact.html" class="emergency-link">Get Urgent Guidance &rarr;</a>
         </div>
     </div>
@@ -41,7 +41,7 @@
     </header>
 
     <!-- Modern Hero Section -->
-    <section class="hero-section" style="background: linear-gradient(135deg, rgba(138, 11, 30, 0.88), rgba(15, 23, 42, 0.92)), url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;">
+    <section class="hero-section" style="background: linear-gradient(135deg, rgba(138, 11, 30, 0.88), rgba(15, 23, 42, 0.92)), url('./assets/hero-bg.jpg') center/cover no-repeat;">
         <div class="hero-overlay"></div>
         <div class="container hero-content">
             <div class="badge-tag">Uganda's Beacon of Hope</div>
@@ -67,7 +67,7 @@
             </div>
             <div class="stat-item">
                 <span class="stat-number">Afya Medicare</span>
-                <span class="stat-label">Clinical Health Partner</span>
+                <span class="stat-label">Clinical Partner</span>
             </div>
             <div class="stat-item">
                 <span class="stat-number">24/7</span>
@@ -76,23 +76,27 @@
         </div>
     </section>
 
-    <!-- Founders Spotlight -->
+    <!-- Founders Spotlight Section -->
     <section class="founders-spotlight">
         <div class="container founders-grid">
-            <div class="founders-image">
-                <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=800&q=80" alt="Ugandan Mother and Child Filled with Hope">
+            <div class="founders-image-container">
+                <div class="image-frame">
+                    <img src="./assets/founders.jpg" alt="Founders Kittengo Alysious and Nanyonjo Noeline" onerror="this.src='https://via.placeholder.com/600x450?text=Upload+founders.jpg';">
+                </div>
                 <div class="floating-badge">
-                    <span>Partnered with</span>
-                    <strong>Afya Medicare</strong>
+                    <span class="badge-title">Official Health Partner</span>
+                    <strong class="badge-sub">Afya Medicare</strong>
                 </div>
             </div>
             <div class="founders-text">
-                <span class="section-subtitle">Born From Personal Strength</span>
-                <h2>Turning Pain into a Light for Thousands</h2>
+                <span class="section-subtitle">Born From Personal Experience</span>
+                <h2>Turning Denial & Pain into Hope for Thousands</h2>
                 <div class="divider-left"></div>
-                <p>When founders <strong>Kittengo Alysious</strong> and <strong>Nanyonjo Noeline</strong> learned their firstborn daughter was living with sickle cell disease, they experienced the denial, emotional weight, and medical strain firsthand.</p>
-                <p>They built the <strong>Afya Sickle Cell Foundation</strong> to ensure no parent walks that path alone. Attached directly to <strong>Afya Medicare</strong>, we combine heartfelt parental compassion with medical reviews, routine care, and public screening drives.</p>
-                <a href="about.html" class="btn-text">Read the Full Founders' Journey &rarr;</a>
+                <p>When founders <strong>Kittengo Alysious</strong> and <strong>Nanyonjo Noeline</strong> received their firstborn daughter's diagnosis, they walked through shock, denial, and heavy medical expenses.</p>
+                <p>Refusing to let despair have the last word, they built the <strong>Afya Sickle Cell Foundation</strong>. Partnering directly with <strong>Afya Medicare</strong>, we provide warriors with structured education, routine clinical check-ups, and an unwavering family support network.</p>
+                <div class="founders-cta-box">
+                    <a href="about.html" class="btn-link">Read Full Founders' Story <span class="arrow">&rarr;</span></a>
+                </div>
             </div>
         </div>
     </section>
@@ -101,86 +105,113 @@
     <section class="pillars-section">
         <div class="container">
             <div class="section-header">
+                <span class="section-subtitle">What We Do</span>
                 <h2>Our Comprehensive Care Pillars</h2>
                 <div class="divider"></div>
-                <p class="section-lead">Holistic support tailored for Ugandan families—from clinical check-ups to community empowerment.</p>
+                <p class="section-lead">Combining medical precision through Afya Medicare with heartfelt community care for every warrior.</p>
             </div>
 
             <div class="cards-grid">
                 <!-- Pillar 1 -->
                 <div class="card">
                     <div class="card-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80" alt="Afya Medicare Clinical Care and Consultation">
+                        <img src="./assets/clinical-care.jpg" alt="Afya Medicare Clinical Care" onerror="this.src='https://via.placeholder.com/600x400?text=Upload+clinical-care.jpg';">
+                        <span class="card-chip">Clinical Health</span>
                     </div>
                     <div class="card-body">
-                        <span class="card-tag">Medical Care</span>
-                        <h3>Routine Clinical Reviews</h3>
-                        <p>Direct partnership with Afya Medicare providing registered members with routine check-ups, lab tests, and medication guidance.</p>
-                        <a href="programs.html" class="text-link">Explore care plans &rarr;</a>
+                        <h3>Routine Care & Reviews</h3>
+                        <p>Through our tie with Afya Medicare, foundation members receive ongoing clinical tracking, laboratory reviews, and personalized care guidelines.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="programs.html" class="text-link">Explore Care Services &rarr;</a>
                     </div>
                 </div>
 
                 <!-- Pillar 2 -->
                 <div class="card">
                     <div class="card-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=600&q=80" alt="Ugandan Community Outreach and Youth Screening">
+                        <img src="./assets/community-outreach.jpg" alt="Community Genotype Screening" onerror="this.src='https://via.placeholder.com/600x400?text=Upload+community-outreach.jpg';">
+                        <span class="card-chip">Advocacy & Testing</span>
                     </div>
                     <div class="card-body">
-                        <span class="card-tag">Advocacy</span>
-                        <h3>Community & Genotype Screening</h3>
-                        <p>Sensitizing schools and communities across Uganda to break social stigma and conduct early genotype screening drives.</p>
-                        <a href="programs.html" class="text-link">View outreach work &rarr;</a>
+                        <h3>Awareness & Screening</h3>
+                        <p>Dismantling social stigma in local communities, schools, and churches through genotype screening and early education drives.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="programs.html" class="text-link">View Community Drives &rarr;</a>
                     </div>
                 </div>
 
                 <!-- Pillar 3 -->
                 <div class="card">
                     <div class="card-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=600&q=80" alt="Ugandan Caregiver Support Circle">
+                        <img src="./assets/parent-circle.jpg" alt="Parent Support Circles" onerror="this.src='https://via.placeholder.com/600x400?text=Upload+parent-circle.jpg';">
+                        <span class="card-chip">Emotional Support</span>
                     </div>
                     <div class="card-body">
-                        <span class="card-tag">Support</span>
                         <h3>Parent & Warrior Circles</h3>
-                        <p>Safe spaces where parents and warriors exchange encouragement, practical home crisis management tips, and strength.</p>
-                        <a href="stories.html" class="text-link">Read warrior stories &rarr;</a>
+                        <p>Providing safe spaces where caregivers and warriors build strength, exchange practical crisis management tips, and stand united.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="stories.html" class="text-link">Read Inspirational Stories &rarr;</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Heart-Touching Quote Banner -->
-    <section class="quote-banner">
-        <div class="container quote-container">
-            <div class="quote-icon">“</div>
-            <blockquote>
-                Pain may be part of our story, but it will never define our power. Together in love, every warrior thrives.
-            </blockquote>
-            <p class="quote-author">— The Afya Foundation Family</p>
+    <!-- Redesigned Quote / Callout Section -->
+    <section class="quote-callout">
+        <div class="container">
+            <div class="callout-card">
+                <div class="quote-mark">“</div>
+                <blockquote>
+                    Out of our deepest pain grew a light for thousands. No warrior should fight alone, and no parent should suffer in silence.
+                </blockquote>
+                <div class="quote-attribution">
+                    <strong>Kittengo Alysious & Nanyonjo Noeline</strong>
+                    <span>Founders, Afya Sickle Cell Foundation</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Complete Modern Footer -->
     <footer class="site-footer">
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <h3>Afya Sickle Cell Foundation</h3>
-                <p>Empowering warriors, providing clinical support with Afya Medicare, and spreading hope across Uganda.</p>
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <div class="footer-logo">
+                    <span class="logo-fallback">Afya <span>Foundation</span></span>
+                </div>
+                <p>Empowering sickle cell warriors, spreading awareness, and providing routine clinical guidance in partnership with <strong>Afya Medicare</strong>.</p>
             </div>
-            <div class="footer-links">
-                <h4>Navigation</h4>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="about.html">About Our Founders</a></li>
+                    <li><a href="programs.html">Health Programs</a></li>
                     <li><a href="stories.html">Stories of Hope</a></li>
                     <li><a href="contact.html">Get Connected</a></li>
                 </ul>
             </div>
+
+            <div class="footer-col">
+                <h4>Support & Services</h4>
+                <ul>
+                    <li><a href="programs.html">Afya Medicare Reviews</a></li>
+                    <li><a href="programs.html">Genotype Screening Drives</a></li>
+                    <li><a href="programs.html">Crisis Management Support</a></li>
+                    <li><a href="contact.html">Emergency Contacts</a></li>
+                </ul>
+            </div>
         </div>
+
         <div class="footer-bottom">
-            <div class="container">
+            <div class="container bottom-flex">
                 <p>&copy; 2026 Afya Sickle Cell Foundation. All rights reserved.</p>
+                <p class="tagline">Built with Love & Hope</p>
             </div>
         </div>
     </footer>
@@ -188,20 +219,7 @@
     <script src="main.js"></script>
 </body>
 </html>
-03 — FAMILIES
-        ============================================== -->
-
-        <a
-            href="education/children.html"
-            class="feature-tile tile-children">
-
-
-            <div class="tile-image">
-
-
-                <img
-                    src="assets/images/children-smiling.jpg"
-                    alt="Children smiling together"
+      alt="Children smiling together"
                     loading="lazy">
 
 
