@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Connected & Contact Us | AFYA Sickle Cell Foundation</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================
+           RESET & CORE STYLES
+           ========================================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-red: #C8102E;
+            --dark-red: #991B1B;
+            --whatsapp-green: #25D366;
+            --accent-light: #FEF2F2;
+            --navy-dark: #0F172A;
+            --slate-text: #334155;
+            --slate-muted: #64748B;
+            --bg-light: #F8FAFC;
+            --border-color: #E2E8F0;
+            --font-main: 'Plus Jakarta Sans', -apple-system, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--slate-text);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .text-center { text-align: center; }
+
+        /* ==========================================
+           TOP EMERGENCY BAR
+           ========================================== */
+        .top-bar {
+            background-color: var(--navy-dark);
+            color: #FFFFFF;
+            padding: 10px 0;
+            font-size: 0.85rem;
+        }
+
+        .top-bar-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .emergency-badge {
+            background-color: var(--primary-red);
+            color: #FFFFFF;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-weight: 800;
+            font-size: 0.75rem;
+            margin-right: 8px;
+        }
+
+        /* ==========================================
+           HEADER NAVIGATION
+           ========================================== */
+        .site-header {
+            background: #FFFFFF;
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-img {
+            max-height: 48px;
+            width: auto;
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-item {
+            text-decoration: none;
+            color: var(--navy-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            color: var(--primary-red);
+        }
+
+        .btn-nav {
+            background: var(--primary-red);
+            color: #FFFFFF !important;
+            padding: 10px 22px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        /* ==========================================
+           PAGE HERO BANNER
+           ========================================== */
+        .page-hero {
+            background: linear-gradient(135deg, #7F1D1D 0%, #0F172A 100%);
+            color: #FFFFFF;
+            padding: 70px 0;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .page-hero p {
+            font-size: 1.1rem;
+            color: #E2E8F0;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* ==========================================
+           CONTACT & LOCATION SECTION
+           ========================================== */
+        .contact-section {
+            padding: 80px 0;
+        }
+
+        /* QUICK CONTACT CARDS GRID */
+        .contact-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .contact-card {
+            background: #FFFFFF;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            padding: 30px 25px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 18px;
+            font-size: 1.6rem;
+        }
+
+        .icon-red { background-color: var(--accent-light); color: var(--primary-red); }
+        .icon-green { background-color: #DCFCE7; color: #16A34A; }
+        .icon-blue { background-color: #E0F2FE; color: #0284C7; }
+
+        .contact-card h3 {
+            font-size: 1.2rem;
+            color: var(--navy-dark);
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .contact-card p {
+            color: var(--slate-muted);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .contact-link {
+            display: inline-block;
+            color: var(--dark-red);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1rem;
+            word-break: break-all;
+        }
+
+        .whatsapp-btn {
+            background-color: var(--whatsapp-green);
+            color: #FFFFFF !important;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            transition: opacity 0.2s ease;
+        }
+
+        .whatsapp-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* MAIN TWO COLUMN SECTION: LOCATION & FORM */
+        .main-contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        /* LOCATION CARD */
+        .location-box {
+            background: #FFFFFF;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+
+        .section-tag {
+            color: var(--primary-red);
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .location-box h2 {
+            font-size: 1.8rem;
+            color: var(--navy-dark);
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .address-detail {
+            margin-bottom: 25px;
+        }
+
+        .address-detail strong {
+            display: block;
+            color: var(--navy-dark);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .address-detail p {
+            color: var(--slate-text);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .hours-badge {
+            background-color: #FEF2F2;
+            border: 1px solid #FECACA;
+            border-radius: 12px;
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .hours-badge-icon {
+            font-size: 1.8rem;
+        }
+
+        .hours-badge-text strong {
+            display: block;
+            color: var(--dark-red);
+            font-size: 1rem;
+        }
+
+        .hours-badge-text span {
+            color: var(--slate-text);
+            font-size: 0.9rem;
+        }
+
+        /* FORM STYLING */
+        .form-box {
+            background: #FFFFFF;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+
+        .form-box h2 {
+            font-size: 1.8rem;
+            color: var(--navy-dark);
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 700;
+            color: var(--navy-dark);
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            font-family: var(--font-main);
+            font-size: 0.95rem;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-red);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--primary-red);
+            color: #FFFFFF;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .btn-submit:hover {
+            background: var(--dark-red);
+        }
+
+        /* MAP PLACEHOLDER / EMBED */
+        .map-wrapper {
+            margin-top: 25px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        /* ==========================================
+           FOOTER
+           ========================================== */
+        .site-footer {
+            background-color: #0B1120;
+            color: #94A3B8;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #1E293B;
+        }
+
+        .footer-logo {
+            max-height: 45px;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand h3 {
+            color: #FFFFFF;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #94A3B8;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom {
+            padding-top: 25px;
+            font-size: 0.85rem;
+            color: #64748B;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 850px) {
+            .main-contact-grid, .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .location-box, .form-box {
+                padding: 25px;
+            }
+            .page-hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Emergency Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-flex">
+            <div>
+                <span class="emergency-badge">URGENT CARE</span>
+                <span>In a Sickle Cell Crisis? Keep warm, hydrate, and seek medical support immediately.</span>
+            </div>
+            <div>
+                <span>Clinical Partner: <strong>Afya Medicare</strong></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="site-header">
+        <div class="container header-flex">
+            <a href="index.html" class="brand-logo">
+                <img src="assets/logo.png" alt="AFYA Sickle Cell Foundation Logo" class="logo-img">
+            </a>
+            
+            <nav class="main-nav">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="about.html" class="nav-item">About Founders</a>
+                <a href="programs.html" class="nav-item">Clinical & Programs</a>
+                <a href="stories.html" class="nav-item">Warrior Stories</a>
+                <a href="contact.html" class="btn-nav">Get Connected</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Title Banner -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Get Connected With Us</h1>
+            <p>Whether you need emergency clinical support, genotype testing guidance, or family support, we are here for you 24/7.</p>
+        </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section class="contact-section">
+        <div class="container">
+
+            <!-- Quick Contact Cards Grid -->
+            <div class="contact-cards-grid">
+                
+                <!-- Phone Call Card -->
+                <div class="contact-card">
+                    <div class="icon-circle icon-red">📞</div>
+                    <h3>Direct Call Hotline</h3>
+                    <p>For immediate assistance & emergency support</p>
+                    <a href="tel:0702238103" class="contact-link">0702238103</a><br>
+                    <a href="tel:0788490987" class="contact-link">0788490987</a>
+                </div>
+
+                <!-- WhatsApp Card -->
+                <div class="contact-card">
+                    <div class="icon-circle icon-green">💬</div>
+                    <h3>WhatsApp Chat</h3>
+                    <p>Instant chat for advice & support circles</p>
+                    <a href="https://wa.me/256702238103" target="_blank" class="whatsapp-btn">Chat on WhatsApp</a>
+                </div>
+
+                <!-- Email Card -->
+                <div class="contact-card">
+                    <div class="icon-circle icon-blue">✉️</div>
+                    <h3>Email Support</h3>
+                    <p>For partnerships, inquiries & donations</p>
+                    <a href="mailto:afyasicklecellfoudation@gmail.com" class="contact-link" style="font-size: 0.88rem;">afyasicklecellfoudation@gmail.com</a>
+                </div>
+
+            </div>
+
+            <!-- Main Location and Form Grid -->
+            <div class="main-contact-grid">
+
+                <!-- Left Column: Location & Hours -->
+                <div class="location-box">
+                    <span class="section-tag">VISIT OUR CLINICAL OFFICE</span>
+                    <h2>Where to Find Us</h2>
+
+                    <div class="address-detail">
+                        <strong>🏥 Afya Medicare Clinic</strong>
+                        <p>Located at <strong>Kitende B, Mwenda Stage</strong>,<br>Off Entebbe Road, Uganda.</p>
+                    </div>
+
+                    <div class="hours-badge">
+                        <div class="hours-badge-icon">🚨</div>
+                        <div class="hours-badge-text">
+                            <strong>Open 24 Hours / 7 Days a Week</strong>
+                            <span>Our clinical team is always ready to receive and care for warriors in crisis.</span>
+                        </div>
+                    </div>
+
+                    <p style="color: var(--slate-muted); font-size: 0.95rem; margin-bottom: 15px;">
+                        📍 <strong>Directions:</strong> Turn off Entebbe Road at Mwenda Stage in Kitende B. Look out for the Afya Medicare banner.
+                    </p>
+
+                    <!-- Embedded Map -->
+                    <div class="map-wrapper">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.815779048386!2d32.5312!3d0.1983!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zM8KwMTExOS45Ik4gMzLCsDMxJzUyLjMiRQ!5e0!3m2!1sen!2sug!4v1600000000000!5m2!1sen!2sug" 
+                            width="100%" 
+                            height="220" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+
+                <!-- Right Column: Send Us a Message Form -->
+                <div class="form-box">
+                    <span class="section-tag">LEAVE A MESSAGE</span>
+                    <h2>Send Us a Message</h2>
+
+                    <form action="mailto:afyasicklecellfoudation@gmail.com" method="post" enctype="text/plain">
+                        <div class="form-group">
+                            <label for="name">Your Full Name</label>
+                            <input type="text" id="name" name="Name" class="form-control" placeholder="e.g. Sarah Namukasa" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number / WhatsApp</label>
+                            <input type="tel" id="phone" name="Phone" class="form-control" placeholder="e.g. 0700 000 000" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">How can we help?</label>
+                            <select id="subject" name="Subject" class="form-control">
+                                <option value="Medical Emergency / Review">Medical Emergency / Crisis Support</option>
+                                <option value="Genotype Screening Inquiry">Genotype Screening & Testing</option>
+                                <option value="Joining Parent Support Circle">Joining Parent Support Circles</option>
+                                <option value="General Inquiry / Partnership">General Inquiry / Partnership</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="Message" class="form-control" placeholder="Tell us how we can assist you or your loved one..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">Send Message Now</button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="assets/logo.png" alt="AFYA Logo" class="footer-logo">
+                    <h3>AFYA Sickle Cell Foundation</h3>
+                    <p>Empowering sickle cell warriors, increasing health literacy, and partnering with <strong>Afya Medicare</strong> across Uganda.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Founders</a></li>
+                        <li><a href="programs.html">Clinical Care</a></li>
+                        <li><a href="stories.html">Warrior Stories</a></li>
+                        <li><a href="contact.html">Contact Supp
