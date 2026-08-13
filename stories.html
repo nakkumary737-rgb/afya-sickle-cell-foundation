@@ -3,141 +3,498 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stories of Hope | Afya Sickle Cell Foundation</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Warrior Stories | AFYA Sickle Cell Foundation</title>
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================
+           RESET & CORE STYLES
+           ========================================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-red: #C8102E;
+            --dark-red: #991B1B;
+            --accent-light: #FEF2F2;
+            --navy-dark: #0F172A;
+            --slate-text: #334155;
+            --slate-muted: #64748B;
+            --bg-light: #F8FAFC;
+            --border-color: #E2E8F0;
+            --font-main: 'Plus Jakarta Sans', -apple-system, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--slate-text);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .text-center { text-align: center; }
+
+        /* ==========================================
+           TOP EMERGENCY BAR
+           ========================================== */
+        .top-bar {
+            background-color: var(--navy-dark);
+            color: #FFFFFF;
+            padding: 10px 0;
+            font-size: 0.85rem;
+        }
+
+        .top-bar-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .emergency-badge {
+            background-color: var(--primary-red);
+            color: #FFFFFF;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-weight: 800;
+            font-size: 0.75rem;
+            margin-right: 8px;
+        }
+
+        /* ==========================================
+           HEADER NAVIGATION
+           ========================================== */
+        .site-header {
+            background: #FFFFFF;
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-img {
+            max-height: 48px;
+            width: auto;
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-item {
+            text-decoration: none;
+            color: var(--navy-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            color: var(--primary-red);
+        }
+
+        .btn-nav {
+            background: var(--primary-red);
+            color: #FFFFFF !important;
+            padding: 10px 22px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        /* ==========================================
+           PAGE HERO BANNER
+           ========================================== */
+        .page-hero {
+            background: linear-gradient(135deg, #7F1D1D 0%, #0F172A 100%);
+            color: #FFFFFF;
+            padding: 70px 0;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .page-hero p {
+            font-size: 1.1rem;
+            color: #E2E8F0;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* ==========================================
+           WARRIOR STORIES SECTION
+           ========================================== */
+        .stories-section {
+            padding: 80px 0;
+        }
+
+        .story-card {
+            background: #FFFFFF;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            overflow: hidden;
+            margin-bottom: 50px;
+            transition: transform 0.2s ease;
+        }
+
+        .story-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+        }
+
+        .story-img-wrap {
+            position: relative;
+            background-color: #FEF2F2;
+            min-height: 380px;
+        }
+
+        .story-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .warrior-tag {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: var(--navy-dark);
+            color: #FFFFFF;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .story-content {
+            padding: 45px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .mini-tag {
+            color: var(--primary-red);
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .story-content h2 {
+            font-size: 1.8rem;
+            color: var(--navy-dark);
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .warrior-location {
+            color: var(--dark-red);
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #FEE2E2;
+        }
+
+        .story-text {
+            color: var(--slate-text);
+            font-size: 0.98rem;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .warrior-quote {
+            margin-top: 10px;
+            padding: 16px 20px;
+            background-color: #FEF2F2;
+            border-left: 4px solid var(--primary-red);
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+            color: var(--dark-red);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        /* SHARE STORY BANNER */
+        .share-banner {
+            background: var(--navy-dark);
+            color: #FFFFFF;
+            border-radius: 20px;
+            padding: 50px 40px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .share-banner h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .share-banner p {
+            color: #E2E8F0;
+            font-size: 1.05rem;
+            max-width: 650px;
+            margin: 0 auto 25px;
+        }
+
+        /* ==========================================
+           FOOTER
+           ========================================== */
+        .site-footer {
+            background-color: #0B1120;
+            color: #94A3B8;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #1E293B;
+        }
+
+        .footer-logo {
+            max-height: 45px;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand h3 {
+            color: #FFFFFF;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #94A3B8;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom {
+            padding-top: 25px;
+            font-size: 0.85rem;
+            color: #64748B;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 850px) {
+            .story-card, .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .story-img-wrap {
+                min-height: 280px;
+            }
+            .story-content {
+                padding: 25px;
+            }
+            .page-hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
-    <header class="navbar">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <img src="./assets/logo.png" alt="Afya Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
-                <span class="logo-fallback">Afya <span>Foundation</span></span>
+    <!-- Emergency Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-flex">
+            <div>
+                <span class="emergency-badge">URGENT CARE</span>
+                <span>In a Sickle Cell Crisis? Keep warm, hydrate, and seek medical support immediately.</span>
+            </div>
+            <div>
+                <span>Clinical Partner: <strong>Afya Medicare</strong></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="site-header">
+        <div class="container header-flex">
+            <a href="index.html" class="brand-logo">
+                <img src="assets/logo.png" alt="AFYA Sickle Cell Foundation Logo" class="logo-img">
             </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span class="hamburger"></span>
-            </button>
-            <nav class="nav-links" id="navLinks">
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="programs.html">Programs</a>
-                <a href="stories.html" class="active">Stories of Hope</a>
-                <a href="contact.html" class="nav-btn">Get Connected</a>
+            
+            <nav class="main-nav">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="about.html" class="nav-item">About Founders</a>
+                <a href="programs.html" class="nav-item">Clinical & Programs</a>
+                <a href="stories.html" class="nav-item active">Warrior Stories</a>
+                <a href="contact.html" class="btn-nav">Get Connected</a>
             </nav>
         </div>
     </header>
 
-    <!-- Subpage Hero Banner -->
-    <section class="hero" style="padding: 4.5rem 0; background: linear-gradient(135deg, rgba(138, 11, 30, 0.88), rgba(30, 41, 59, 0.92)), url('./assets/hope.jpg') center/cover no-repeat;">
-        <div class="container hero-content">
-            <h1>Voices of Courage</h1>
-            <p class="hero-subtitle">Real stories of resilience, strength, and victory from our warriors and loving caregivers.</p>
+    <!-- Page Title Banner -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Warrior Stories of Hope</h1>
+            <p>Real lives, real courage, and real transformation. Discover how proper clinical care and unconditional support turn pain into purpose.</p>
         </div>
     </section>
 
-    <!-- Featured Story Section -->
-    <section style="background-color: var(--white); padding: 4.5rem 0;">
+    <!-- Warrior Stories Section -->
+    <section class="stories-section">
         <div class="container">
-            <div class="section-header">
-                <h2>A Mother's Journey to Hope</h2>
-                <div class="divider"></div>
-            </div>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; align-items: center;">
-                <div>
-                    <img src="./assets/community.jpg" alt="Mother and Child" style="width: 100%; border-radius: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.08);" onerror="this.src='https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=600&q=80';">
-                </div>
-                <div>
-                    <span style="color: var(--primary-red); font-weight: 700; text-transform: uppercase; font-size: 0.85rem;">Caregiver Testimonial</span>
-                    <h3 style="font-size: 1.6rem; margin: 0.5rem 0 1rem; color: var(--text-dark);">"We No Longer Walk This Path Alone"</h3>
-                    <p style="margin-bottom: 1rem; color: var(--text-muted);">"When my child was diagnosed, I felt completely lost. The endless hospital visits and financial strain brought so much fear into our lives. Discovering the Afya Sickle Cell Foundation gave us a community that truly understands our pain."</p>
-                    <p style="color: var(--text-muted);">"Through routine reviews with Afya Medicare and the support circles with other mothers, my child is thriving today. Pain crises are far less frequent, and our home is filled with joy again."</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Warrior Testimonial Grid -->
-    <section class="mission-highlight">
-        <div class="container">
-            <div class="section-header">
-                <h2>Warrior Testimonials</h2>
-                <div class="divider"></div>
-                <p class="section-lead">Every story proves that sickle cell disease may be part of life, but it never limits purpose.</p>
-            </div>
-
-            <div class="cards-grid">
-                <!-- Story 1 -->
-                <div class="card" style="padding: 2rem;">
-                    <div style="color: var(--accent-warm); font-size: 2rem; line-height: 1; margin-bottom: 0.5rem;">“</div>
-                    <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">"Living with sickle cell used to make me feel isolated in school. Being part of the Afya Foundation showed me that I am a warrior. The education on staying hydrated and taking care of my body has kept me out of the hospital for months."</p>
-                    <div>
-                        <strong style="color: var(--text-dark); display: block;">Brian, Age 14</strong>
-                        <span style="color: var(--gray-text); font-size: 0.85rem;">Sickle Cell Warrior</span>
-                    </div>
+            <!-- Story 1: Brian -->
+            <div class="story-card">
+                <div class="story-img-wrap">
+                    <img src="assets/warrior-brian.jpg" alt="Brian's Story" class="story-img">
+                    <span class="warrior-tag">12 Years Old • Student</span>
                 </div>
+                <div class="story-content">
+                    <span class="mini-tag">BACK TO CLASSROOM & PLAY</span>
+                    <h2>Brian’s Journey: From Frequent Admissions to Top of Class</h2>
+                    <p class="warrior-location">📍 Wakiso District, Uganda</p>
+                    
+                    <p class="story-text">
+                        For years, 12-year-old Brian missed almost half of every school term due to sudden, severe painful crises. His mother, a single parent, spent nights in tears at local clinics, overwhelmed by medical costs and fear for her son's future.
+                    </p>
+                    <p class="story-text">
+                        When Brian was introduced to the AFYA Sickle Cell Foundation, everything shifted. Through regular clinical reviews with <strong>Afya Medicare</strong>, a structured hydration plan, and routine preventative care, Brian’s crisis episodes reduced dramatically. Today, he hasn't missed a day of school in over six months!
+                    </p>
 
-                <!-- Story 2 -->
-                <div class="card" style="padding: 2rem;">
-                    <div style="color: var(--accent-warm); font-size: 2rem; line-height: 1; margin-bottom: 0.5rem;">“</div>
-                    <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">"As a father, seeing the founders, Kittengo Alysious and Nanyonjo Noeline, turn their own grief into a foundation inspired me. Their story gave me the strength to stand strong for my own daughter."</p>
-                    <div>
-                        <strong style="color: var(--text-dark); display: block;">David M.</strong>
-                        <span style="color: var(--gray-text); font-size: 0.85rem;">Parent & Support Member</span>
-                    </div>
-                </div>
-
-                <!-- Story 3 -->
-                <div class="card" style="padding: 2rem;">
-                    <div style="color: var(--accent-warm); font-size: 2rem; line-height: 1; margin-bottom: 0.5rem;">“</div>
-                    <p style="color: var(--text-muted); font-style: italic; margin-bottom: 1.5rem;">"The routine reviews at Afya Medicare made all the difference. Having medical professionals who truly care and check on our progress regularly has given us peace of mind."</p>
-                    <div>
-                        <strong style="color: var(--text-dark); display: block;">Grace K.</strong>
-                        <span style="color: var(--gray-text); font-size: 0.85rem;">Foundation Member</span>
+                    <div class="warrior-quote">
+                        "Before AFYA, I thought I would never finish primary school. Now I want to study hard and become a doctor to help other warriors like me." — Brian
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Quote Banner -->
-    <section class="quote-banner">
-        <div class="container">
-            <blockquote>
-                "Our stories are not about the pain we endure, but the courage we discover together."
-            </blockquote>
-            <p class="quote-author">— Afya Sickle Cell Foundation</p>
+            <!-- Story 2: Grace (Parent) -->
+            <div class="story-card">
+                <div class="story-img-wrap">
+                    <img src="assets/warrior-grace.jpg" alt="Grace and Her Twins" class="story-img">
+                    <span class="warrior-tag">Mother of Warrior Twins</span>
+                </div>
+                <div class="story-content">
+                    <span class="mini-tag">FAMILY SUPPORT & EMPOWERMENT</span>
+                    <h2>Grace's Voice: Overcoming Stigma and Isolation</h2>
+                    <p class="warrior-location">📍 Mukono District, Uganda</p>
+                    
+                    <p class="story-text">
+                        When Grace discovered both of her twin daughters had sickle cell disease, neighbors blamed her, and isolation followed. Overwhelmed and heartbroken, she struggled to manage their health alone without reliable medical advice.
+                    </p>
+                    <p class="story-text">
+                        Joining the <strong>AFYA Parent Support Circle</strong> gave Grace a community that understood her daily struggles. With guidance from founders Kittengo Alysious & Nanyonjo Noeline, plus direct clinical support from Afya Medicare, Grace learned home crisis management and gained the courage to stand tall.
+                    </p>
+
+                    <div class="warrior-quote">
+                        "AFYA didn't just give my daughters medical care—they gave me my dignity back as a mother. I am no longer ashamed; I am proud of my warriors!" — Grace
+                    </div>
+                </div>
+            </div>
+
+            <!-- Story 3: Emmanuel -->
+            <div class="story-card">
+                <div class="story-img-wrap">
+                    <img src="assets/warrior-emmanuel.jpg" alt="Emmanuel's Story" class="story-img">
+                    <span class="warrior-tag">19 Years Old • Youth Ambassador</span>
+                </div>
+                <div class="story-content">
+                    <span class="mini-tag">LIVING BEYOND BOUNDARIES</span>
+                    <h2>Emmanuel: Championing Sickle Cell Awareness in Schools</h2>
+                    <p class="warrior-location">📍 Kampala, Uganda</p>
+                    
+                    <p class="story-text">
+                        Growing up, Emmanuel hid his diagnosis from classmates out of fear of being mocked or excluded from sports. The emotional toll was as heavy as the physical pain.
+                    </p>
+                    <p class="story-text">
+                        Through AFYA’s youth advocacy program, Emmanuel embraced his story. Today, he walks into secondary schools across Kampala alongside the AFYA team, educating young people on genotype testing and showing younger students that warriors can achieve anything.
+                    </p>
+
+                    <div class="warrior-quote">
+                        "Sickle cell is part of my journey, but it isn't my destination. AFYA taught me to wear my warrior badge with pride." — Emmanuel
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action Banner -->
+            <div class="share-banner">
+                <h3>Are You a Sickle Cell Warrior or Parent?</h3>
+                <p>Your story can inspire thousands across Uganda. Reach out to join our community, access clinical reviews, or share your testimony.</p>
+                <a href="contact.html" class="btn-nav" style="padding: 14px 32px; font-size: 1rem;">Connect With Us Today</a>
+            </div>
+
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="site-footer">
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <h3>Afya Sickle Cell Foundation</h3>
-                <p>Empowering warriors, advocating for care, and inspiring hope.</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="assets/logo.png" alt="AFYA Logo" class="footer-logo">
+                    <h3>AFYA Sickle Cell Foundation</h3>
+                    <p>Empowering sickle cell warriors, increasing health literacy, and partnering with <strong>Afya Medicare</strong> across Uganda.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Founders</a></li>
+                        <li><a href="programs.html">Clinical Care</a></li>
+                        <li><a href="stories.html">Warrior Stories</a></li>
+                        <li><a href="contact.html">Contact Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Clinical Partner</h4>
+                    <p><strong>Afya Medicare Clinic</strong><br>Providing routine reviews, crisis response guidance, and laboratory screening.</p>
+                </div>
             </div>
-            <div class="footer-links">
-                <h4>Quick Navigation</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="programs.html">Programs</a></li>
-                    <li><a href="stories.html">Stories of Hope</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2026 Afya Sickle Cell Foundation. All rights reserved.</p>
+            <div class="footer-bottom text-center">
+                <p>&copy; 2026 AFYA Sickle Cell Foundation. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="main.js"></script>
 </body>
 </html>
