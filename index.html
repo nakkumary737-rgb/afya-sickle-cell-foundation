@@ -10,7 +10,514 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="style.css?v=4.0">
+    <style>
+        /* ==========================================
+           RESET & CORE STYLES
+           ========================================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-red: #C8102E;
+            --dark-red: #991B1B;
+            --accent-light: #FEF2F2;
+            --navy-dark: #0F172A;
+            --slate-text: #334155;
+            --slate-muted: #64748B;
+            --bg-light: #F8FAFC;
+            --border-color: #E2E8F0;
+            --font-main: 'Plus Jakarta Sans', -apple-system, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--slate-text);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .text-center { text-align: center; }
+
+        /* ==========================================
+           TOP EMERGENCY BAR
+           ========================================== */
+        .top-bar {
+            background-color: var(--navy-dark);
+            color: #FFFFFF;
+            padding: 10px 0;
+            font-size: 0.85rem;
+        }
+
+        .top-bar-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .emergency-badge {
+            background-color: var(--primary-red);
+            color: #FFFFFF;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-weight: 800;
+            font-size: 0.75rem;
+            margin-right: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .top-bar-partner {
+            color: #94A3B8;
+        }
+
+        .top-bar-partner strong {
+            color: #FFFFFF;
+        }
+
+        /* ==========================================
+           HEADER NAVIGATION
+           ========================================== */
+        .site-header {
+            background: #FFFFFF;
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-img {
+            max-height: 48px;
+            width: auto;
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-item {
+            text-decoration: none;
+            color: var(--navy-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            color: var(--primary-red);
+        }
+
+        .btn-nav {
+            background: var(--primary-red);
+            color: #FFFFFF !important;
+            padding: 10px 22px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        .btn-nav:hover {
+            background: var(--dark-red);
+            transform: translateY(-2px);
+        }
+
+        /* ==========================================
+           HERO SECTION
+           ========================================== */
+        .hero-section {
+            background: linear-gradient(135deg, #7F1D1D 0%, #0F172A 100%);
+            color: #FFFFFF;
+            padding: 80px 0 100px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            color: #FCA5A5;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero-content h1 span {
+            color: #FCA5A5;
+        }
+
+        .hero-lead {
+            font-size: 1.1rem;
+            color: #E2E8F0;
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .hero-img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            object-fit: cover;
+            height: 380px;
+            background-color: var(--navy-dark);
+        }
+
+        /* BUTTONS */
+        .btn {
+            padding: 12px 28px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-red);
+            color: #FFFFFF;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--dark-red);
+            transform: translateY(-2px);
+        }
+
+        .btn-outline-light {
+            border: 2px solid rgba(255,255,255,0.4);
+            color: #FFFFFF;
+        }
+
+        .btn-outline-light:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: #FFFFFF;
+        }
+
+        /* ==========================================
+           STATS SECTION
+           ========================================== */
+        .stats-section {
+            margin-top: -40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            background: #FFFFFF;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        .stat-card {
+            padding: 25px 20px;
+            text-align: center;
+            border-right: 1px solid #F1F5F9;
+        }
+
+        .stat-card:last-child {
+            border-right: none;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--dark-red);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: var(--slate-muted);
+            font-weight: 600;
+        }
+
+        /* ==========================================
+           FOUNDERS SECTION
+           ========================================== */
+        .founders-section {
+            padding: 90px 0 60px;
+        }
+
+        .sub-tag {
+            color: var(--primary-red);
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .section-title-wrap h2 {
+            font-size: 2.2rem;
+            color: var(--navy-dark);
+            font-weight: 800;
+            margin-bottom: 40px;
+        }
+
+        .founders-card {
+            background-color: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+        }
+
+        .founders-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 300px;
+            background-color: #E2E8F0;
+        }
+
+        .founders-text-wrap {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .founders-text-wrap p {
+            margin-bottom: 15px;
+            color: var(--slate-text);
+            font-size: 1rem;
+        }
+
+        .clinical-partner-pill {
+            margin-top: 15px;
+            background-color: var(--accent-light);
+            border: 1px solid #FECACA;
+            color: var(--dark-red);
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+
+        /* ==========================================
+           PILLARS SECTION
+           ========================================== */
+        .pillars-section {
+            padding: 60px 0 90px;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .pillar-card {
+            background: #FFFFFF;
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+        }
+
+        .card-img-container {
+            height: 200px;
+            overflow: hidden;
+            background-color: #E2E8F0;
+        }
+
+        .card-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        .pillar-num {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--primary-red);
+            letter-spacing: 1px;
+        }
+
+        .card-body h3 {
+            font-size: 1.3rem;
+            color: var(--navy-dark);
+            margin: 5px 0 10px;
+        }
+
+        .card-body p {
+            color: var(--slate-muted);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .card-link {
+            color: var(--dark-red);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.95rem;
+        }
+
+        /* ==========================================
+           QUOTE BANNER
+           ========================================== */
+        .quote-banner-section {
+            padding-bottom: 80px;
+        }
+
+        .quote-card {
+            background: var(--navy-dark);
+            color: #FFFFFF;
+            padding: 50px 40px;
+            border-radius: 16px;
+            text-align: center;
+        }
+
+        .quote-card h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 1.4;
+            max-width: 800px;
+            margin: 0 auto 15px;
+        }
+
+        .quote-card p {
+            color: #FCA5A5;
+            font-weight: 600;
+        }
+
+        /* ==========================================
+           FOOTER
+           ========================================== */
+        .site-footer {
+            background-color: #0B1120;
+            color: #94A3B8;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #1E293B;
+        }
+
+        .footer-logo {
+            max-height: 45px;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand h3 {
+            color: #FFFFFF;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-brand p {
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .footer-col h4 {
+            color: #FFFFFF;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #94A3B8;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: #FFFFFF;
+        }
+
+        .partner-desc {
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .footer-bottom {
+            padding-top: 25px;
+            font-size: 0.85rem;
+            color: #64748B;
+        }
+
+        /* RESPONSIVE BREAKPOINTS */
+        @media (max-width: 900px) {
+            .hero-grid, .founders-card, .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -59,7 +566,7 @@
                 </div>
             </div>
             <div class="hero-media">
-                <img src="assets/hero-warrior.jpg" alt="Sickle Cell Warrior Smiling" class="hero-img">
+                <img src="assets/hero-warrior.jpg" alt="Sickle Cell Warrior" class="hero-img">
             </div>
         </div>
     </section>
@@ -143,73 +650,7 @@
                         <h3>Advocacy & Screening</h3>
                         <p>Dismantling social stigma in schools and communities across Uganda through genotype awareness and early detection drives.</p>
                         <a href="programs.html" class="card-link">See Outreach Work &rarr;</a>
-                    </div>
-                </div>
-
-                <!-- Pillar 03 -->
-                <div class="pillar-card">
-                    <div class="card-img-container">
-                        <img src="assets/parent-circle.jpg" alt="Parent Support Circle" class="card-img">
-                    </div>
-                    <div class="card-body">
-                        <span class="pillar-num">PILLAR 03</span>
-                        <h3>Parent Support Circles</h3>
-                        <p>Safe spaces where parents and warriors share practical crisis management tips, mental health support, and hope.</p>
-                        <a href="programs.html" class="card-link">Join Support Circle &rarr;</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quote Banner -->
-    <section class="quote-banner-section">
-        <div class="container">
-            <div class="quote-card">
-                <h2>"You are more than your diagnosis. Sickle cell is part of your story — but it will never define your future."</h2>
-                <p>— The Afya Sickle Cell Foundation Family</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <img src="assets/logo.png" alt="AFYA Logo" class="footer-logo">
-                    <h3>AFYA Sickle Cell Foundation</h3>
-                    <p>Empowering sickle cell warriors, increasing health literacy, and partnering with <strong>Afya Medicare</strong> to deliver compassionate healthcare across Uganda.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="about.html">About Founders</a></li>
-                        <li><a href="programs.html">Clinical Care</a></li>
-                        <li><a href="programs.html">Genotype Testing</a></li>
-                        <li><a href="contact.html">Contact Support</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Clinical Partner</h4>
-                    <p class="partner-desc"><strong>Afya Medicare Clinic</strong><br>Providing routine reviews, crisis response guidance, and laboratory screening.</p>
-                </div>
-            </div>
-            <div class="footer-bottom text-center">
-                <p>&copy; 2026 AFYA Sickle Cell Foundation. All Rights Reserved. | Knowledge • Compassion • Strength</p>
-            </div>
-        </div>
-    </footer>
-
-</body>
-</html>
-            </a>
-
-            <a href="education/crisis.html">
-                Pain Crisis
-            </a>
-
-            <a href="education/routine-care.html">
+                    </dhref="education/routine-care.html">
                 Routine Care
             </a>
 
