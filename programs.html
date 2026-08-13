@@ -3,162 +3,494 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Programs & Initiatives | Afya Sickle Cell Foundation</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Clinical Programs & Support | AFYA Sickle Cell Foundation</title>
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================
+           RESET & CORE STYLES
+           ========================================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-red: #C8102E;
+            --dark-red: #991B1B;
+            --accent-light: #FEF2F2;
+            --navy-dark: #0F172A;
+            --slate-text: #334155;
+            --slate-muted: #64748B;
+            --bg-light: #F8FAFC;
+            --border-color: #E2E8F0;
+            --font-main: 'Plus Jakarta Sans', -apple-system, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--slate-text);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .text-center { text-align: center; }
+
+        /* ==========================================
+           TOP EMERGENCY BAR
+           ========================================== */
+        .top-bar {
+            background-color: var(--navy-dark);
+            color: #FFFFFF;
+            padding: 10px 0;
+            font-size: 0.85rem;
+        }
+
+        .top-bar-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .emergency-badge {
+            background-color: var(--primary-red);
+            color: #FFFFFF;
+            padding: 3px 10px;
+            border-radius: 20px;
+            font-weight: 800;
+            font-size: 0.75rem;
+            margin-right: 8px;
+        }
+
+        /* ==========================================
+           HEADER NAVIGATION
+           ========================================== */
+        .site-header {
+            background: #FFFFFF;
+            border-bottom: 1px solid var(--border-color);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-img {
+            max-height: 48px;
+            width: auto;
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-item {
+            text-decoration: none;
+            color: var(--navy-dark);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            color: var(--primary-red);
+        }
+
+        .btn-nav {
+            background: var(--primary-red);
+            color: #FFFFFF !important;
+            padding: 10px 22px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: transform 0.2s ease, background 0.2s ease;
+        }
+
+        /* ==========================================
+           PAGE HERO BANNER
+           ========================================== */
+        .page-hero {
+            background: linear-gradient(135deg, #7F1D1D 0%, #0F172A 100%);
+            color: #FFFFFF;
+            padding: 70px 0;
+            text-align: center;
+        }
+
+        .page-hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .page-hero p {
+            font-size: 1.1rem;
+            color: #E2E8F0;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* ==========================================
+           PROGRAMS SECTION STYLES
+           ========================================== */
+        .programs-section {
+            padding: 80px 0;
+        }
+
+        .program-card {
+            background: #FFFFFF;
+            border-radius: 20px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            overflow: hidden;
+            margin-bottom: 40px;
+            transition: transform 0.2s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.06);
+        }
+
+        .program-img-wrap {
+            min-height: 320px;
+            background-color: #E2E8F0;
+            position: relative;
+        }
+
+        .program-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .program-content {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .pillar-badge {
+            color: var(--primary-red);
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .program-content h2 {
+            font-size: 1.8rem;
+            color: var(--navy-dark);
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .program-content p {
+            color: var(--slate-text);
+            font-size: 0.98rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .feature-list li {
+            position: relative;
+            padding-left: 24px;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            color: var(--slate-text);
+            font-weight: 500;
+        }
+
+        .feature-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--primary-red);
+            font-weight: 800;
+        }
+
+        /* CLINICAL BANNER */
+        .clinical-callout {
+            background: var(--navy-dark);
+            color: #FFFFFF;
+            border-radius: 20px;
+            padding: 45px;
+            margin-top: 60px;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .clinical-callout h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .clinical-callout p {
+            color: #E2E8F0;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .btn-callout {
+            background: var(--primary-red);
+            color: #FFFFFF;
+            padding: 12px 28px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            transition: background 0.2s ease;
+        }
+
+        .btn-callout:hover {
+            background: var(--dark-red);
+        }
+
+        /* ==========================================
+           FOOTER
+           ========================================== */
+        .site-footer {
+            background-color: #0B1120;
+            color: #94A3B8;
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #1E293B;
+        }
+
+        .footer-logo {
+            max-height: 45px;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand h3 {
+            color: #FFFFFF;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #94A3B8;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom {
+            padding-top: 25px;
+            font-size: 0.85rem;
+            color: #64748B;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 850px) {
+            .program-card, .clinical-callout, .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .program-img-wrap {
+                min-height: 250px;
+            }
+            .program-content, .clinical-callout {
+                padding: 25px;
+            }
+            .page-hero h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Header Navigation -->
-    <header class="navbar">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">
-                <img src="./assets/logo.png" alt="Afya Logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline-block';">
-                <span class="logo-fallback">Afya <span>Foundation</span></span>
+    <!-- Emergency Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-flex">
+            <div>
+                <span class="emergency-badge">URGENT CARE</span>
+                <span>In a Sickle Cell Crisis? Keep warm, hydrate, and seek medical support immediately.</span>
+            </div>
+            <div>
+                <span>Clinical Partner: <strong>Afya Medicare</strong></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="site-header">
+        <div class="container header-flex">
+            <a href="index.html" class="brand-logo">
+                <img src="assets/logo.png" alt="AFYA Sickle Cell Foundation Logo" class="logo-img">
             </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-                <span class="hamburger"></span>
-            </button>
-            <nav class="nav-links" id="navLinks">
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <a href="programs.html" class="active">Programs</a>
-                <a href="stories.html">Stories of Hope</a>
-                <a href="contact.html" class="nav-btn">Get Connected</a>
+            
+            <nav class="main-nav">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="about.html" class="nav-item">About Founders</a>
+                <a href="programs.html" class="nav-item active">Clinical & Programs</a>
+                <a href="stories.html" class="nav-item">Warrior Stories</a>
+                <a href="contact.html" class="btn-nav">Get Connected</a>
             </nav>
         </div>
     </header>
 
-    <!-- Subpage Hero Banner -->
-    <section class="hero" style="padding: 4.5rem 0; background: linear-gradient(135deg, rgba(138, 11, 30, 0.88), rgba(30, 41, 59, 0.92)), url('./assets/support.jpg') center/cover no-repeat;">
-        <div class="container hero-content">
-            <h1>Our Programs & Impact</h1>
-            <p class="hero-subtitle">Comprehensive medical support, early detection, and compassionate community care designed for sickle cell warriors and their families.</p>
+    <!-- Page Title Banner -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Clinical Care & Programs</h1>
+            <p>Combining professional medical monitoring with community outreach to support every warrior in Uganda.</p>
         </div>
     </section>
 
-    <!-- Main Programs Grid -->
-    <section class="mission-highlight">
+    <!-- Programs List Section -->
+    <section class="programs-section">
         <div class="container">
-            <div class="section-header">
-                <h2>How We Support Our Warriors</h2>
-                <div class="divider"></div>
-                <p class="section-lead">Through clinical collaboration and community-driven action, our programs address both medical and emotional needs at every stage.</p>
+            
+            <!-- Program 1: Routine Medical Care -->
+            <div class="program-card">
+                <div class="program-img-wrap">
+                    <img src="assets/clinical-care.jpg" alt="Clinical Consultations" class="program-img">
+                </div>
+                <div class="program-content">
+                    <span class="pillar-badge">PROGRAM 01 • CLINICAL CARE</span>
+                    <h2>Routine Medical Monitoring</h2>
+                    <p>
+                        In partnership with <strong>Afya Medicare Clinic</strong>, we ensure that sickle cell warriors receive proactive, preventive healthcare to reduce the frequency and severity of painful vaso-occlusive crises.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Comprehensive routine blood reviews and hemoglobin checks</li>
+                        <li>Personalized crisis prevention and hydration planning</li>
+                        <li>Accessible essential medication guidance and consultations</li>
+                        <li>Early diagnosis and management of sickle cell complications</li>
+                    </ul>
+                </div>
             </div>
 
-            <div class="cards-grid">
-                <!-- Program 1: Awareness & Education -->
-                <div class="card">
-                    <div class="card-image">
-                        <img src="./assets/community.jpg" alt="Sickle Cell Awareness Campaign" onerror="this.src='https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=600&q=80';">
-                    </div>
-                    <div class="card-body">
-                        <span style="color: var(--primary-red); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Education & Outreach</span>
-                        <h3 style="margin: 0.4rem 0 0.8rem;">Sickle Cell Public Awareness</h3>
-                        <p>Dismantling myths, fighting social stigma, and conducting educational workshops in schools, places of worship, and local communities to promote understanding and empathy.</p>
-                    </div>
+            <!-- Program 2: Community Screening & Genotype Testing -->
+            <div class="program-card">
+                <div class="program-img-wrap">
+                    <img src="assets/community-outreach.jpg" alt="Community Genotype Screening" class="program-img">
                 </div>
-
-                <!-- Program 2: Routine Medical Care (Afya Medicare) -->
-                <div class="card">
-                    <div class="card-image">
-                        <img src="./assets/support.jpg" alt="Routine Medical Checkups" onerror="this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80';">
-                    </div>
-                    <div class="card-body">
-                        <span style="color: var(--primary-red); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Clinical Partnership</span>
-                        <h3 style="margin: 0.4rem 0 0.8rem;">Routine Clinical Care & Reviews</h3>
-                        <p>In partnership with <strong>Afya Medicare</strong>, registered members receive organized clinical check-ups, regular lab monitoring, routine medication reviews, and ongoing health tracking.</p>
-                    </div>
-                </div>
-
-                <!-- Program 3: Screening & Genotype Testing -->
-                <div class="card">
-                    <div class="card-image">
-                        <img src="./assets/hope.jpg" alt="Screening and Testing" onerror="this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80';">
-                    </div>
-                    <div class="card-body">
-                        <span style="color: var(--primary-red); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Early Detection</span>
-                        <h3 style="margin: 0.4rem 0 0.8rem;">Genotype Screening Drives</h3>
-                        <p>Facilitating accessible genotype testing for young adults, intending couples, and newborns to encourage early detection, informed family planning, and timely medical care.</p>
-                    </div>
-                </div>
-
-                <!-- Program 4: Pain & Crisis Guidance -->
-                <div class="card">
-                    <div class="card-image">
-                        <img src="./assets/support.jpg" alt="Crisis Management" onerror="this.src='https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80';">
-                    </div>
-                    <div class="card-body">
-                        <span style="color: var(--primary-red); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Crisis Response</span>
-                        <h3 style="margin: 0.4rem 0 0.8rem;">Pain Crisis Management Support</h3>
-                        <p>Equipping families with home-care guidelines, hydration regimens, and rapid-response protocols to effectively manage pain crises and know when emergency clinical intervention is needed.</p>
-                    </div>
-                </div>
-
-                <!-- Program 5: Parent & Caregiver Support Circles -->
-                <div class="card">
-                    <div class="card-image">
-                        <img src="./assets/community.jpg" alt="Caregiver Support Circle" onerror="this.src='https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&w=600&q=80';">
-                    </div>
-                    <div class="card-body">
-                        <span style="color: var(--primary-red); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Psychosocial Support</span>
-                        <h3 style="margin: 0.4rem 0 0.8rem;">Parent & Caregiver Support Circles</h3>
-                        <p>Providing safe spaces for parents—inspired by the founders' journey—to share challenges, alleviate emotional isolation, and learn practical care strategies from one another.</p>
-                    </div>
-                </div>
-
-                <!-- Program 6: Nutritional & Wellness Counseling -->
-                <div class="card">
-                    <div class="card-image">
-                        <img src="./assets/hope.jpg" alt="Nutritional Care" onerror="this.src='https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=600&q=80';">
-                    </div>
-                    <div class="card-body">
-                        <span style="color: var(--primary-red); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Holistic Wellness</span>
-                        <h3 style="margin: 0.4rem 0 0.8rem;">Nutritional & Lifestyle Guidance</h3>
-                        <p>Educating families on optimal dietary habits, proper hydration habits, and lifestyle modifications that strengthen immunity and reduce crisis triggers for warriors.</p>
-                    </div>
+                <div class="program-content">
+                    <span class="pillar-badge">PROGRAM 02 • ADVOCACY & OUTREACH</span>
+                    <h2>Genotype Screening & School Advocacy</h2>
+                    <p>
+                        Knowledge is the ultimate key to prevention and compassion. We conduct community sensitization drives and genotype testing in schools across Uganda to dismantle social stigma and encourage early detection.
+                    </p>
+                    <ul class="feature-list">
+                        <li>On-site genotype testing drives in schools and communities</li>
+                        <li>Educational workshops for teachers, parents, and students</li>
+                        <li>Awareness campaigns to eradicate myth and social isolation</li>
+                        <li>Early child screening to support timely medical intervention</li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Call to Action Banner -->
-    <section class="quote-banner">
-        <div class="container">
-            <blockquote>
-                "Through education we prevent, through care we sustain, and through love we restore hope."
-            </blockquote>
-            <p class="quote-author">— Afya Sickle Cell Foundation</p>
+            <!-- Program 3: Parent Support Circles -->
+            <div class="program-card">
+                <div class="program-img-wrap">
+                    <img src="assets/parent-circle.jpg" alt="Parent Support Circle" class="program-img">
+                </div>
+                <div class="program-content">
+                    <span class="pillar-badge">PROGRAM 03 • COMMUNITY & HOPE</span>
+                    <h2>Parent & Warrior Support Circles</h2>
+                    <p>
+                        Caring for a child with sickle cell can feel overwhelming for parents. Our support circles offer a safe space for families to connect, share experiences, and receive practical guidance on home crisis management.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Peer-to-peer parent support networks and practical tips</li>
+                        <li>Mental health guidance and emotional solidarity</li>
+                        <li>Nutritional advice for warrior wellness and strength</li>
+                        <li>Emergency preparation and home care training</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Clinical Callout Card -->
+            <div class="clinical-callout">
+                <div>
+                    <h3>Need Clinical Consultation or Testing?</h3>
+                    <p>Our clinical partners at <strong>Afya Medicare Clinic</strong> are ready to assist with routine reviews, laboratory screenings, and crisis management support.</p>
+                </div>
+                <div class="text-center">
+                    <a href="contact.html" class="btn-callout">Schedule a Review</a>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="site-footer">
-        <div class="container footer-content">
-            <div class="footer-brand">
-                <h3>Afya Sickle Cell Foundation</h3>
-                <p>Empowering warriors, advocating for care, and inspiring hope.</p>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="assets/logo.png" alt="AFYA Logo" class="footer-logo">
+                    <h3>AFYA Sickle Cell Foundation</h3>
+                    <p>Empowering sickle cell warriors, increasing health literacy, and partnering with <strong>Afya Medicare</strong> across Uganda.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Founders</a></li>
+                        <li><a href="programs.html">Clinical Care</a></li>
+                        <li><a href="contact.html">Contact Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Clinical Partner</h4>
+                    <p><strong>Afya Medicare Clinic</strong><br>Providing routine reviews, crisis response guidance, and laboratory screening.</p>
+                </div>
             </div>
-            <div class="footer-links">
-                <h4>Quick Navigation</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="programs.html">Programs</a></li>
-                    <li><a href="stories.html">Stories of Hope</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2026 Afya Sickle Cell Foundation. All rights reserved.</p>
+            <div class="footer-bottom text-center">
+                <p>&copy; 2026 AFYA Sickle Cell Foundation. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <script src="main.js"></script>
 </body>
 </html>
