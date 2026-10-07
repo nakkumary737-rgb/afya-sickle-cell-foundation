@@ -4,497 +4,227 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Warrior Stories | AFYA Sickle Cell Foundation</title>
-    
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
     <style>
-        /* ==========================================
-           RESET & CORE STYLES
-           ========================================== */
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         :root {
             --primary-red: #C8102E;
             --dark-red: #991B1B;
-            --accent-light: #FEF2F2;
             --navy-dark: #0F172A;
             --slate-text: #334155;
             --slate-muted: #64748B;
-            --bg-light: #F8FAFC;
-            --border-color: #E2E8F0;
+            --bg-soft: #f8fafc;
+            --glass-bg: rgba(255,255,255,0.72);
+            --shadow-soft: 0 16px 40px rgba(15, 23, 42, 0.08);
             --font-main: 'Plus Jakarta Sans', -apple-system, sans-serif;
         }
-
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: var(--font-main);
-            color: var(--slate-text);
-            background-color: var(--bg-light);
-            line-height: 1.6;
+            font-family: var(--font-main); color: var(--slate-text); line-height: 1.6;
+            background: linear-gradient(135deg, #eff6ff 0%, #fdf2f8 25%, #f8fafc 60%, #eef2ff 100%);
         }
+        a { text-decoration: none; }
+        img { max-width: 100%; display: block; }
+        .container { width: min(1140px, 90%); margin: 0 auto; }
 
-        .container {
-            width: 90%;
-            max-width: 1140px;
-            margin: 0 auto;
-        }
-
-        .text-center { text-align: center; }
-
-        /* ==========================================
-           TOP EMERGENCY BAR
-           ========================================== */
         .top-bar {
-            background-color: var(--navy-dark);
-            color: #FFFFFF;
-            padding: 10px 0;
-            font-size: 0.85rem;
+            background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            color: #fff; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.12);
         }
-
-        .top-bar-flex {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
+        .top-bar-flex { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap: wrap; }
         .emergency-badge {
-            background-color: var(--primary-red);
-            color: #FFFFFF;
-            padding: 3px 10px;
-            border-radius: 20px;
-            font-weight: 800;
-            font-size: 0.75rem;
-            margin-right: 8px;
+            display:inline-block; background: linear-gradient(135deg, var(--primary-red), #E11D48); color:#fff; font-weight:800; font-size: 0.72rem;
+            letter-spacing: .08em; text-transform: uppercase; padding: 4px 12px; border-radius:999px; margin-right: 10px;
         }
 
-        /* ==========================================
-           HEADER NAVIGATION
-           ========================================== */
         .site-header {
-            background: #FFFFFF;
-            border-bottom: 1px solid var(--border-color);
-            padding: 16px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            position: sticky; top:0; z-index: 1000; background: rgba(255,255,255,0.74); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(148,163,184,0.2); box-shadow: 0 8px 24px rgba(15,23,42,.06);
         }
-
-        .header-flex {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .header-flex { display:flex; justify-content:space-between; align-items:center; min-height: 78px; }
+        .logo-img { max-height: 52px; width: auto; }
+        .main-nav { display:flex; align-items:center; gap:24px; }
+        .nav-item { position:relative; color: var(--navy-dark); font-weight:600; }
+        .nav-item:hover, .nav-item.active { color: var(--primary-red); }
+        .nav-item::after {
+            content: ''; position:absolute; left: 0; bottom: -7px; width:0; height:2px; background: var(--primary-red); transition: width .2s ease;
         }
-
-        .logo-img {
-            max-height: 48px;
-            width: auto;
-        }
-
-        .main-nav {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-        }
-
-        .nav-item {
-            text-decoration: none;
-            color: var(--navy-dark);
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
-        }
-
-        .nav-item:hover, .nav-item.active {
-            color: var(--primary-red);
-        }
-
+        .nav-item:hover::after, .nav-item.active::after { width: 100%; }
         .btn-nav {
-            background: var(--primary-red);
-            color: #FFFFFF !important;
-            padding: 10px 22px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 0.9rem;
-            transition: transform 0.2s ease, background 0.2s ease;
+            display:inline-flex; align-items:center; justify-content:center; padding:10px 22px; background: linear-gradient(135deg, var(--primary-red), #E11D48);
+            color:#fff !important; border-radius:999px; font-weight:700; box-shadow:0 10px 24px rgba(200,16,46,.28);
         }
 
-        /* ==========================================
-           PAGE HERO BANNER
-           ========================================== */
         .page-hero {
-            background: linear-gradient(135deg, #7F1D1D 0%, #0F172A 100%);
-            color: #FFFFFF;
-            padding: 70px 0;
-            text-align: center;
+            background: linear-gradient(135deg, rgba(127,29,29,.88), rgba(15,23,42,.92)); color:#fff; text-align:center; padding:68px 0 70px; position:relative; overflow:hidden;
         }
-
-        .page-hero h1 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            margin-bottom: 15px;
+        .page-hero::before {
+            content:''; position:absolute; right:-180px; top:-160px; width:420px; height:420px; border-radius:50%; background: radial-gradient(circle, rgba(255,255,255,.12), rgba(255,255,255,0));
         }
+        .page-hero h1 { position:relative; z-index:1; font-size: clamp(2.2rem, 3vw, 3.5rem); margin-bottom: 12px; }
+        .page-hero p { position:relative; z-index:1; max-width:700px; margin:0 auto; color: #e2e8f0; font-size:1.08rem; }
 
-        .page-hero p {
-            font-size: 1.1rem;
-            color: #E2E8F0;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* ==========================================
-           WARRIOR STORIES SECTION
-           ========================================== */
-        .stories-section {
-            padding: 80px 0;
-        }
-
+        .stories-section { padding: 80px 0; }
         .story-card {
-            background: #FFFFFF;
-            border-radius: 20px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-            display: grid;
-            grid-template-columns: 0.9fr 1.1fr;
-            overflow: hidden;
-            margin-bottom: 50px;
-            transition: transform 0.2s ease;
+            display:grid; grid-template-columns: .9fr 1.1fr; background: rgba(255,255,255,.74); border:1px solid rgba(255,255,255,.4);
+            border-radius: 24px; overflow:hidden; box-shadow: var(--shadow-soft); margin-bottom: 36px; backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
         }
-
-        .story-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-        }
-
-        .story-img-wrap {
-            position: relative;
-            background-color: #FEF2F2;
-            min-height: 380px;
-        }
-
-        .story-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
+        .story-img-wrap { position:relative; min-height: 380px; background: #e2e8f0; }
+        .story-img { width:100%; height:100%; object-fit:cover; }
         .warrior-tag {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            background: var(--navy-dark);
-            color: #FFFFFF;
-            padding: 8px 16px;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            position:absolute; left:20px; bottom:20px; background: rgba(15,23,42,.82); color:#fff; padding:8px 14px; border-radius:999px; font-size:.82rem; font-weight:700;
+            border:1px solid rgba(255,255,255,.18);
         }
-
-        .story-content {
-            padding: 45px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .mini-tag {
-            color: var(--primary-red);
-            font-size: 0.75rem;
-            font-weight: 800;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-            display: block;
-        }
-
-        .story-content h2 {
-            font-size: 1.8rem;
-            color: var(--navy-dark);
-            font-weight: 800;
-            margin-bottom: 5px;
-        }
-
-        .warrior-location {
-            color: var(--dark-red);
-            font-weight: 600;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid #FEE2E2;
-        }
-
-        .story-text {
-            color: var(--slate-text);
-            font-size: 0.98rem;
-            line-height: 1.7;
-            margin-bottom: 16px;
-        }
-
+        .story-content { padding: 42px 36px; display:flex; flex-direction:column; justify-content:center; }
+        .mini-tag { color: var(--primary-red); font-size: .74rem; letter-spacing:.14em; text-transform:uppercase; font-weight:800; }
+        .story-content h2 { margin-top:10px; font-size: clamp(1.6rem, 2vw, 2.1rem); color: var(--navy-dark); }
+        .warrior-location { color: var(--dark-red); font-weight:700; margin: 14px 0 18px; border-bottom:2px solid rgba(200,16,46,.12); padding-bottom: 10px; }
+        .story-text { color: var(--slate-text); margin-bottom:14px; }
         .warrior-quote {
-            margin-top: 10px;
-            padding: 16px 20px;
-            background-color: #FEF2F2;
-            border-left: 4px solid var(--primary-red);
-            border-radius: 0 12px 12px 0;
-            font-style: italic;
-            color: var(--dark-red);
-            font-size: 0.95rem;
-            font-weight: 600;
+            margin-top: 10px; background: linear-gradient(135deg, rgba(200,16,46,.08), rgba(30,41,59,.04)); border-left: 4px solid var(--primary-red);
+            border-radius: 0 14px 14px 0; padding: 18px 20px; font-style: italic; color: var(--dark-red); font-weight: 700;
         }
 
-        /* SHARE STORY BANNER */
         .share-banner {
-            background: var(--navy-dark);
-            color: #FFFFFF;
-            border-radius: 20px;
-            padding: 50px 40px;
-            text-align: center;
-            margin-top: 30px;
+            background: linear-gradient(135deg, rgba(15,23,42,.96), rgba(30,41,59,.96)); color:#fff; border-radius:26px; padding: 52px 36px; text-align:center; box-shadow: var(--shadow-soft);
         }
+        .share-banner h3 { font-size: clamp(1.8rem, 2.5vw, 2.5rem); margin-bottom: 12px; }
+        .share-banner p { color: #dbeafe; max-width: 680px; margin: 0 auto 24px; }
 
-        .share-banner h3 {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 12px;
-        }
-
-        .share-banner p {
-            color: #E2E8F0;
-            font-size: 1.05rem;
-            max-width: 650px;
-            margin: 0 auto 25px;
-        }
-
-        /* ==========================================
-           FOOTER
-           ========================================== */
         .site-footer {
-            background-color: #0B1120;
-            color: #94A3B8;
-            padding: 60px 0 30px;
+            margin-top: 72px; background: rgba(15,23,42,.92); color: #cbd5e1; padding: 60px 0 30px; border-top:1px solid rgba(255,255,255,.08);
         }
+        .footer-grid { display:grid; grid-template-columns: 2fr 1fr 1fr; gap:40px; padding-bottom:32px; border-bottom:1px solid rgba(255,255,255,.08); }
+        .footer-brand h3 { color:#fff; margin: 10px 0 12px; }
+        .footer-col h4 { color:#fff; margin-bottom:12px; }
+        .footer-links { list-style:none; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { color:#cbd5e1; }
+        .footer-bottom { padding-top: 20px; font-size: .86rem; text-align:center; color:#94a3b8; }
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 40px;
-            padding-bottom: 40px;
-            border-bottom: 1px solid #1E293B;
-        }
-
-        .footer-logo {
-            max-height: 45px;
-            margin-bottom: 15px;
-        }
-
-        .footer-brand h3 {
-            color: #FFFFFF;
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            color: #94A3B8;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        .footer-bottom {
-            padding-top: 25px;
-            font-size: 0.85rem;
-            color: #64748B;
-        }
-
-        /* RESPONSIVE DESIGN */
-        @media (max-width: 850px) {
-            .story-card, .footer-grid {
-                grid-template-columns: 1fr;
-            }
-            .story-img-wrap {
-                min-height: 280px;
-            }
-            .story-content {
-                padding: 25px;
-            }
-            .page-hero h1 {
-                font-size: 2.2rem;
-            }
+        @media (max-width: 900px) {
+            .story-card, .footer-grid { grid-template-columns: 1fr; }
+            .header-flex { align-items:flex-start; flex-direction:column; }
+            .main-nav { flex-wrap:wrap; }
         }
     </style>
 </head>
 <body>
-
-    <!-- Emergency Top Bar -->
     <div class="top-bar">
         <div class="container top-bar-flex">
             <div>
-                <span class="emergency-badge">URGENT CARE</span>
-                <span>In a Sickle Cell Crisis? Keep warm, hydrate, and seek medical support immediately.</span>
+                <span class="emergency-badge">Urgent Care</span>
+                <span>In a sickle cell crisis, keep warm, hydrate, and seek medical support immediately.</span>
             </div>
-            <div>
-                <span>Clinical Partner: <strong>Afya Medicare</strong></span>
-            </div>
+            <div>Clinical partner: <strong>Afya Medicare</strong></div>
         </div>
     </div>
 
-    <!-- Navigation Header -->
     <header class="site-header">
         <div class="container header-flex">
-            <a href="index.html" class="brand-logo">
-                <img src="assets/logo.png" alt="AFYA Sickle Cell Foundation Logo" class="logo-img">
-            </a>
-            
+            <a href="index.html" class="brand-logo"><img src="assets/logo.png" alt="AFYA" class="logo-img"></a>
             <nav class="main-nav">
                 <a href="index.html" class="nav-item">Home</a>
-                <a href="about.html" class="nav-item">About Founders</a>
+                <a href="about.html" class="nav-item">About Founder</a>
                 <a href="programs.html" class="nav-item">Clinical & Programs</a>
                 <a href="stories.html" class="nav-item active">Warrior Stories</a>
-                <a href="contact.html" class="btn-nav">Get Connected</a>
+                <a href="contact.html" class="nav-item">Contact</a>
+                <a href="contact.html#donate" class="btn-nav">Donate</a>
             </nav>
         </div>
     </header>
 
-    <!-- Page Title Banner -->
     <section class="page-hero">
         <div class="container">
             <h1>Warrior Stories of Hope</h1>
-            <p>Real lives, real courage, and real transformation. Discover how proper clinical care and unconditional support turn pain into purpose.</p>
+            <p>Real lives, real courage, and real transformation. Discover how care, community, and determination turn pain into purpose.</p>
         </div>
     </section>
 
-    <!-- Warrior Stories Section -->
     <section class="stories-section">
         <div class="container">
-
-            <!-- Story 1: Brian -->
             <div class="story-card">
                 <div class="story-img-wrap">
-                    <img src="assets/warrior-brian.jpg" alt="Brian's Story" class="story-img">
+                    <img src="assets/warrior-brian.jpg" alt="Brian story" class="story-img">
                     <span class="warrior-tag">12 Years Old • Student</span>
                 </div>
                 <div class="story-content">
-                    <span class="mini-tag">BACK TO CLASSROOM & PLAY</span>
-                    <h2>Brian’s Journey: From Frequent Admissions to Top of Class</h2>
+                    <span class="mini-tag">Back to school</span>
+                    <h2>Brian’s journey from frequent admissions to top of class</h2>
                     <p class="warrior-location">📍 Wakiso District, Uganda</p>
-                    
-                    <p class="story-text">
-                        For years, 12-year-old Brian missed almost half of every school term due to sudden, severe painful crises. His mother, a single parent, spent nights in tears at local clinics, overwhelmed by medical costs and fear for her son's future.
-                    </p>
-                    <p class="story-text">
-                        When Brian was introduced to the AFYA Sickle Cell Foundation, everything shifted. Through regular clinical reviews with <strong>Afya Medicare</strong>, a structured hydration plan, and routine preventative care, Brian’s crisis episodes reduced dramatically. Today, he hasn't missed a day of school in over six months!
-                    </p>
-
-                    <div class="warrior-quote">
-                        "Before AFYA, I thought I would never finish primary school. Now I want to study hard and become a doctor to help other warriors like me." — Brian
-                    </div>
+                    <p class="story-text">For years, Brian missed much of each school term due to sudden, severe painful crises. His mother spent nights worrying and hoping for a better rhythm.</p>
+                    <p class="story-text">When he joined the AFYA support network, his routine reviews, hydration guidance, and family education changed everything. He is now more stable, stronger, and reclaiming his place in school.</p>
+                    <div class="warrior-quote">“Before AFYA, I thought I would never finish primary school. Now I want to become a doctor and help other warriors.” — Brian</div>
                 </div>
             </div>
 
-            <!-- Story 2: Grace (Parent) -->
             <div class="story-card">
                 <div class="story-img-wrap">
-                    <img src="assets/warrior-grace.jpg" alt="Grace and Her Twins" class="story-img">
+                    <img src="assets/warrior-grace.jpg" alt="Grace story" class="story-img">
                     <span class="warrior-tag">Mother of Warrior Twins</span>
                 </div>
                 <div class="story-content">
-                    <span class="mini-tag">FAMILY SUPPORT & EMPOWERMENT</span>
-                    <h2>Grace's Voice: Overcoming Stigma and Isolation</h2>
+                    <span class="mini-tag">Family support</span>
+                    <h2>Grace’s voice: overcoming stigma and finding strength</h2>
                     <p class="warrior-location">📍 Mukono District, Uganda</p>
-                    
-                    <p class="story-text">
-                        When Grace discovered both of her twin daughters had sickle cell disease, neighbors blamed her, and isolation followed. Overwhelmed and heartbroken, she struggled to manage their health alone without reliable medical advice.
-                    </p>
-                    <p class="story-text">
-                        Joining the <strong>AFYA Parent Support Circle</strong> gave Grace a community that understood her daily struggles. With guidance from founders Kittengo Alysious & Nanyonjo Noeline, plus direct clinical support from Afya Medicare, Grace learned home crisis management and gained the courage to stand tall.
-                    </p>
-
-                    <div class="warrior-quote">
-                        "AFYA didn't just give my daughters medical care—they gave me my dignity back as a mother. I am no longer ashamed; I am proud of my warriors!" — Grace
-                    </div>
+                    <p class="story-text">Grace was overwhelmed after learning her twin daughters had sickle cell disease. Social stigma and isolation made each day heavier.</p>
+                    <p class="story-text">Joining AFYA’s parent support circle helped her rediscover confidence and courage. Today, she is a vocal advocate for understanding, care, and dignity for families navigating similar experiences.</p>
+                    <div class="warrior-quote">“AFYA gave my daughters care—and gave me my confidence back as a mother.” — Grace</div>
                 </div>
             </div>
 
-            <!-- Story 3: Emmanuel -->
             <div class="story-card">
                 <div class="story-img-wrap">
-                    <img src="assets/warrior-emmanuel.jpg" alt="Emmanuel's Story" class="story-img">
+                    <img src="assets/warrior-emmanuel.jpg" alt="Emmanuel story" class="story-img">
                     <span class="warrior-tag">19 Years Old • Youth Ambassador</span>
                 </div>
                 <div class="story-content">
-                    <span class="mini-tag">LIVING BEYOND BOUNDARIES</span>
-                    <h2>Emmanuel: Championing Sickle Cell Awareness in Schools</h2>
+                    <span class="mini-tag">Living beyond boundaries</span>
+                    <h2>Emmanuel: championing awareness in schools</h2>
                     <p class="warrior-location">📍 Kampala, Uganda</p>
-                    
-                    <p class="story-text">
-                        Growing up, Emmanuel hid his diagnosis from classmates out of fear of being mocked or excluded from sports. The emotional toll was as heavy as the physical pain.
-                    </p>
-                    <p class="story-text">
-                        Through AFYA’s youth advocacy program, Emmanuel embraced his story. Today, he walks into secondary schools across Kampala alongside the AFYA team, educating young people on genotype testing and showing younger students that warriors can achieve anything.
-                    </p>
-
-                    <div class="warrior-quote">
-                        "Sickle cell is part of my journey, but it isn't my destination. AFYA taught me to wear my warrior badge with pride." — Emmanuel
-                    </div>
+                    <p class="story-text">Growing up, Emmanuel hid his diagnosis from classmates for fear of being mocked or excluded. The emotional burden was heavy.</p>
+                    <p class="story-text">Through AFYA’s advocacy and peer support, he embraced his story and began speaking in schools, helping young people understand sickle cell with compassion instead of fear.</p>
+                    <div class="warrior-quote">“Sickle cell is part of my journey, but it is not my destiny.” — Emmanuel</div>
                 </div>
             </div>
 
-            <!-- Call to Action Banner -->
             <div class="share-banner">
-                <h3>Are You a Sickle Cell Warrior or Parent?</h3>
-                <p>Your story can inspire thousands across Uganda. Reach out to join our community, access clinical reviews, or share your testimony.</p>
-                <a href="contact.html" class="btn-nav" style="padding: 14px 32px; font-size: 1rem;">Connect With Us Today</a>
+                <h3>Are you a sickle cell warrior or parent?</h3>
+                <p>Your story can inspire families across Uganda. Join our community, access support, and help us build a stronger future for every warrior.</p>
+                <a href="contact.html" class="btn-nav">Connect With Us Today</a>
             </div>
-
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <img src="assets/logo.png" alt="AFYA Logo" class="footer-logo">
+                    <img src="assets/logo.png" alt="AFYA" class="logo-img">
                     <h3>AFYA Sickle Cell Foundation</h3>
-                    <p>Empowering sickle cell warriors, increasing health literacy, and partnering with <strong>Afya Medicare</strong> across Uganda.</p>
+                    <p>Empowering sickle cell warriors through compassionate care, advocacy, and community support.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Founders</a></li>
-                        <li><a href="programs.html">Clinical Care</a></li>
-                        <li><a href="stories.html">Warrior Stories</a></li>
-                        <li><a href="contact.html">Contact Support</a></li>
+                        <li><a href="about.html">About Founder</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="stories.html">Stories</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
                     <h4>Clinical Partner</h4>
-                    <p><strong>Afya Medicare Clinic</strong><br>Providing routine reviews, crisis response guidance, and laboratory screening.</p>
+                    <p>Afya Medicare Clinic</p>
+                    <p>Routine reviews and crisis support guidance.</p>
                 </div>
             </div>
-            <div class="footer-bottom text-center">
-                <p>&copy; 2026 AFYA Sickle Cell Foundation. All Rights Reserved.</p>
-            </div>
+            <div class="footer-bottom">© 2026 AFYA Sickle Cell Foundation. All rights reserved.</div>
         </div>
     </footer>
-
 </body>
 </html>
+
