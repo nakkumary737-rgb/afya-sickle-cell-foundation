@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate to AFYA | AFYA Sickle Cell Foundation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #C8102E;
+            --dark-red: #991B1B;
+            --navy-dark: #0F172A;
+            --slate-text: #334155;
+            --slate-muted: #64748B;
+            --bg-soft: #f8fafc;
+            --glass-bg: rgba(255,255,255,0.72);
+            --shadow-soft: 0 16px 40px rgba(15, 23, 42, 0.08);
+            --font-main: 'Plus Jakarta Sans', -apple-system, sans-serif;
+        }
+        * { box-sizing: border-box; margin:0; padding:0; }
+        html { scroll-behavior:smooth; }
+        body {
+            font-family: var(--font-main); color: var(--slate-text); line-height:1.6;
+            background: linear-gradient(135deg, #eff6ff 0%, #fdf2f8 25%, #f8fafc 60%, #eef2ff 100%);
+        }
+        a { text-decoration:none; }
+        img { max-width:100%; display:block; }
+        .container { width: min(1140px, 90%); margin: 0 auto; }
+
+        .top-bar { background: rgba(15,23,42,0.8); color:#fff; padding:10px 0; border-bottom:1px solid rgba(255,255,255,.12); }
+        .top-bar-flex { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
+        .emergency-badge { display:inline-block; background: linear-gradient(135deg, var(--primary-red), #E11D48); color:#fff; font-weight:800; font-size:0.72rem; letter-spacing:.08em; text-transform:uppercase; padding:4px 12px; border-radius:999px; margin-right:10px; }
+
+        .site-header {
+            position: sticky; top:0; z-index:1000; background: rgba(255,255,255,0.74); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+            border-bottom: 1px solid rgba(148,163,184,0.2); box-shadow: 0 8px 24px rgba(15,23,42,.06);
+        }
+        .header-flex { display:flex; justify-content:space-between; align-items:center; min-height: 78px; }
+        .logo-img { max-height:52px; width:auto; }
+        .main-nav { display:flex; align-items:center; gap:24px; }
+        .nav-item { position:relative; color: var(--navy-dark); font-weight:600; }
+        .nav-item:hover, .nav-item.active { color: var(--primary-red); }
+        .nav-item::after {
+            content:''; position:absolute; left:0; bottom:-7px; width:0; height:2px; background: var(--primary-red); transition: width .2s ease;
+        }
+        .nav-item:hover::after, .nav-item.active::after { width: 100%; }
+        .btn-nav {
+            display:inline-flex; align-items:center; justify-content:center; padding:10px 22px; background: linear-gradient(135deg, var(--primary-red), #E11D48);
+            color:#fff !important; border-radius:999px; font-weight:700; box-shadow:0 10px 24px rgba(200,16,46,.28);
+        }
+
+        .page-hero {
+            background: linear-gradient(135deg, rgba(127,29,29,.88), rgba(15,23,42,.92)); color:#fff; text-align:center; padding:68px 0 70px; position:relative; overflow:hidden;
+        }
+        .page-hero::before {
+            content:''; position:absolute; right:-180px; top:-160px; width:420px; height:420px; border-radius:50%; background: radial-gradient(circle, rgba(255,255,255,.12), rgba(255,255,255,0));
+        }
+        .page-hero h1 { position:relative; z-index:1; font-size: clamp(2.2rem, 3vw, 3.5rem); margin-bottom: 12px; }
+        .page-hero p { position:relative; z-index:1; max-width:700px; margin:0 auto; color:#e2e8f0; font-size:1.08rem; }
+
+        .donate-section { padding: 80px 0; }
+        .donation-layout { display:grid; grid-template-columns: 1.05fr .95fr; gap: 32px; }
+        .donation-panel, .impact-panel, .method-panel, .contact-panel {
+            background: rgba(255,255,255,.72); border:1px solid rgba(255,255,255,.4); border-radius:26px; padding: 32px; box-shadow: var(--shadow-soft); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+        }
+        .donation-tabs { display:flex; gap:12px; flex-wrap:wrap; margin-bottom: 22px; }
+        .tab { padding:10px 18px; border-radius:999px; border:1px solid rgba(148,163,184,.3); background:#fff; font-weight:700; color: var(--navy-dark); }
+        .tab.active {
+            background: linear-gradient(135deg, var(--primary-red), #E11D48); color:#fff; border-color: transparent; box-shadow:0 10px 22px rgba(200,16,46,.22);
+        }
+        .amount-grid { display:grid; grid-template-columns: repeat(3, minmax(100px,1fr)); gap: 12px; margin-bottom: 20px; }
+        .amount-btn {
+            padding: 18px 10px; border-radius: 16px; border:1px solid rgba(148,163,184,.3); background: rgba(255,255,255,.72); font-weight:800; color: var(--navy-dark); cursor:pointer; text-align:center;
+        }
+        .amount-btn.selected {
+            background: linear-gradient(135deg, rgba(200,16,46,.08), rgba(30,41,59,.04)); border-color: rgba(200,16,46,.25); color: var(--dark-red);
+        }
+        .custom-amount { margin-top:20px; }
+        .custom-amount input {
+            width:100%; padding:14px 16px; border-radius: 12px; border:1px solid rgba(148,163,184,.4); font:inherit; background: rgba(255,255,255,.7);
+        }
+        .donation-form { margin-top: 20px; }
+        .donation-form-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+        .form-group { margin-bottom: 14px; }
+        .form-group label { display:block; margin-bottom:8px; font-weight:700; color: var(--navy-dark); }
+        .form-control {
+            width:100%; padding:12px 14px; border:1px solid rgba(148,163,184,.35); border-radius:12px; background: rgba(255,255,255,.75); font:inherit;
+        }
+        .submit-btn {
+            width:100%; border:none; border-radius:12px; padding:14px 18px; background: linear-gradient(135deg, var(--primary-red), #E11D48); color:#fff; font-weight:800; cursor:pointer; margin-top: 10px;
+        }
+
+        .impact-panel h3, .method-panel h3, .contact-panel h3 { color: var(--navy-dark); margin-bottom: 16px; }
+        .impact-list { list-style:none; display:grid; gap: 16px; }
+        .impact-item {
+            display:flex; gap: 16px; padding: 18px; border-radius: 18px; background: linear-gradient(135deg, rgba(200,16,46,.06), rgba(30,41,59,.04)); border:1px solid rgba(200,16,46,.08);
+        }
+        .impact-number {
+            min-width: 44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center; background: linear-gradient(135deg, var(--primary-red), #E11D48); color:#fff; font-weight:800;
+        }
+        .impact-item strong { display:block; color: var(--navy-dark); margin-bottom: 4px; }
+
+        .method-panel { margin-top: 24px; }
+        .method-box { padding: 18px; border-radius: 18px; background: rgba(15,23,42,.02); border:1px solid rgba(148,163,184,.2); margin-top:12px; }
+        .method-box strong { display:block; color: var(--navy-dark); margin-bottom: 6px; }
+
+        .contact-panel { margin-top:24px; }
+        .contact-list { list-style:none; display:grid; gap: 12px; }
+        .contact-list a { color: var(--dark-red); font-weight:700; }
+
+        .site-footer {
+            margin-top: 72px; background: rgba(15,23,42,.92); color:#cbd5e1; padding:60px 0 30px; border-top:1px solid rgba(255,255,255,.08);
+        }
+        .footer-grid { display:grid; grid-template-columns: 2fr 1fr 1fr; gap:40px; padding-bottom:32px; border-bottom:1px solid rgba(255,255,255,.08); }
+        .footer-brand h3 { color:#fff; margin:10px 0 12px; }
+        .footer-col h4 { color:#fff; margin-bottom:12px; }
+        .footer-links { list-style:none; }
+        .footer-links li { margin-bottom:10px; }
+        .footer-links a { color:#cbd5e1; }
+        .footer-bottom { padding-top:20px; text-align:center; color:#94a3b8; font-size: .86rem; }
+
+        @media (max-width: 900px) {
+            .donation-layout, .footer-grid, .donation-form-grid { grid-template-columns: 1fr; }
+            .header-flex { flex-direction:column; align-items:flex-start; }
+            .main-nav { flex-wrap:wrap; }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container top-bar-flex">
+            <div>
+                <span class="emergency-badge">Urgent Care</span>
+                <span>In a sickle cell crisis, keep warm, hydrate, and seek medical support immediately.</span>
+            </div>
+            <div>Clinical partner: <strong>Afya Medicare</strong></div>
+        </div>
+    </div>
+
+    <header class="site-header">
+        <div class="container header-flex">
+            <a href="index.html" class="brand-logo"><img src="assets/logo.png" alt="AFYA" class="logo-img"></a>
+            <nav class="main-nav">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="about.html" class="nav-item">About Founder</a>
+                <a href="programs.html" class="nav-item">Clinical & Programs</a>
+                <a href="stories.html" class="nav-item">Warrior Stories</a>
+                <a href="contact.html" class="nav-item">Contact</a>
+                <a href="donate.html" class="btn-nav active">Donate</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>Help us keep care accessible</h1>
+            <p>Your generosity helps AFYA fund routine screening, family support, community outreach, and crisis response for sickle cell warriors across Uganda.</p>
+        </div>
+    </section>
+
+    <section class="donate-section">
+        <div class="container donation-layout">
+            <div>
+                <div class="donation-panel">
+                    <div class="donation-tabs">
+                        <div class="tab active">One-time</div>
+                        <div class="tab">Monthly</div>
+                        <div class="tab">Sponsor a Warrior</div>
+                    </div>
+
+                    <div class="amount-grid">
+                        <div class="amount-btn selected">UGX 20,000</div>
+                        <div class="amount-btn">UGX 50,000</div>
+                        <div class="amount-btn">UGX 100,000</div>
+                        <div class="amount-btn">UGX 250,000</div>
+                        <div class="amount-btn">UGX 500,000</div>
+                        <div class="amount-btn">UGX 1,000,000</div>
+                    </div>
+
+                    <div class="custom-amount">
+                        <input type="number" placeholder="Custom amount (UGX)" aria-label="Custom amount">
+                    </div>
+
+                    <form class="donation-form" action="mailto:afyasicklecellfoudation@gmail.com" method="post" enctype="text/plain">
+                        <div class="donation-form-grid">
+                            <div class="form-group">
+                                <label for="donor-name">Full name</label>
+                                <input type="text" id="donor-name" class="form-control" placeholder="Your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="donor-email">Email</label>
+                                <input type="email" id="donor-email" class="form-control" placeholder="you@example.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="donor-phone">Phone number</label>
+                            <input type="tel" id="donor-phone" class="form-control" placeholder="e.g. 0702 238103" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="donor-message">Message</label>
+                            <textarea id="donor-message" class="form-control" placeholder="Optional note for the AFYA team"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Make a Donation</button>
+                    </form>
+                </div>
+            </div>
+
+            <div>
+                <div class="impact-panel">
+                    <h3>Where your donation goes</h3>
+                    <ul class="impact-list">
+                        <li class="impact-item">
+                            <div class="impact-number">01</div>
+                            <div>
+                                <strong>Routine screening</strong>
+                                <span>Funds genotype testing, wellness checks, and follow-up care for warriors and families.</span>
+                            </div>
+                        </li>
+                        <li class="impact-item">
+                            <div class="impact-number">02</div>
+                            <div>
+                                <strong>Clinical support</strong>
+                                <span>Helps cover medication guidance, crisis support pathways, and clinic partnerships.</span>
+                            </div>
+                        </li>
+                        <li class="impact-item">
+                            <div class="impact-number">03</div>
+                            <div>
+                                <strong>School & community outreach</strong>
+                                <span>Supports awareness sessions, parent education, and early intervention in schools.</span>
+                            </div>
+                        </li>
+                        <li class="impact-item">
+                            <div class="impact-number">04</div>
+                            <div>
+                                <strong>Family care packs</strong>
+                                <span>Provides nutrition guidance, hydration essentials, and practical support for families.</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="method-panel">
+                    <h3>Alternative giving methods</h3>
+                    <div class="method-box">
+                        <strong>Mobile money</strong>
+                        <p>Call or WhatsApp the AFYA support team to coordinate a donation: +256 702 238103</p>
+                    </div>
+                    <div class="method-box">
+                        <strong>Bank transfer</strong>
+                        <p>Coordinate via email or phone and we will share bank details after your inquiry.</p>
+                    </div>
+                </div>
+
+                <div class="contact-panel">
+                    <h3>Contact the AFYA team</h3>
+                    <ul class="contact-list">
+                        <li><strong>WhatsApp:</strong> <a href="https://wa.me/256702238103" target="_blank">+256 702 238103</a></li>
+                        <li><strong>Phone:</strong> <a href="tel:0702238103">0702238103</a></li>
+                        <li><strong>Email:</strong> <a href="mailto:afyasicklecellfoudation@gmail.com">afyasicklecellfoudation@gmail.com</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="assets/logo.png" alt="AFYA" class="logo-img">
+                    <h3>AFYA Sickle Cell Foundation</h3>
+                    <p>Empowering sickle cell warriors with compassionate care, accurate information, and practical support.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Founder</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="stories.html">Warrior Stories</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Clinical Partner</h4>
+                    <p>Afya Medicare Clinic</p>
+                    <p>Screening, wellness checks, and crisis guidance.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">© 2026 AFYA Sickle Cell Foundation. All rights reserved.</div>
+        </div>
+    </footer>
+</body>
+</html>
