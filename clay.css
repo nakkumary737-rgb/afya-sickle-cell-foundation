@@ -1,0 +1,529 @@
+/* ==========================================
+   CLAYMORPHISM THEME
+   Soft, puffy, tactile surfaces layered over each page's base styles.
+   Loaded after the inline <style> block on every page.
+   ========================================== */
+:root {
+    --clay-bg: #FBEFEA;
+    --clay-surface: #FFF8F5;
+    --clay-surface-pink: #FDE4E1;
+    --clay-surface-peach: #FFE9D9;
+    --clay-surface-mint: #DDF5E6;
+    --clay-surface-sky: #DDEFFC;
+    --clay-red: #D9324B;
+    --clay-red-deep: #A8192F;
+    --clay-plum: #3A1D2C;
+    --clay-ink: #2B1A22;
+    --font-display: 'Fredoka', 'Plus Jakarta Sans', sans-serif;
+
+    --radius-lg: 36px;
+    --radius-md: 26px;
+    --radius-sm: 18px;
+
+    /* Light clay: outer drop shadow + inner highlight/shade for the puffy look */
+    --clay-shadow:
+        16px 18px 36px rgba(168, 25, 47, 0.13),
+        -8px -8px 22px rgba(255, 255, 255, 0.85),
+        inset -6px -8px 16px rgba(168, 25, 47, 0.07),
+        inset 6px 8px 16px rgba(255, 255, 255, 0.95);
+    --clay-shadow-hover:
+        22px 26px 48px rgba(168, 25, 47, 0.18),
+        -10px -10px 26px rgba(255, 255, 255, 0.9),
+        inset -6px -8px 16px rgba(168, 25, 47, 0.08),
+        inset 6px 8px 16px rgba(255, 255, 255, 0.95);
+    --clay-shadow-sm:
+        8px 10px 20px rgba(168, 25, 47, 0.14),
+        inset -3px -4px 8px rgba(168, 25, 47, 0.08),
+        inset 3px 4px 8px rgba(255, 255, 255, 0.9);
+
+    /* Coloured clay (red / dark slabs) */
+    --clay-shadow-red:
+        12px 16px 30px rgba(168, 25, 47, 0.35),
+        inset -5px -6px 12px rgba(90, 8, 22, 0.35),
+        inset 5px 6px 12px rgba(255, 170, 180, 0.55);
+    --clay-shadow-dark:
+        18px 22px 44px rgba(58, 29, 44, 0.3),
+        inset -8px -10px 20px rgba(0, 0, 0, 0.3),
+        inset 8px 10px 20px rgba(255, 255, 255, 0.12);
+
+    /* Pressed-in clay for inputs */
+    --clay-inset:
+        inset 6px 6px 12px rgba(168, 25, 47, 0.1),
+        inset -6px -6px 12px rgba(255, 255, 255, 0.95);
+}
+
+body {
+    background-color: var(--clay-bg);
+    background-image:
+        radial-gradient(circle at 8% 12%, rgba(255, 205, 195, 0.55) 0, transparent 32%),
+        radial-gradient(circle at 92% 38%, rgba(221, 239, 252, 0.7) 0, transparent 30%),
+        radial-gradient(circle at 15% 78%, rgba(221, 245, 230, 0.6) 0, transparent 28%);
+    background-attachment: fixed;
+    color: #4A3640;
+}
+
+h1, h2, h3, h4,
+.stat-number {
+    font-family: var(--font-display);
+    letter-spacing: 0 !important;
+}
+
+/* ==========================================
+   TOP BAR
+   ========================================== */
+.top-bar {
+    background: var(--clay-plum);
+    border-radius: 0 0 24px 24px;
+    margin: 0 12px;
+}
+
+.emergency-badge {
+    background: var(--clay-red);
+    box-shadow: inset 2px 2px 4px rgba(255, 170, 180, 0.6), inset -2px -2px 4px rgba(90, 8, 22, 0.4);
+    padding: 4px 12px;
+}
+
+/* ==========================================
+   HEADER — floating clay pill
+   ========================================== */
+.site-header {
+    background: transparent;
+    border-bottom: none;
+    padding: 14px 0;
+}
+
+.site-header .header-flex {
+    background: var(--clay-surface);
+    border-radius: 999px;
+    padding: 10px 12px 10px 26px;
+    box-shadow: var(--clay-shadow);
+    gap: 16px;
+}
+
+.main-nav {
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.nav-item {
+    color: var(--clay-ink);
+    padding: 9px 16px;
+    border-radius: 999px;
+    transition: background 0.2s ease, box-shadow 0.2s ease, color 0.2s ease;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    color: var(--clay-red-deep);
+    background: var(--clay-surface-pink);
+    box-shadow: var(--clay-shadow-sm);
+}
+
+/* ==========================================
+   BUTTONS — puffy clay pills
+   ========================================== */
+.btn,
+.btn-nav,
+.btn-callout,
+.btn-submit,
+.whatsapp-btn {
+    border-radius: 999px !important;
+    border: none !important;
+    font-weight: 700;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+.btn-primary,
+.btn-nav,
+.btn-callout,
+.btn-submit {
+    background: linear-gradient(145deg, #E84A62, var(--clay-red-deep)) !important;
+    color: #FFFFFF !important;
+    box-shadow: var(--clay-shadow-red);
+}
+
+.whatsapp-btn {
+    background: linear-gradient(145deg, #3BD678, #17A34A) !important;
+    box-shadow:
+        10px 14px 26px rgba(23, 163, 74, 0.3),
+        inset -5px -6px 12px rgba(5, 80, 35, 0.3),
+        inset 5px 6px 12px rgba(190, 255, 215, 0.6);
+}
+
+.btn-outline-light {
+    background: rgba(255, 255, 255, 0.16);
+    color: #FFFFFF;
+    box-shadow:
+        10px 14px 26px rgba(0, 0, 0, 0.2),
+        inset -4px -5px 10px rgba(0, 0, 0, 0.18),
+        inset 4px 5px 10px rgba(255, 255, 255, 0.3);
+}
+
+.btn:hover,
+.btn-nav:hover,
+.btn-callout:hover,
+.btn-submit:hover,
+.whatsapp-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    filter: brightness(1.05);
+    opacity: 1;
+}
+
+.btn:active,
+.btn-nav:active,
+.btn-callout:active,
+.btn-submit:active,
+.whatsapp-btn:active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow:
+        inset 6px 6px 12px rgba(0, 0, 0, 0.25),
+        inset -4px -4px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* ==========================================
+   HEROES — rounded clay slabs
+   ========================================== */
+.hero-section,
+.page-hero {
+    background: linear-gradient(140deg, #E5485F 0%, #B11F37 45%, #4A1F33 100%);
+    margin: 4px 12px 0;
+    border-radius: 48px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--clay-shadow-dark);
+}
+
+/* Decorative clay blobs */
+.hero-section::before,
+.hero-section::after,
+.page-hero::before,
+.page-hero::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    box-shadow:
+        inset -10px -14px 26px rgba(90, 8, 22, 0.35),
+        inset 10px 14px 26px rgba(255, 190, 200, 0.5);
+}
+
+.hero-section::before,
+.page-hero::before {
+    width: 220px;
+    height: 220px;
+    top: -70px;
+    right: 8%;
+    background: rgba(255, 140, 155, 0.35);
+}
+
+.hero-section::after,
+.page-hero::after {
+    width: 140px;
+    height: 140px;
+    bottom: -50px;
+    left: 4%;
+    background: rgba(255, 200, 170, 0.28);
+}
+
+.hero-section > .container,
+.page-hero > .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-tag {
+    background: rgba(255, 255, 255, 0.18);
+    color: #FFE1E5;
+    box-shadow: inset 2px 3px 6px rgba(255, 255, 255, 0.3), inset -2px -3px 6px rgba(0, 0, 0, 0.15);
+}
+
+.hero-content h1 span {
+    color: #FFD3D9;
+}
+
+.hero-img {
+    border-radius: var(--radius-lg);
+    border: 8px solid rgba(255, 248, 245, 0.9);
+    box-shadow:
+        20px 26px 50px rgba(0, 0, 0, 0.35),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.4);
+    transform: rotate(2deg);
+    transition: transform 0.4s ease;
+}
+
+.hero-img:hover {
+    transform: rotate(0deg) scale(1.02);
+}
+
+/* ==========================================
+   STATS — individual clay tiles
+   ========================================== */
+.stats-section {
+    margin-top: -46px;
+}
+
+.stats-grid {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    overflow: visible;
+    gap: 20px;
+    padding: 0 12px;
+}
+
+.stat-card {
+    background: var(--clay-surface);
+    border-right: none;
+    border-radius: var(--radius-md);
+    box-shadow: var(--clay-shadow);
+}
+
+.stat-card:nth-child(2) { background: var(--clay-surface-peach); }
+.stat-card:nth-child(3) { background: var(--clay-surface-sky); }
+.stat-card:nth-child(4) { background: var(--clay-surface-mint); }
+
+.stat-number {
+    color: var(--clay-red-deep);
+    font-weight: 700;
+}
+
+/* ==========================================
+   CARDS — shared clay surface
+   ========================================== */
+.founders-card,
+.pillar-card,
+.hero-story-card,
+.program-card,
+.story-card,
+.contact-card,
+.location-box,
+.form-box {
+    background: var(--clay-surface) !important;
+    border: none !important;
+    border-radius: var(--radius-lg) !important;
+    box-shadow: var(--clay-shadow) !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pillar-card:hover,
+.program-card:hover,
+.story-card:hover,
+.contact-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--clay-shadow-hover) !important;
+}
+
+/* Inset image "windows" inside cards */
+.founders-card,
+.hero-story-card,
+.program-card,
+.story-card {
+    padding: 14px;
+    gap: 14px;
+}
+
+.founders-img,
+.founders-img-wrap,
+.hero-story-img-wrap,
+.hero-story-img,
+.program-img-wrap,
+.program-img,
+.story-img-wrap,
+.story-img {
+    border-radius: 26px;
+    overflow: hidden;
+}
+
+.pillar-card {
+    padding: 12px;
+}
+
+.card-img-container {
+    border-radius: 26px;
+}
+
+.card-body {
+    padding: 22px 16px 14px;
+}
+
+.pillar-num,
+.pillar-badge {
+    display: inline-block;
+    background: var(--clay-surface-pink);
+    color: var(--clay-red-deep);
+    padding: 5px 14px;
+    border-radius: 999px;
+    box-shadow: var(--clay-shadow-sm);
+}
+
+.card-link,
+.contact-link {
+    color: var(--clay-red-deep);
+    transition: color 0.2s ease;
+}
+
+.card-link:hover,
+.contact-link:hover {
+    color: var(--clay-red);
+}
+
+/* Pills, badges, quotes */
+.clinical-partner-pill,
+.partner-pill,
+.hours-badge {
+    background: var(--clay-surface-pink) !important;
+    border: none !important;
+    border-radius: var(--radius-sm) !important;
+    box-shadow: var(--clay-shadow-sm);
+}
+
+.quote-box,
+.warrior-quote {
+    background: var(--clay-surface-pink) !important;
+    border-left: none !important;
+    border-radius: var(--radius-md) !important;
+    padding: 20px 24px !important;
+    box-shadow: var(--clay-shadow-sm);
+}
+
+.age-badge,
+.warrior-tag {
+    background: var(--clay-plum) !important;
+    border-radius: 999px !important;
+    box-shadow:
+        8px 10px 20px rgba(0, 0, 0, 0.25),
+        inset -3px -4px 8px rgba(0, 0, 0, 0.3),
+        inset 3px 4px 8px rgba(255, 255, 255, 0.18) !important;
+}
+
+.warrior-location {
+    border-bottom: 2px dashed #F6C9CF;
+}
+
+.feature-list li::before {
+    border-radius: 50%;
+}
+
+/* Contact icon bubbles */
+.icon-circle {
+    width: 72px;
+    height: 72px;
+    box-shadow: var(--clay-shadow-sm);
+}
+
+.icon-red { background: var(--clay-surface-pink); }
+.icon-green { background: var(--clay-surface-mint); }
+.icon-blue { background: var(--clay-surface-sky); }
+
+/* ==========================================
+   DARK CLAY BANNERS
+   ========================================== */
+.quote-card,
+.share-banner,
+.clinical-callout {
+    background: linear-gradient(140deg, #5A2740 0%, var(--clay-plum) 100%) !important;
+    border-radius: 44px !important;
+    border: none !important;
+    box-shadow: var(--clay-shadow-dark) !important;
+}
+
+.quote-card p {
+    color: #FFC2CB;
+}
+
+/* ==========================================
+   FORMS — pressed-in clay
+   ========================================== */
+.form-control {
+    background: var(--clay-bg) !important;
+    border: none !important;
+    border-radius: var(--radius-sm) !important;
+    box-shadow: var(--clay-inset);
+    padding: 14px 18px;
+    transition: box-shadow 0.2s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow:
+        var(--clay-inset),
+        0 0 0 3px rgba(217, 50, 75, 0.25) !important;
+}
+
+.map-wrapper,
+.map-wrapper iframe {
+    border: none !important;
+    border-radius: var(--radius-md) !important;
+    overflow: hidden;
+}
+
+.map-wrapper {
+    box-shadow: var(--clay-shadow-sm);
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+.site-footer {
+    background: var(--clay-plum);
+    border-radius: 48px 48px 0 0;
+    margin: 0 12px;
+    box-shadow: inset 8px 10px 24px rgba(255, 255, 255, 0.08);
+    color: #C9B3BD;
+}
+
+.footer-grid {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-logo {
+    background: var(--clay-surface);
+    padding: 8px 14px;
+    border-radius: var(--radius-sm);
+    box-shadow:
+        inset -3px -4px 8px rgba(168, 25, 47, 0.1),
+        inset 3px 4px 8px rgba(255, 255, 255, 0.9);
+}
+
+.footer-links a {
+    color: #C9B3BD;
+}
+
+.footer-links a:hover {
+    color: #FFFFFF;
+}
+
+.footer-bottom {
+    color: #9C8390;
+}
+
+/* ==========================================
+   RESPONSIVE
+   ========================================== */
+@media (max-width: 900px) {
+    .site-header .header-flex {
+        flex-direction: column;
+        border-radius: var(--radius-md);
+        padding: 14px;
+    }
+
+    .main-nav {
+        justify-content: center;
+    }
+
+    .hero-section,
+    .page-hero {
+        border-radius: 36px;
+    }
+
+    .hero-img {
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        transition: none !important;
+    }
+}
