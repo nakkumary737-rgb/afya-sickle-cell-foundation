@@ -30,13 +30,18 @@
             --bg-light: #F8FAFC;
             --border-color: #E2E8F0;
             --font-main: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-bg-dark: rgba(15, 23, 42, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.2);
         }
 
         body {
             font-family: var(--font-main);
             color: var(--slate-text);
-            background-color: var(--bg-light);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c9d6ff 100%);
+            background-attachment: fixed;
             line-height: 1.6;
+            min-height: 100vh;
         }
 
         .container {
@@ -48,10 +53,13 @@
         .text-center { text-align: center; }
 
         /* ==========================================
-           TOP EMERGENCY BAR
+           TOP EMERGENCY BAR - GLASSMORPHIC
            ========================================== */
         .top-bar {
-            background-color: var(--navy-dark);
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
             color: #FFFFFF;
             padding: 10px 0;
             font-size: 0.85rem;
@@ -66,7 +74,7 @@
         }
 
         .emergency-badge {
-            background-color: var(--primary-red);
+            background: linear-gradient(135deg, var(--primary-red), #E11D48);
             color: #FFFFFF;
             padding: 3px 10px;
             border-radius: 20px;
@@ -74,10 +82,11 @@
             font-size: 0.75rem;
             margin-right: 8px;
             letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(200, 16, 46, 0.4);
         }
 
         .top-bar-partner {
-            color: #94A3B8;
+            color: #CBD5E1;
         }
 
         .top-bar-partner strong {
@@ -85,15 +94,18 @@
         }
 
         /* ==========================================
-           HEADER NAVIGATION
+           HEADER NAVIGATION - GLASSMORPHIC
            ========================================== */
         .site-header {
-            background: #FFFFFF;
-            border-bottom: 1px solid var(--border-color);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
             padding: 16px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
 
         .header-flex {
@@ -118,36 +130,69 @@
             color: var(--navy-dark);
             font-weight: 600;
             font-size: 0.95rem;
-            transition: color 0.2s ease;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
         .nav-item:hover, .nav-item.active {
             color: var(--primary-red);
         }
 
-        .btn-nav {
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
             background: var(--primary-red);
+            transition: width 0.3s ease;
+        }
+
+        .nav-item:hover::after {
+            width: 100%;
+        }
+
+        .btn-nav {
+            background: linear-gradient(135deg, var(--primary-red), #E11D48);
             color: #FFFFFF !important;
             padding: 10px 22px;
             border-radius: 25px;
             text-decoration: none;
             font-weight: 700;
             font-size: 0.9rem;
-            transition: transform 0.2s ease, background 0.2s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(200, 16, 46, 0.3);
         }
 
         .btn-nav:hover {
-            background: var(--dark-red);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(200, 16, 46, 0.5);
         }
 
         /* ==========================================
-           HERO SECTION
+           HERO SECTION - GLASSMORPHIC
            ========================================== */
         .hero-section {
-            background: linear-gradient(135deg, #7F1D1D 0%, #0F172A 100%);
+            background: linear-gradient(135deg, rgba(127, 29, 29, 0.8), rgba(15, 23, 42, 0.8)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" /></filter></defs><rect width="1200" height="600" fill="%23050f1a" filter="url(%23noise)" opacity="0.1"/></svg>');
+            backdrop-filter: blur(8px);
             color: #FFFFFF;
             padding: 80px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(200, 16, 46, 0.1), transparent);
+            border-radius: 50%;
+            filter: blur(40px);
         }
 
         .hero-grid {
@@ -155,19 +200,24 @@
             grid-template-columns: 1.2fr 0.8fr;
             gap: 50px;
             align-items: center;
+            position: relative;
+            z-index: 1;
         }
 
         .hero-tag {
             display: inline-block;
             background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
             color: #FCA5A5;
             padding: 6px 16px;
             border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
             font-size: 0.8rem;
             font-weight: 700;
             letter-spacing: 1px;
             text-transform: uppercase;
             margin-bottom: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .hero-content h1 {
@@ -197,11 +247,13 @@
 
         .hero-img {
             width: 100%;
-            border-radius: 16px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
             object-fit: cover;
             height: 380px;
             background-color: var(--navy-dark);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
         }
 
         /* BUTTONS */
@@ -212,31 +264,39 @@
             font-size: 0.95rem;
             text-decoration: none;
             display: inline-block;
-            transition: all 0.2s ease;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
 
         .btn-primary {
-            background-color: var(--primary-red);
+            background: linear-gradient(135deg, var(--primary-red), #E11D48);
             color: #FFFFFF;
+            box-shadow: 0 4px 15px rgba(200, 16, 46, 0.3);
         }
 
         .btn-primary:hover {
-            background-color: var(--dark-red);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(200, 16, 46, 0.5);
         }
 
         .btn-outline-light {
-            border: 2px solid rgba(255,255,255,0.4);
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             color: #FFFFFF;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .btn-outline-light:hover {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.25);
             border-color: #FFFFFF;
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
         }
 
         /* ==========================================
-           STATS SECTION
+           STATS SECTION - GLASSMORPHIC
            ========================================== */
         .stats-section {
             margin-top: -40px;
@@ -247,17 +307,25 @@
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            background: #FFFFFF;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-            border: 1px solid var(--border-color);
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             overflow: hidden;
         }
 
         .stat-card {
             padding: 25px 20px;
             text-align: center;
-            border-right: 1px solid #F1F5F9;
+            border-right: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: translateY(-5px);
         }
 
         .stat-card:last-child {
@@ -278,7 +346,7 @@
         }
 
         /* ==========================================
-           FOUNDERS SECTION
+           FOUNDERS SECTION - GLASSMORPHIC
            ========================================== */
         .founders-section {
             padding: 90px 0 60px;
@@ -302,13 +370,21 @@
         }
 
         .founders-card {
-            background-color: #FFFFFF;
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
             display: grid;
             grid-template-columns: 1fr 1.2fr;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .founders-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
         }
 
         .founders-img {
@@ -334,17 +410,19 @@
 
         .clinical-partner-pill {
             margin-top: 15px;
-            background-color: var(--accent-light);
-            border: 1px solid #FECACA;
+            background: linear-gradient(135deg, rgba(200, 16, 46, 0.1), rgba(233, 29, 72, 0.1));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(200, 16, 46, 0.2);
             color: var(--dark-red);
             padding: 10px 18px;
-            border-radius: 8px;
+            border-radius: 12px;
             font-size: 0.9rem;
             display: inline-block;
+            box-shadow: 0 4px 15px rgba(200, 16, 46, 0.1);
         }
 
         /* ==========================================
-           PILLARS SECTION
+           PILLARS SECTION - GLASSMORPHIC
            ========================================== */
         .pillars-section {
             padding: 60px 0 90px;
@@ -357,16 +435,20 @@
         }
 
         .pillar-card {
-            background: #FFFFFF;
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
             overflow: hidden;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
 
         .pillar-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            border-color: rgba(200, 16, 46, 0.2);
         }
 
         .card-img-container {
@@ -379,6 +461,11 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .pillar-card:hover .card-img {
+            transform: scale(1.05);
         }
 
         .card-body {
@@ -409,21 +496,38 @@
             font-weight: 700;
             text-decoration: none;
             font-size: 0.95rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .card-link:hover {
+            transform: translateX(5px);
         }
 
         /* ==========================================
-           QUOTE BANNER
+           QUOTE BANNER - GLASSMORPHIC
            ========================================== */
         .quote-banner-section {
             padding-bottom: 80px;
         }
 
         .quote-card {
-            background: var(--navy-dark);
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
             color: #FFFFFF;
             padding: 50px 40px;
-            border-radius: 16px;
+            border-radius: 20px;
             text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .quote-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(200, 16, 46, 0.3);
         }
 
         .quote-card h2 {
@@ -440,10 +544,13 @@
         }
 
         /* ==========================================
-           FOOTER
+           FOOTER - GLASSMORPHIC
            ========================================== */
         .site-footer {
-            background-color: #0B1120;
+            background: rgba(11, 17, 32, 0.8);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
             color: #94A3B8;
             padding: 60px 0 30px;
         }
@@ -453,7 +560,7 @@
             grid-template-columns: 2fr 1fr 1fr;
             gap: 40px;
             padding-bottom: 40px;
-            border-bottom: 1px solid #1E293B;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .footer-logo {
@@ -490,11 +597,12 @@
             color: #94A3B8;
             text-decoration: none;
             font-size: 0.9rem;
-            transition: color 0.2s ease;
+            transition: all 0.3s ease;
         }
 
         .footer-links a:hover {
             color: #FFFFFF;
+            transform: translateX(3px);
         }
 
         .partner-desc {
@@ -516,6 +624,14 @@
             .hero-content h1 {
                 font-size: 2.2rem;
             }
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
@@ -558,7 +674,7 @@
                 <span class="hero-tag">Uganda's Sickle Cell Network</span>
                 <h1>Beyond the Pain,<br>There is <span>Strength & Life.</span></h1>
                 <p class="hero-lead">
-                    Founded out of unconditional love by <strong>Kittengo Alysious & Nanyonjo Noeline</strong>. We walk alongside every sickle cell warrior across Uganda through direct clinical reviews with <strong>Afya Medicare</strong>, community sensitization, and family support networks.
+                    Founded out of unconditional love by <strong>Kittengo Alysious & Nanyonjo Noeline</strong>. We walk alongside every sickle cell warrior across Uganda through direct clinical research, community advocacy, and compassionate support.
                 </p>
                 <div class="hero-actions">
                     <a href="about.html" class="btn btn-primary">Our Mission & Story</a>
@@ -608,8 +724,8 @@
                     <img src="assets/founders.jpg" alt="Kittengo Alysious and Nanyonjo Noeline" class="founders-img">
                 </div>
                 <div class="founders-text-wrap">
-                    <p>When founders <strong>Kittengo Alysious</strong> and <strong>Nanyonjo Noeline</strong> discovered their daughter was living with sickle cell disease, they experienced the fear, uncertainty, and social isolation firsthand.</p>
-                    <p>Determined to change the narrative in Uganda, they established the <strong>Afya Sickle Cell Foundation</strong>. By uniting parental love with clinical expertise through <strong>Afya Medicare</strong>, the foundation provides routine medical monitoring, school testing drives, and emotional solidarity for families.</p>
+                    <p>When founders <strong>Kittengo Alysious</strong> and <strong>Nanyonjo Noeline</strong> discovered their daughter was living with sickle cell disease, they experienced the full weight of the health crisis affecting Uganda's most vulnerable populations.</p>
+                    <p>Determined to change the narrative in Uganda, they established the <strong>Afya Sickle Cell Foundation</strong>. By uniting parental love with clinical expertise through partnerships with Afya Medicare, they transformed their family's pain into a comprehensive support network.</p>
                     <div class="clinical-partner-pill">
                         🏥 Official Clinical Partner: <strong>Afya Medicare Clinic</strong>
                     </div>
@@ -650,52 +766,73 @@
                         <h3>Advocacy & Screening</h3>
                         <p>Dismantling social stigma in schools and communities across Uganda through genotype awareness and early detection drives.</p>
                         <a href="programs.html" class="card-link">See Outreach Work &rarr;</a>
-                    </dhref="education/routine-care.html">
-                Routine Care
-            </a>
+                    </div>
+                </div>
 
+                <!-- Pillar 03 -->
+                <div class="pillar-card">
+                    <div class="card-img-container">
+                        <img src="assets/support-network.jpg" alt="Family Support" class="card-img">
+                    </div>
+                    <div class="card-body">
+                        <span class="pillar-num">PILLAR 03</span>
+                        <h3>Holistic Psychosocial Support</h3>
+                        <p>Connecting families with peer mentors, mental health resources, and nutritional guidance for complete wellbeing.</p>
+                        <a href="programs.html" class="card-link">Join Our Community &rarr;</a>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-
-        <div class="footer-column">
-
-            <h3>Connect</h3>
-
-            <a href="contact.html">
-                Contact Foundation
-            </a>
-
-            <a href="contact.html">
-                Get Support
-            </a>
-
-            <a href="contact.html">
-                Partner With Us
-            </a>
-
+    <!-- Quote Banner -->
+    <section class="quote-banner-section">
+        <div class="container">
+            <div class="quote-card">
+                <h2>"Every warrior deserves to live beyond pain. We're here to prove it's possible."</h2>
+                <p>— Kittengo Alysious & Nanyonjo Noeline, Founders</p>
+            </div>
         </div>
+    </section>
 
-    </div>
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="assets/logo.png" alt="AFYA Sickle Cell Foundation" class="footer-logo">
+                    <h3>AFYA Sickle Cell Foundation</h3>
+                    <p>Uganda's leading digital platform for sickle cell disease awareness, clinical support, and community connection.</p>
+                </div>
 
+                <div class="footer-col">
+                    <h4>Learn</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Our Programs</a></li>
+                        <li><a href="stories.html">Warrior Stories</a></li>
+                    </ul>
+                </div>
 
-    <div class="container footer-bottom">
+                <div class="footer-col">
+                    <h4>Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="contact.html">Get Support</a></li>
+                        <li><a href="contact.html">Partner With Us</a></li>
+                    </ul>
+                </div>
+            </div>
 
-        <p>
-            © 2026 AFYA Sickle Cell Foundation.
-            All rights reserved.
-        </p>
+            <div class="footer-bottom">
+                <p>© 2026 AFYA Sickle Cell Foundation. All rights reserved.</p>
+                <p>Knowledge • Care • Hope</p>
+            </div>
+        </div>
+    </footer>
 
-        <p>
-            Knowledge • Care • Hope
-        </p>
-
-    </div>
-
-</footer>
-
-
-<!-- Main JavaScript -->
-<script src="js/main.js"></script>
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
 
 </body>
-      </html>
+</html>
