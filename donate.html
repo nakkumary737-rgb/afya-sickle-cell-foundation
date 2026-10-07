@@ -18,6 +18,8 @@
             --glass-bg: rgba(255,255,255,0.72);
             --shadow-soft: 0 16px 40px rgba(15, 23, 42, 0.08);
             --font-main: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            --mtN-yellow: #ffcc00;
+            --airtel-red: #e40000;
         }
         * { box-sizing: border-box; margin:0; padding:0; }
         html { scroll-behavior:smooth; }
@@ -61,38 +63,37 @@
         .page-hero p { position:relative; z-index:1; max-width:700px; margin:0 auto; color:#e2e8f0; font-size:1.08rem; }
 
         .donate-section { padding: 80px 0; }
-        .donation-layout { display:grid; grid-template-columns: 1.05fr .95fr; gap: 32px; }
-        .donation-panel, .impact-panel, .method-panel, .contact-panel {
+        .donation-layout { display:grid; grid-template-columns: 1.15fr 0.85fr; gap: 32px; }
+        .payment-panel, .impact-panel, .contact-panel {
             background: rgba(255,255,255,.72); border:1px solid rgba(255,255,255,.4); border-radius:26px; padding: 32px; box-shadow: var(--shadow-soft); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
         }
-        .donation-tabs { display:flex; gap:12px; flex-wrap:wrap; margin-bottom: 22px; }
-        .tab { padding:10px 18px; border-radius:999px; border:1px solid rgba(148,163,184,.3); background:#fff; font-weight:700; color: var(--navy-dark); }
-        .tab.active {
-            background: linear-gradient(135deg, var(--primary-red), #E11D48); color:#fff; border-color: transparent; box-shadow:0 10px 22px rgba(200,16,46,.22);
-        }
-        .amount-grid { display:grid; grid-template-columns: repeat(3, minmax(100px,1fr)); gap: 12px; margin-bottom: 20px; }
-        .amount-btn {
-            padding: 18px 10px; border-radius: 16px; border:1px solid rgba(148,163,184,.3); background: rgba(255,255,255,.72); font-weight:800; color: var(--navy-dark); cursor:pointer; text-align:center;
-        }
-        .amount-btn.selected {
-            background: linear-gradient(135deg, rgba(200,16,46,.08), rgba(30,41,59,.04)); border-color: rgba(200,16,46,.25); color: var(--dark-red);
-        }
-        .custom-amount { margin-top:20px; }
-        .custom-amount input {
-            width:100%; padding:14px 16px; border-radius: 12px; border:1px solid rgba(148,163,184,.4); font:inherit; background: rgba(255,255,255,.7);
-        }
-        .donation-form { margin-top: 20px; }
-        .donation-form-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-        .form-group { margin-bottom: 14px; }
-        .form-group label { display:block; margin-bottom:8px; font-weight:700; color: var(--navy-dark); }
-        .form-control {
-            width:100%; padding:12px 14px; border:1px solid rgba(148,163,184,.35); border-radius:12px; background: rgba(255,255,255,.75); font:inherit;
-        }
-        .submit-btn {
-            width:100%; border:none; border-radius:12px; padding:14px 18px; background: linear-gradient(135deg, var(--primary-red), #E11D48); color:#fff; font-weight:800; cursor:pointer; margin-top: 10px;
-        }
 
-        .impact-panel h3, .method-panel h3, .contact-panel h3 { color: var(--navy-dark); margin-bottom: 16px; }
+        /* Payment Details Styling */
+        .section-title { font-size: 1.5rem; color: var(--navy-dark); margin-bottom: 8px; }
+        .section-subtitle { color: var(--slate-muted); margin-bottom: 24px; font-size: 0.95rem; }
+        
+        .payment-card {
+            background: #ffffff; border: 1px solid rgba(148,163,184,0.25); border-radius: 18px; padding: 20px; margin-bottom: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+        .payment-card h4 { display: flex; align-items: center; justify-content: space-between; font-size: 1.1rem; color: var(--navy-dark); margin-bottom: 14px; border-bottom: 1px solid #f1f5f9; padding-bottom: 10px; }
+        
+        .badge { font-size: 0.75rem; padding: 4px 10px; border-radius: 6px; font-weight: 700; text-transform: uppercase; }
+        .badge-mtn { background: #fff8e1; color: #b78103; border: 1px solid #ffe082; }
+        .badge-airtel { background: #ffebee; color: #c62828; border: 1px solid #ffcdd2; }
+        .badge-bank { background: #e8eaf6; color: #283593; border: 1px solid #c5cae9; }
+
+        .detail-row { display: flex; justify-content: space-between; margin-bottom: 8px; font-size: 0.95rem; }
+        .detail-row:last-child { margin-bottom: 0; }
+        .detail-label { color: var(--slate-muted); }
+        .detail-value { font-weight: 700; color: var(--navy-dark); text-align: right; }
+        
+        .instructions-box { background: rgba(15,23,42,0.03); border-left: 4px solid var(--primary-red); padding: 16px; border-radius: 0 12px 12px 0; margin-top: 24px; }
+        .instructions-box h5 { color: var(--navy-dark); margin-bottom: 8px; font-size: 1rem; }
+        .instructions-box ol { padding-left: 18px; font-size: 0.9rem; color: var(--slate-text); }
+        .instructions-box li { margin-bottom: 6px; }
+
+        /* Sidebar Panels */
+        .impact-panel h3, .contact-panel h3 { color: var(--navy-dark); margin-bottom: 16px; }
         .impact-list { list-style:none; display:grid; gap: 16px; }
         .impact-item {
             display:flex; gap: 16px; padding: 18px; border-radius: 18px; background: linear-gradient(135deg, rgba(200,16,46,.06), rgba(30,41,59,.04)); border:1px solid rgba(200,16,46,.08);
@@ -101,10 +102,6 @@
             min-width: 44px; height:44px; border-radius:12px; display:flex; align-items:center; justify-content:center; background: linear-gradient(135deg, var(--primary-red), #E11D48); color:#fff; font-weight:800;
         }
         .impact-item strong { display:block; color: var(--navy-dark); margin-bottom: 4px; }
-
-        .method-panel { margin-top: 24px; }
-        .method-box { padding: 18px; border-radius: 18px; background: rgba(15,23,42,.02); border:1px solid rgba(148,163,184,.2); margin-top:12px; }
-        .method-box strong { display:block; color: var(--navy-dark); margin-bottom: 6px; }
 
         .contact-panel { margin-top:24px; }
         .contact-list { list-style:none; display:grid; gap: 12px; }
@@ -122,9 +119,11 @@
         .footer-bottom { padding-top:20px; text-align:center; color:#94a3b8; font-size: .86rem; }
 
         @media (max-width: 900px) {
-            .donation-layout, .footer-grid, .donation-form-grid { grid-template-columns: 1fr; }
+            .donation-layout, .footer-grid { grid-template-columns: 1fr; }
             .header-flex { flex-direction:column; align-items:flex-start; }
             .main-nav { flex-wrap:wrap; }
+            .detail-row { flex-direction: column; }
+            .detail-value { text-align: left; margin-top: 2px; }
         }
     </style>
 </head>
@@ -162,51 +161,72 @@
 
     <section class="donate-section">
         <div class="container donation-layout">
+            <!-- Left Column: Payment Details -->
             <div>
-                <div class="donation-panel">
-                    <div class="donation-tabs">
-                        <div class="tab active">One-time</div>
-                        <div class="tab">Monthly</div>
-                        <div class="tab">Sponsor a Warrior</div>
+                <div class="payment-panel">
+                    <h2 class="section-title">Direct Ways to Give</h2>
+                    <p class="section-subtitle">Please use any of the verified channels below to make your contribution directly to AFYA Sickle Cell Foundation.</p>
+
+                    <!-- Mobile Money Section -->
+                    <div class="payment-card">
+                        <h4>Mobile Money Options <span class="badge badge-mtn">MTN</span> <span class="badge badge-airtel">Airtel</span></h4>
+                        <div class="detail-row">
+                            <span class="detail-label">MTN Merchant Code:</span>
+                            <span class="detail-value">[Insert MTN Code, e.g., 123456]</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Airtel Pay Merchant Code:</span>
+                            <span class="detail-value">[Insert Airtel Code, e.g., 654321]</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Registered Name:</span>
+                            <span class="detail-value">AFYA Sickle Cell Foundation</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Direct Mobile Number:</span>
+                            <span class="detail-value">+256 702 238103</span>
+                        </div>
                     </div>
 
-                    <div class="amount-grid">
-                        <div class="amount-btn selected">UGX 20,000</div>
-                        <div class="amount-btn">UGX 50,000</div>
-                        <div class="amount-btn">UGX 100,000</div>
-                        <div class="amount-btn">UGX 250,000</div>
-                        <div class="amount-btn">UGX 500,000</div>
-                        <div class="amount-btn">UGX 1,000,000</div>
+                    <!-- Bank Transfer Section -->
+                    <div class="payment-card">
+                        <h4>Bank Transfer <span class="badge badge-bank">Bank Wire</span></h4>
+                        <div class="detail-row">
+                            <span class="detail-label">Bank Name:</span>
+                            <span class="detail-value">[Insert Bank Name, e.g., Stanbic Bank]</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Account Name:</span>
+                            <span class="detail-value">AFYA Sickle Cell Foundation</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Account Number:</span>
+                            <span class="detail-value">[Insert Account Number]</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">Branch:</span>
+                            <span class="detail-value">[Insert Branch Name]</span>
+                        </div>
+                        <div class="detail-row">
+                            <span class="detail-label">SWIFT / BIC Code:</span>
+                            <span class="detail-value">[Insert SWIFT Code]</span>
+                        </div>
                     </div>
 
-                    <div class="custom-amount">
-                        <input type="number" placeholder="Custom amount (UGX)" aria-label="Custom amount">
+                    <!-- How to Donate Directions -->
+                    <div class="instructions-box">
+                        <h5>How to Complete Your Donation:</h5>
+                        <ol>
+                            <li><strong>via Merchant Code (USSD):</strong> Dial <code>*165*3#</code> (MTN) or <code>*185*9#</code> (Airtel), enter the merchant code listed above, input your donation amount, and confirm with your PIN.</li>
+                            <li><strong>via Mobile Transfer:</strong> Send directly to <strong>+256 702 238103</strong> with the reference line: <em>"Donation"</em>.</li>
+                            <li><strong>via Bank Wire:</strong> Perform an EFT or RTGS transfer using the bank account details above.</li>
+                            <li><strong>Confirmation:</strong> Once completed, kindly send a screenshot or transaction ID via WhatsApp to <strong>+256 702 238103</strong> or email <strong>afyasicklecellfoudation@gmail.com</strong> so we can issue your receipt!</li>
+                        </ol>
                     </div>
-
-                    <form class="donation-form" action="mailto:afyasicklecellfoudation@gmail.com" method="post" enctype="text/plain">
-                        <div class="donation-form-grid">
-                            <div class="form-group">
-                                <label for="donor-name">Full name</label>
-                                <input type="text" id="donor-name" class="form-control" placeholder="Your name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="donor-email">Email</label>
-                                <input type="email" id="donor-email" class="form-control" placeholder="you@example.com" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="donor-phone">Phone number</label>
-                            <input type="tel" id="donor-phone" class="form-control" placeholder="e.g. 0702 238103" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="donor-message">Message</label>
-                            <textarea id="donor-message" class="form-control" placeholder="Optional note for the AFYA team"></textarea>
-                        </div>
-                        <button type="submit" class="submit-btn">Make a Donation</button>
-                    </form>
                 </div>
             </div>
 
+            <!-- Right Column: Impact & Contact -->
             <div>
                 <div class="impact-panel">
                     <h3>Where your donation goes</h3>
@@ -242,23 +262,12 @@
                     </ul>
                 </div>
 
-                <div class="method-panel">
-                    <h3>Alternative giving methods</h3>
-                    <div class="method-box">
-                        <strong>Mobile money</strong>
-                        <p>Call or WhatsApp the AFYA support team to coordinate a donation: +256 702 238103</p>
-                    </div>
-                    <div class="method-box">
-                        <strong>Bank transfer</strong>
-                        <p>Coordinate via email or phone and we will share bank details after your inquiry.</p>
-                    </div>
-                </div>
-
                 <div class="contact-panel">
                     <h3>Contact the AFYA team</h3>
+                    <p style="margin-bottom: 12px; font-size: 0.95rem;">Have questions about larger corporate sponsorships or donations in kind?</p>
                     <ul class="contact-list">
                         <li><strong>WhatsApp:</strong> <a href="https://wa.me/256702238103" target="_blank">+256 702 238103</a></li>
-                        <li><strong>Phone:</strong> <a href="tel:0702238103">0702238103</a></li>
+                        <li><strong>Phone:</strong> <a href="tel:0702238103">0702 238103</a></li>
                         <li><strong>Email:</strong> <a href="mailto:afyasicklecellfoudation@gmail.com">afyasicklecellfoudation@gmail.com</a></li>
                     </ul>
                 </div>
