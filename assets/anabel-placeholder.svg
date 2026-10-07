@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Photo of Anabel Esther Kittengo coming soon">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FEF2F2"/>
+      <stop offset="1" stop-color="#FECACA"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="800" fill="url(#bg)"/>
+  <circle cx="110" cy="120" r="170" fill="#FFFFFF" opacity="0.55"/>
+  <circle cx="700" cy="690" r="210" fill="#C8102E" opacity="0.08"/>
+  <g fill="#C8102E" opacity="0.35">
+    <path d="M640 150 l8 18 20 2 -15 13 5 20 -18 -11 -18 11 5 -20 -15 -13 20 -2z"/>
+    <path d="M120 730 l6 13 14 1 -11 9 4 14 -13 -8 -13 8 4 -14 -11 -9 14 -1z"/>
+  </g>
+  <g transform="translate(400 290)">
+    <circle r="140" fill="#FFFFFF" stroke="#C8102E" stroke-width="6"/>
+    <text y="34" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, Helvetica, sans-serif" font-size="96" font-weight="800" fill="#C8102E">AK</text>
+    <path d="M0 168 C -16 150 -46 150 -46 178 C -46 200 -16 216 0 232 C 16 216 46 200 46 178 C 46 150 16 150 0 168 Z" fill="#C8102E"/>
+  </g>
+  <text x="400" y="585" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, Helvetica, sans-serif" font-size="38" font-weight="800" fill="#0F172A">Anabel Esther Kittengo</text>
+  <text x="400" y="628" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="4" fill="#991B1B">OUR GUIDING LIGHT</text>
+</svg>
