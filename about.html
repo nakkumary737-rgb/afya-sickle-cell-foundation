@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Our Founders & Story | AFYA Sickle Cell Foundation</title>
+    <title>About Our Founder & Story | AFYA Sickle Cell Foundation</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,22 +21,26 @@
         }
 
         :root {
-            --primary-red: #C8102E;
-            --dark-red: #991B1B;
-            --accent-light: #FEF2F2;
-            --navy-dark: #0F172A;
-            --slate-text: #334155;
-            --slate-muted: #64748B;
-            --bg-light: #F8FAFC;
-            --border-color: #E2E8F0;
+            --primary: #E63946;
+            --secondary: #1D3557;
+            --accent: #A8DADC;
+            --light: #F1FAEE;
+            --navy: #264653;
+            --slate-text: #2D3748;
+            --slate-muted: #718096;
+            --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c9d6ff 100%);
             --font-main: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.2);
         }
 
         body {
             font-family: var(--font-main);
             color: var(--slate-text);
-            background-color: var(--bg-light);
+            background: var(--bg-gradient);
+            background-attachment: fixed;
             line-height: 1.6;
+            min-height: 100vh;
         }
 
         .container {
@@ -48,10 +52,13 @@
         .text-center { text-align: center; }
 
         /* ==========================================
-           TOP EMERGENCY BAR
+           TOP EMERGENCY BAR - GLASSMORPHIC
            ========================================== */
         .top-bar {
-            background-color: var(--navy-dark);
+            background: rgba(29, 53, 87, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
             color: #FFFFFF;
             padding: 10px 0;
             font-size: 0.85rem;
@@ -66,25 +73,30 @@
         }
 
         .emergency-badge {
-            background-color: var(--primary-red);
+            background: linear-gradient(135deg, var(--primary), #D62828);
             color: #FFFFFF;
             padding: 3px 10px;
             border-radius: 20px;
             font-weight: 800;
             font-size: 0.75rem;
             margin-right: 8px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(230, 57, 70, 0.4);
         }
 
         /* ==========================================
-           HEADER NAVIGATION
+           HEADER NAVIGATION - GLASSMORPHIC
            ========================================== */
         .site-header {
-            background: #FFFFFF;
-            border-bottom: 1px solid var(--border-color);
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
             padding: 16px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
 
         .header-flex {
@@ -106,41 +118,81 @@
 
         .nav-item {
             text-decoration: none;
-            color: var(--navy-dark);
+            color: var(--navy);
             font-weight: 600;
             font-size: 0.95rem;
-            transition: color 0.2s ease;
+            transition: all 0.3s ease;
+            position: relative;
         }
 
         .nav-item:hover, .nav-item.active {
-            color: var(--primary-red);
+            color: var(--primary);
+        }
+
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-item:hover::after {
+            width: 100%;
         }
 
         .btn-nav {
-            background: var(--primary-red);
+            background: linear-gradient(135deg, var(--primary), #D62828);
             color: #FFFFFF !important;
             padding: 10px 22px;
             border-radius: 25px;
             text-decoration: none;
             font-weight: 700;
             font-size: 0.9rem;
-            transition: transform 0.2s ease, background 0.2s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+        }
+
+        .btn-nav:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(230, 57, 70, 0.5);
         }
 
         /* ==========================================
            PAGE HERO BANNER
            ========================================== */
         .page-hero {
-            background: linear-gradient(135deg, #7F1D1D 0%, #0F172A 100%);
+            background: linear-gradient(135deg, rgba(230, 57, 70, 0.9), rgba(29, 53, 87, 0.9)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" /></filter></defs><rect width="1200" height="600" fill="%23264653" filter="url(%23noise)" opacity="0.1"/></svg>');
+            backdrop-filter: blur(8px);
             color: #FFFFFF;
             padding: 70px 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(230, 57, 70, 0.1), transparent);
+            border-radius: 50%;
+            filter: blur(40px);
         }
 
         .page-hero h1 {
             font-size: 2.8rem;
             font-weight: 800;
             margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
         }
 
         .page-hero p {
@@ -148,17 +200,19 @@
             color: #E2E8F0;
             max-width: 700px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         /* ==========================================
-           ABOUT CONTENT & STORY SECTION
+           ABOUT CONTENT & STORY SECTION - GLASSMORPHIC
            ========================================== */
         .about-section {
             padding: 80px 0;
         }
 
         .section-tag {
-            color: var(--primary-red);
+            color: var(--primary);
             font-size: 0.8rem;
             font-weight: 800;
             letter-spacing: 1.5px;
@@ -169,19 +223,27 @@
 
         /* FEATURE CARD: ANABEL */
         .hero-story-card {
-            background: #FFFFFF;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             border-radius: 20px;
-            border: 1px solid #FECACA;
-            box-shadow: 0 10px 30px rgba(200, 16, 46, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             display: grid;
             grid-template-columns: 0.9fr 1.1fr;
             overflow: hidden;
             margin-bottom: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .hero-story-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
         }
 
         .hero-story-img-wrap {
             position: relative;
-            background-color: #FEF2F2;
+            background-color: #E8F0F8;
             min-height: 400px;
         }
 
@@ -196,13 +258,15 @@
             position: absolute;
             bottom: 20px;
             left: 20px;
-            background: var(--navy-dark);
+            background: rgba(29, 53, 87, 0.9);
+            backdrop-filter: blur(10px);
             color: #FFFFFF;
             padding: 8px 16px;
             border-radius: 30px;
             font-size: 0.85rem;
             font-weight: 700;
             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .hero-story-content {
@@ -214,18 +278,18 @@
 
         .hero-story-content h2 {
             font-size: 2rem;
-            color: var(--navy-dark);
+            color: var(--navy);
             font-weight: 800;
             margin-bottom: 5px;
         }
 
         .school-info {
-            color: var(--dark-red);
+            color: var(--primary);
             font-weight: 600;
             font-size: 0.95rem;
             margin-bottom: 20px;
             padding-bottom: 12px;
-            border-bottom: 1px solid #FEE2E2;
+            border-bottom: 2px solid rgba(230, 57, 70, 0.2);
         }
 
         .story-p {
@@ -238,30 +302,39 @@
         .quote-box {
             margin-top: 15px;
             padding: 16px 20px;
-            background-color: #FEF2F2;
-            border-left: 4px solid var(--primary-red);
+            background: linear-gradient(135deg, rgba(230, 57, 70, 0.1), rgba(168, 218, 220, 0.1));
+            border-left: 4px solid var(--primary);
             border-radius: 0 12px 12px 0;
             font-style: italic;
-            color: var(--dark-red);
+            color: var(--primary);
             font-size: 0.95rem;
             font-weight: 600;
+            backdrop-filter: blur(10px);
         }
 
         /* FOUNDERS CARD */
         .founders-card {
-            background: #FFFFFF;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             border-radius: 20px;
-            border: 1px solid var(--border-color);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             display: grid;
             grid-template-columns: 1fr 1.1fr;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
             margin-bottom: 50px;
+            transition: all 0.3s ease;
+        }
+
+        .founders-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
         }
 
         .founders-img-wrap {
             min-height: 350px;
-            background-color: #E2E8F0;
+            background-color: #E8F0F8;
         }
 
         .founders-img {
@@ -280,27 +353,32 @@
 
         .founders-content h2 {
             font-size: 1.8rem;
-            color: var(--navy-dark);
+            color: var(--navy);
             font-weight: 800;
             margin-bottom: 15px;
         }
 
         .partner-pill {
             margin-top: 15px;
-            background-color: #F1F5F9;
-            color: var(--navy-dark);
+            background: linear-gradient(135deg, rgba(230, 57, 70, 0.1), rgba(168, 218, 220, 0.1));
+            border: 1px solid rgba(230, 57, 70, 0.2);
+            color: var(--navy);
             padding: 12px 18px;
-            border-radius: 10px;
+            border-radius: 12px;
             font-size: 0.9rem;
             display: inline-block;
+            backdrop-filter: blur(10px);
         }
 
         /* ==========================================
-           FOOTER
+           FOOTER - GLASSMORPHIC
            ========================================== */
         .site-footer {
-            background-color: #0B1120;
-            color: #94A3B8;
+            background: rgba(41, 69, 99, 0.9);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            color: #B0BEC5;
             padding: 60px 0 30px;
         }
 
@@ -309,7 +387,7 @@
             grid-template-columns: 2fr 1fr 1fr;
             gap: 40px;
             padding-bottom: 40px;
-            border-bottom: 1px solid #1E293B;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .footer-logo {
@@ -332,18 +410,25 @@
         }
 
         .footer-links a {
-            color: #94A3B8;
+            color: #B0BEC5;
             text-decoration: none;
             font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #FFFFFF;
+            transform: translateX(3px);
         }
 
         .footer-bottom {
             padding-top: 25px;
             font-size: 0.85rem;
-            color: #64748B;
+            color: #90A4AE;
+            text-align: center;
         }
 
-        /* RESPONSIVE DESIGN */
+        /* RESPONSIVE BREAKPOINTS */
         @media (max-width: 850px) {
             .hero-story-card, .founders-card, .footer-grid {
                 grid-template-columns: 1fr;
@@ -357,6 +442,10 @@
             .page-hero h1 {
                 font-size: 2.2rem;
             }
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
@@ -384,7 +473,7 @@
             
             <nav class="main-nav">
                 <a href="index.html" class="nav-item">Home</a>
-                <a href="about.html" class="nav-item active">About Founders</a>
+                <a href="about.html" class="nav-item active">About Founder</a>
                 <a href="programs.html" class="nav-item">Clinical & Programs</a>
                 <a href="stories.html" class="nav-item">Warrior Stories</a>
                 <a href="contact.html" class="btn-nav">Get Connected</a>
@@ -395,7 +484,7 @@
     <!-- Page Title Banner -->
     <section class="page-hero">
         <div class="container">
-            <h1>Our Story & Founders</h1>
+            <h1>Our Story & Inspiration</h1>
             <p>From one family's personal journey to a nationwide foundation of clinical care, advocacy, and hope across Uganda.</p>
         </div>
     </section>
@@ -407,22 +496,22 @@
             <!-- Anabel's Story (The Inspiration) -->
             <div class="hero-story-card">
                 <div class="hero-story-img-wrap">
-                    <img src="assets/anabel.jpg" alt="Anabel Esther Kittengo" class="hero-story-img">
+                    <img src="assets/anabel.jpg" alt="Anabel Esther" class="hero-story-img">
                     <span class="age-badge">7 Years Old • Primary Two (P.2)</span>
                 </div>
                 <div class="hero-story-content">
                     <span class="section-tag">OUR GUIDING LIGHT</span>
-                    <h2>Anabel Esther Kittengo</h2>
+                    <h2>Anabel Esther</h2>
                     <p class="school-info">📍 Seeds of Gold Primary School</p>
                     
                     <p class="story-p">
-                        Every powerful movement is born from a quiet, deeply personal moment. For the AFYA Sickle Cell Foundation, that spark is <strong>Anabel Esther Kittengo</strong>.
+                        Every powerful movement is born from a quiet, deeply personal moment. For the AFYA Sickle Cell Foundation, that spark is <strong>Anabel Esther</strong>.
                     </p>
                     <p class="story-p">
-                        Diagnosed with sickle cell disease at a young age, Anabel showed extraordinary strength through early hospital visits and painful crises. Today, as a joyful 7-year-old student in Primary Two at <strong>Seeds of Gold Primary School</strong>, her smile and determination light up every room she enters.
+                        Diagnosed with sickle cell disease at a young age, Anabel showed extraordinary strength through early hospital visits and painful crises. Today, as a joyful 7-year-old student, she represents the hope that inspired this foundation.
                     </p>
                     <p class="story-p">
-                        Anabel represents every child living with sickle cell in Uganda—showing that with early detection, continuous clinical monitoring, and overwhelming family support, a diagnosis is never the end of a child's story.
+                        Anabel represents every child living with sickle cell in Uganda—showing that with early detection, continuous clinical monitoring, and overwhelming family support, a diagnosis is not a destiny.
                     </p>
 
                     <div class="quote-box">
@@ -431,22 +520,22 @@
                 </div>
             </div>
 
-            <!-- Founders Story -->
+            <!-- Founder Story -->
             <div class="founders-card">
                 <div class="founders-img-wrap">
-                    <img src="assets/founders.jpg" alt="Kittengo Alysious and Nanyonjo Noeline" class="founders-img">
+                    <img src="assets/founders.jpg" alt="Founder" class="founders-img">
                 </div>
                 <div class="founders-content">
-                    <span class="section-tag">THE FOUNDERS</span>
-                    <h2>Kittengo Alysious & Nanyonjo Noeline</h2>
+                    <span class="section-tag">THE FOUNDER</span>
+                    <h2>Nanyonjo Noeline</h2>
                     <p class="story-p">
-                        When founders <strong>Kittengo Alysious</strong> and <strong>Nanyonjo Noeline</strong> first received Anabel’s diagnosis, they faced the fear, medical uncertainty, and social stigma that affect countless families across Uganda.
+                        When founder <strong>Nanyonjo Noeline</strong> first received Anabel's diagnosis, she faced the fear, medical uncertainty, and social stigma that confronts countless families across Uganda.
                     </p>
                     <p class="story-p">
-                        Driven by unconditional love for their daughter, they chose to turn personal adversity into a life-saving mission. They founded the <strong>AFYA Sickle Cell Foundation</strong> to ensure no parent walks this path alone.
+                        Driven by unconditional love for her daughter, she chose to turn personal adversity into a life-saving mission. She founded the <strong>AFYA Sickle Cell Foundation</strong> with a singular vision: to ensure that no warrior walks this journey alone.
                     </p>
                     <p class="story-p">
-                        By establishing an official medical partnership with <strong>Afya Medicare Clinic</strong>, they built a ecosystem of routine doctor reviews, genotype screening drives, and parent support circles that serve warriors across the nation.
+                        By establishing an official medical partnership with <strong>Afya Medicare Clinic</strong>, she built an ecosystem of routine doctor reviews, genotype screening drives, and peer support circles that now reaches over 1,000 warriors across Uganda.
                     </p>
 
                     <div class="partner-pill">
@@ -471,7 +560,7 @@
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
                         <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Founders</a></li>
+                        <li><a href="about.html">About Founder</a></li>
                         <li><a href="programs.html">Clinical Care</a></li>
                         <li><a href="contact.html">Contact Support</a></li>
                     </ul>
@@ -481,34 +570,12 @@
                     <p><strong>Afya Medicare Clinic</strong><br>Providing routine reviews, crisis response guidance, and laboratory screening.</p>
                 </div>
             </div>
-            <div class="footer-bottom text-center">
+            <div class="footer-bottom">
                 <p>&copy; 2026 AFYA Sickle Cell Foundation. All Rights Reserved.</p>
+                <p>Knowledge • Care • Hope</p>
             </div>
         </div>
     </footer>
 
-</body>
-</html>
-ell Foundation</h3>
-                <p>Empowering warriors, advocating for care, and inspiring hope.</p>
-            </div>
-            <div class="footer-links">
-                <h4>Quick Navigation</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="programs.html">Programs</a></li>
-                    <li><a href="stories.html">Stories of Hope</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <div class="container">
-                <p>&copy; 2026 Afya Sickle Cell Foundation. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="main.js"></script>
 </body>
 </html>
