@@ -140,7 +140,7 @@
             transition: width 0.3s ease;
         }
 
-        .nav-item:hover::after {
+        .nav-item:hover::after, .nav-item.active::after {
             width: 100%;
         }
 
@@ -165,8 +165,7 @@
            PAGE HERO BANNER
            ========================================== */
         .page-hero {
-            background: linear-gradient(135deg, rgba(230, 57, 70, 0.9), rgba(29, 53, 87, 0.9)), 
-                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" /></filter></defs><rect width="1200" height="600" fill="%23264653" filter="url(%23noise)" opacity="0.1"/></svg>');
+            background: linear-gradient(135deg, rgba(230, 57, 70, 0.9), rgba(29, 53, 87, 0.9));
             backdrop-filter: blur(8px);
             color: #FFFFFF;
             padding: 70px 0;
@@ -476,7 +475,8 @@
                 <a href="about.html" class="nav-item active">About Founder</a>
                 <a href="programs.html" class="nav-item">Clinical & Programs</a>
                 <a href="stories.html" class="nav-item">Warrior Stories</a>
-                <a href="contact.html" class="btn-nav">Get Connected</a>
+                <a href="contact.html" class="nav-item">Contact</a>
+                <a href="donate.html" class="btn-nav">Donate</a>
             </nav>
         </div>
     </header>
@@ -523,7 +523,7 @@
             <!-- Founder Story -->
             <div class="founders-card">
                 <div class="founders-img-wrap">
-                    <img src="assets/founders.jpg" alt="Founder" class="founders-img">
+                    <img src="assets/founders.jpg" alt="Nanyonjo Noeline" class="founders-img">
                 </div>
                 <div class="founders-content">
                     <span class="section-tag">THE FOUNDER</span>
@@ -563,6 +563,7 @@
                         <li><a href="about.html">About Founder</a></li>
                         <li><a href="programs.html">Clinical Care</a></li>
                         <li><a href="contact.html">Contact Support</a></li>
+                        <li><a href="donate.html">Donate</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -578,4 +579,5 @@
     </footer>
 
 </body>
-</html>
+    </html>
+    
