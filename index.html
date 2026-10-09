@@ -1,27 +1,26 @@
-<!-- existing hero CTA buttons and nav links updated to point to donate.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AFYA Sickle Cell Foundation | Hope, Strength & Clinical Care</title>
+    <title>AFYA Sickle Cell Foundation | Hope, Care & Community</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-red: #C8102E;
-            --dark-red: #991B1B;
-            --soft-red: #FEE2E2;
-            --navy-dark: #0F172A;
-            --navy-soft: #1E293B;
+            --primary-red: #d72638;
+            --dark-red: #9d1623;
+            --rose-soft: #fff1f2;
+            --navy-deep: #0f172a;
+            --navy-soft: #1f2d3d;
             --slate-text: #334155;
-            --slate-muted: #64748B;
-            --bg-light: #F8FAFC;
-            --border-color: rgba(148, 163, 184, 0.25);
-            --glass-bg: rgba(255,255,255,0.72);
-            --glass-dark: rgba(15,23,42,0.72);
-            --shadow-soft: 0 16px 40px rgba(15, 23, 42, 0.08);
+            --slate-muted: #64748b;
+            --bg-soft: #f8fafc;
+            --green-soft: #ecfdf5;
+            --gold-soft: #fff7ed;
+            --border: rgba(148, 163, 184, 0.28);
+            --shadow-soft: 0 22px 50px rgba(15, 23, 42, 0.08);
             --font-main: 'Plus Jakarta Sans', -apple-system, sans-serif;
         }
 
@@ -30,187 +29,563 @@
         body {
             font-family: var(--font-main);
             color: var(--slate-text);
-            background: linear-gradient(135deg, #eff6ff 0%, #fdf2f8 25%, #f8fafc 60%, #eef2ff 100%);
-            line-height: 1.6;
+            background:
+                radial-gradient(circle at top left, rgba(255, 228, 230, 0.8), transparent 30%),
+                linear-gradient(135deg, #f8fbff 0%, #fff7fb 26%, #f8fafc 60%, #eef6ff 100%);
+            line-height: 1.7;
         }
+
         a { text-decoration: none; }
         img { max-width: 100%; display: block; }
-        .container { width: min(1140px, 90%); margin: 0 auto; }
+        .container { width: min(1160px, 90%); margin: 0 auto; }
+        .section-tag {
+            display: inline-block;
+            padding: 7px 14px;
+            border-radius: 999px;
+            background: rgba(215, 38, 56, 0.08);
+            color: var(--dark-red);
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 13px 26px;
+            border-radius: 999px;
+            font-weight: 700;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .btn:hover { transform: translateY(-2px); }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-red), #e11d48);
+            color: #fff;
+            box-shadow: 0 16px 35px rgba(215, 38, 56, 0.28);
+        }
+        .btn-light {
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.28);
+            color: #fff;
+        }
 
         .top-bar {
-            background: rgba(15, 23, 42, 0.78);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: rgba(15, 23, 42, 0.92);
             color: #fff;
             padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
             font-size: 0.85rem;
-            border-bottom: 1px solid rgba(255,255,255,0.12);
         }
         .top-bar-flex {
-            display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
         }
         .emergency-badge {
-            display: inline-block; background: linear-gradient(135deg, var(--primary-red), #E11D48);
-            color: #fff; padding: 4px 12px; border-radius: 999px; font-weight: 800; font-size: 0.72rem;
-            letter-spacing: 0.06em; margin-right: 10px; box-shadow: 0 8px 20px rgba(200,16,46,.28);
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-red), #ef4444);
+            color: #fff;
+            border-radius: 999px;
+            padding: 4px 10px;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-right: 10px;
         }
-        .top-bar-partner { color: #cbd5e1; }
-        .top-bar-partner strong { color: #fff; }
 
         .site-header {
-            position: sticky; top: 0; z-index: 1000; background: rgba(255,255,255,0.74);
-            backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
-            border-bottom: 1px solid rgba(148,163,184,0.2); box-shadow: 0 8px 24px rgba(15,23,42,.06);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.76);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+            box-shadow: 0 10px 30px rgba(15,23,42,0.04);
         }
-        .header-flex { display:flex; justify-content:space-between; align-items:center; min-height: 78px; }
-        .logo-img { max-height: 52px; width: auto; }
-        .main-nav { display:flex; align-items:center; gap: 26px; }
+        .header-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 78px;
+            gap: 28px;
+        }
+        .logo-img { max-height: 54px; width: auto; }
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+            flex-wrap: wrap;
+        }
         .nav-item {
-            position: relative; color: var(--navy-dark); font-weight: 600; font-size: .95rem; transition: color .2s ease;
+            position: relative;
+            color: var(--navy-deep);
+            font-weight: 600;
+            font-size: 0.94rem;
+            transition: color 0.2s ease;
         }
         .nav-item:hover, .nav-item.active { color: var(--primary-red); }
         .nav-item::after {
-            content: ''; position: absolute; left: 0; bottom: -7px; width: 0; height: 2px; background: var(--primary-red);
-            transition: width .2s ease;
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 0;
+            height: 2px;
+            background: var(--primary-red);
+            transition: width 0.2s ease;
         }
         .nav-item:hover::after, .nav-item.active::after { width: 100%; }
         .btn-nav {
-            display: inline-flex; align-items:center; justify-content:center; padding: 10px 22px; border-radius: 999px;
-            background: linear-gradient(135deg, var(--primary-red), #E11D48); color: #fff !important; font-weight: 700;
-            box-shadow: 0 10px 24px rgba(200,16,46,.28); transition: transform .2s ease, box-shadow .2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 22px;
+            background: linear-gradient(135deg, var(--primary-red), #ef4444);
+            color: #fff !important;
+            border-radius: 999px;
+            font-weight: 700;
+            box-shadow: 0 12px 26px rgba(215, 38, 56, 0.2);
         }
-        .btn-nav:hover { transform: translateY(-2px); box-shadow: 0 14px 28px rgba(200,16,46,.35); }
 
         .hero-section {
-            position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(127,29,29,.88), rgba(15,23,42,.92));
-            color: #fff; padding: 86px 0 100px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(127, 29, 29, 0.9), rgba(15,23,42,0.96));
+            color: #fff;
+            padding: 86px 0 92px;
+        }
+        .hero-section::before,
+        .hero-section::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(8px);
         }
         .hero-section::before {
-            content: ''; position:absolute; right:-120px; top:-120px; width:420px; height:420px; border-radius:50%;
-            background: radial-gradient(circle, rgba(255,255,255,.18), rgba(255,255,255,0));
+            width: 480px;
+            height: 480px;
+            right: -120px;
+            top: -120px;
+            background: radial-gradient(circle, rgba(255,255,255,0.18), rgba(255,255,255,0));
+        }
+        .hero-section::after {
+            width: 320px;
+            height: 320px;
+            left: -80px;
+            bottom: -80px;
+            background: radial-gradient(circle, rgba(251, 146, 60, 0.18), rgba(255,255,255,0));
         }
         .hero-grid {
-            position: relative; z-index: 1; display:grid; grid-template-columns: 1.2fr .8fr; align-items:center; gap: 50px;
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 48px;
+            align-items: center;
         }
         .hero-tag {
-            display:inline-block; margin-bottom: 18px; background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.18);
-            color: #f9a8d4; padding: 7px 16px; border-radius: 999px; letter-spacing: .14em; text-transform: uppercase; font-size: .75rem; font-weight: 700;
+            display: inline-block;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.18);
+            color: #fecdd3;
+            padding: 7px 16px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+            font-weight: 700;
         }
         .hero-content h1 {
-            font-size: clamp(2.4rem, 4vw, 4rem); line-height:1.08; letter-spacing:-.04em; margin-bottom: 18px; font-weight: 800;
+            font-size: clamp(2.5rem, 4vw, 4.2rem);
+            line-height: 1.08;
+            letter-spacing: -0.05em;
+            margin-bottom: 18px;
+            font-weight: 800;
         }
         .hero-content h1 span { color: #fca5a5; }
         .hero-lead {
-            font-size: 1.08rem; color: #e2e8f0; line-height: 1.75; margin-bottom: 30px; max-width: 620px;
+            font-size: 1.08rem;
+            max-width: 620px;
+            color: #e2e8f0;
+            margin-bottom: 28px;
         }
-        .hero-actions { display:flex; gap:15px; flex-wrap: wrap; }
-        .btn {
-            display:inline-flex; align-items:center; justify-content:center; padding: 13px 28px; border-radius: 999px; font-weight:700; transition: transform .2s ease, box-shadow .2s ease;
+        .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+        .hero-visual {
+            position: relative;
+            display: grid;
+            place-items: center;
         }
-        .btn:hover { transform: translateY(-2px); }
-        .btn-primary { background: linear-gradient(135deg, var(--primary-red), #E11D48); color:#fff; box-shadow:0 12px 30px rgba(200,16,46,.28); }
-        .btn-outline-light {
-            background: rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.28); color:#fff;
-            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+        .hero-image-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 28px;
+            border: 1px solid rgba(255,255,255,0.18);
+            box-shadow: 0 30px 60px rgba(15,23,42,0.35);
+            background: rgba(255,255,255,0.08);
         }
-        .hero-img {
-            width:100%; height: 380px; object-fit:cover; border-radius: 24px; border:1px solid rgba(255,255,255,.18);
-            box-shadow: 0 28px 60px rgba(15,23,42,.35);
+        .hero-image-card img {
+            width: 100%;
+            height: 420px;
+            object-fit: cover;
+            display: block;
         }
+        .floating-message {
+            position: absolute;
+            right: -8px;
+            bottom: 16px;
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: 18px;
+            padding: 16px 18px;
+            color: #fff;
+            max-width: 220px;
+            box-shadow: 0 22px 40px rgba(15, 23, 42, 0.15);
+        }
+        .floating-message strong { display: block; margin-bottom: 4px; color: #f9a8d4; }
 
-        .stats-section { margin-top: -42px; position: relative; z-index: 5; }
+        .stats-section {
+            position: relative;
+            z-index: 4;
+            margin-top: -30px;
+        }
         .stats-grid {
-            display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); background: rgba(255,255,255,.72);
-            backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255,255,255,.42);
-            border-radius: 24px; overflow:hidden; box-shadow: var(--shadow-soft);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            background: rgba(255,255,255,0.76);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border: 1px solid rgba(255,255,255,0.48);
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
         }
         .stat-card {
-            padding: 30px 20px; text-align:center; border-right:1px solid rgba(148,163,184,.15); background: rgba(255,255,255,.2);
-            transition: background .2s ease, transform .2s ease;
+            padding: 28px 20px;
+            text-align: center;
+            border-right: 1px solid rgba(148, 163, 184, 0.18);
+            background: rgba(255,255,255,0.08);
         }
         .stat-card:last-child { border-right: none; }
-        .stat-card:hover { background: rgba(255,255,255,.32); transform: translateY(-4px); }
-        .stat-number { display:block; font-size: 1.9rem; font-weight: 800; color: var(--dark-red); }
-        .stat-label { font-size: .82rem; color: var(--slate-muted); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
-
-        .founders-section { padding: 90px 0 60px; }
-        .sub-tag { color: var(--primary-red); font-size: .8rem; font-weight:800; letter-spacing: .18em; text-transform: uppercase; }
-        .section-title-wrap h2 { font-size: clamp(2rem, 3vw, 2.6rem); color: var(--navy-dark); margin-top: 10px; margin-bottom: 28px; }
-        .founders-card {
-            display:grid; grid-template-columns: 1fr 1.2fr; background: rgba(255,255,255,.72); border: 1px solid rgba(255,255,255,.4);
-            backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-radius: 24px; overflow:hidden; box-shadow: var(--shadow-soft);
+        .stat-number {
+            display: block;
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: var(--dark-red);
         }
-        .founders-img { width:100%; height:100%; min-height: 310px; object-fit:cover; }
-        .founders-text-wrap { padding: 42px 38px; display:flex; flex-direction:column; justify-content:center; }
-        .founders-text-wrap p { color: var(--slate-text); margin-bottom: 14px; }
-        .clinical-partner-pill {
-            display:inline-block; margin-top:14px; background: linear-gradient(135deg, rgba(200,16,46,.10), rgba(30,41,59,.05));
-            color: var(--dark-red); border:1px solid rgba(200,16,46,.18); padding: 10px 18px; border-radius: 12px; font-weight:700; width: fit-content;
+        .stat-label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--slate-muted);
         }
 
-        .pillars-section { padding: 60px 0 90px; }
-        .pillars-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:26px; }
+        .story-section, .programs-section, .impact-section, .forum-section {
+            padding: 90px 0;
+        }
+        .section-head {
+            margin-bottom: 36px;
+        }
+        .section-head h2 {
+            font-size: clamp(2.1rem, 3vw, 2.9rem);
+            color: var(--navy-deep);
+            margin-top: 12px;
+            line-height: 1.15;
+            letter-spacing: -0.04em;
+        }
+        .story-card {
+            display: grid;
+            grid-template-columns: 0.95fr 1.05fr;
+            background: rgba(255,255,255,0.7);
+            border: 1px solid rgba(255,255,255,0.4);
+            border-radius: 26px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+        }
+        .story-card img {
+            width: 100%;
+            height: 100%;
+            min-height: 340px;
+            object-fit: cover;
+        }
+        .story-copy {
+            padding: 44px 38px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .story-copy p {
+            margin-bottom: 16px;
+            color: var(--slate-text);
+        }
+        .mini-quote {
+            margin-top: 8px;
+            border-left: 4px solid var(--primary-red);
+            padding: 16px 18px;
+            background: linear-gradient(135deg, rgba(215,38,56,0.06), rgba(168, 218, 220, 0.08));
+            border-radius: 0 14px 14px 0;
+            font-style: italic;
+            color: var(--dark-red);
+            font-weight: 700;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 26px;
+        }
         .pillar-card {
-            background: rgba(255,255,255,.7); border: 1px solid rgba(255,255,255,.4); border-radius: 24px; overflow:hidden;
-            box-shadow: var(--shadow-soft); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); transition: transform .2s ease, box-shadow .2s ease;
+            background: rgba(255,255,255,0.76);
+            border: 1px solid var(--border);
+            border-radius: 23px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
-        .pillar-card:hover { transform: translateY(-8px); box-shadow: 0 22px 44px rgba(15,23,42,.1); }
-        .card-img-container { height: 210px; overflow:hidden; }
-        .card-img { width:100%; height:100%; object-fit:cover; transition: transform .25s ease; }
-        .pillar-card:hover .card-img { transform: scale(1.04); }
-        .card-body { padding: 26px;
+        .pillar-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 48px rgba(15,23,42,0.12);
         }
-        .pillar-num { display:block; color: var(--primary-red); font-size: .78rem; font-weight:800; letter-spacing:.16em; text-transform: uppercase; margin-bottom: 6px; }
-        .card-body h3 { color: var(--navy-dark); font-size:1.32rem; margin-bottom: 10px; }
-        .card-body p { color: var(--slate-muted); font-size: .96rem; margin-bottom: 18px; }
-        .card-link { color: var(--dark-red); font-weight:700; }
+        .card-img-wrap { height: 210px; overflow: hidden; }
+        .card-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.25s ease;
+        }
+        .pillar-card:hover .card-img-wrap img { transform: scale(1.04); }
+        .pillar-body {
+            padding: 26px 22px 24px;
+        }
+        .pillar-index {
+            font-size: 0.73rem;
+            color: var(--primary-red);
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+        .pillar-card h3 {
+            margin: 10px 0 10px;
+            font-size: 1.4rem;
+            color: var(--navy-deep);
+        }
+        .pillar-card p {
+            color: var(--slate-muted);
+            margin-bottom: 18px;
+        }
+        .card-link {
+            color: var(--dark-red);
+            font-weight: 700;
+        }
 
-        .donation-spotlight {
-            padding: 32px; border-radius: 30px; background: linear-gradient(135deg, rgba(15,23,42,.96), rgba(30,41,59,.95));
-            color: #fff; box-shadow: 0 24px 50px rgba(15,23,42,.15); margin-top: 16px; display:grid; grid-template-columns: 1.2fr .8fr; gap: 26px; align-items:center;
+        .impact-panel {
+            background: linear-gradient(135deg, rgba(15,23,42,0.96), rgba(31,45,61,0.96));
+            border-radius: 28px;
+            padding: 42px 30px;
+            color: #fff;
+            box-shadow: 0 24px 48px rgba(15,23,42,0.12);
         }
-        .donation-spotlight h3 { font-size: clamp(1.8rem, 2vw, 2.3rem); margin-bottom: 12px; }
-        .donation-spotlight p { color: #dbeafe; }
-        .donation-actions { display:flex; justify-content:flex-end; flex-wrap:wrap; gap:12px; }
-        .donation-chip {
-            background: rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); padding: 10px 16px; border-radius: 999px;
-            font-weight: 700; color: #fff; text-align:center;
+        .impact-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 28px;
+            align-items: center;
         }
+        .impact-panel h3 {
+            font-size: clamp(2rem, 2.4vw, 2.6rem);
+            line-height: 1.2;
+            margin-bottom: 12px;
+        }
+        .impact-panel p {
+            color: #dbeafe;
+            margin-bottom: 20px;
+        }
+        .impact-tags {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .impact-tags span {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.14);
+            color: #fff;
+            padding: 10px 14px;
+            border-radius: 999px;
+            font-weight: 700;
+        }
+        .impact-points {
+            list-style: none;
+            display: grid;
+            gap: 14px;
+        }
+        .impact-points li {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            padding: 14px 16px;
+            border-radius: 16px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .impact-number {
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--primary-red), #ef4444);
+            color: #fff;
+            display: grid;
+            place-items: center;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+        .impact-points strong { display: block; margin-bottom: 4px; }
+        .impact-points span { color: #dbeafe; font-size: 0.9rem; }
 
-        .quote-banner-section { padding-bottom: 90px; }
-        .quote-card {
-            background: linear-gradient(135deg, rgba(15,23,42,.95), rgba(30,41,59,.96)); color:#fff; border-radius: 28px; padding: 60px 40px; text-align:center;
-            box-shadow: 0 24px 50px rgba(15,23,42,.12);
+        .forum-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            background: rgba(255,255,255,0.76);
+            border: 1px solid var(--border);
+            border-radius: 26px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
         }
-        .quote-card h2 { font-size: clamp(1.8rem,2vw,2.4rem); max-width: 780px; margin: 0 auto 14px; line-height:1.35; }
-        .quote-card p { color: #fecaca; font-weight:700; }
+        .forum-image {
+            min-height: 300px;
+            background: linear-gradient(135deg, #fef2f2, #f0fdf4);
+        }
+        .forum-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .forum-copy {
+            padding: 36px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .price-badge {
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            padding: 8px 16px;
+            border-radius: 999px;
+            background: #ecfdf5;
+            color: #166534;
+            font-weight: 800;
+            border: 1px solid rgba(34,197,94,0.18);
+            margin-bottom: 18px;
+        }
+        .forum-copy h3 {
+            font-size: clamp(2rem, 3vw, 2.6rem);
+            color: var(--navy-deep);
+            line-height: 1.15;
+            letter-spacing: -0.04em;
+            margin-bottom: 12px;
+        }
+        .forum-copy p {
+            margin-bottom: 18px;
+            color: var(--slate-text);
+        }
+        .forum-list {
+            list-style: none;
+            display: grid;
+            gap: 10px;
+            margin-bottom: 24px;
+        }
+        .forum-list li {
+            position: relative;
+            padding-left: 18px;
+            color: var(--slate-text);
+        }
+        .forum-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary-red);
+            font-weight: 800;
+        }
+        .forum-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+        .quote-banner {
+            padding: 0 0 90px;
+        }
+        .quote-box {
+            background: linear-gradient(135deg, rgba(15,23,42,0.96), rgba(31,45,61,0.96));
+            border-radius: 28px;
+            padding: 52px 34px;
+            color: #fff;
+            text-align: center;
+            box-shadow: 0 20px 45px rgba(15,23,42,0.12);
+        }
+        .quote-box h2 {
+            font-size: clamp(1.8rem, 2.6vw, 2.6rem);
+            max-width: 800px;
+            margin: 0 auto 12px;
+            line-height: 1.35;
+            letter-spacing: -0.03em;
+        }
+        .quote-box p {
+            color: #fca5a5;
+            font-weight: 700;
+        }
 
         .site-footer {
-            background: rgba(15,23,42,.92); color: #cbd5e1; padding: 60px 0 30px; border-top: 1px solid rgba(255,255,255,.08);
+            background: rgba(15,23,42,0.96);
+            color: #cbd5e1;
+            padding: 60px 0 28px;
+            border-top: 1px solid rgba(255,255,255,0.08);
         }
-        .footer-grid { display:grid; grid-template-columns: 2fr 1fr 1fr; gap:40px; padding-bottom: 32px; border-bottom:1px solid rgba(255,255,255,.08); }
-        .footer-brand h3 { color:#fff; font-size:1.15rem; margin: 10px 0 12px; }
-        .footer-brand p, .footer-col p { color:#cbd5e1; font-size: .92rem; }
-        .footer-col h4 { color:#fff; font-size:1rem; margin-bottom:12px; }
-        .footer-links { list-style:none; }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 36px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .footer-brand h3 {
+            margin: 12px 0 10px;
+            color: #fff;
+            font-size: 1.1rem;
+        }
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+        .footer-links { list-style: none; }
         .footer-links li { margin-bottom: 10px; }
-        .footer-links a { color:#cbd5e1; font-size: .9rem; }
-        .footer-links a:hover { color:#fff; }
-        .footer-bottom { padding-top: 20px; font-size: .86rem; text-align:center; color:#94a3b8; }
+        .footer-links a { color: #cbd5e1; }
+        .footer-bottom {
+            padding-top: 22px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
 
         @media (max-width: 900px) {
-            .hero-grid, .founders-card, .donation-spotlight, .footer-grid { grid-template-columns: 1fr; }
-            .header-flex { align-items:flex-start; gap: 16px; flex-direction:column; }
-            .main-nav { flex-wrap:wrap; }
-            .hero-img { height: 320px; }
+            .hero-grid, .story-card, .impact-grid, .forum-card, .footer-grid { grid-template-columns: 1fr; }
+            .header-flex { flex-direction: column; align-items: flex-start; padding: 12px 0; }
+            .main-nav { gap: 14px; }
+            .hero-image-card img { height: 350px; }
         }
 
         @media (max-width: 640px) {
-            .main-nav { gap: 14px; }
-            .stat-card { border-right:none; border-bottom:1px solid rgba(148,163,184,.12); }
-            .donation-actions { justify-content:flex-start; }
-            .top-bar { font-size: .8rem; }
-            .hero-section { padding-top: 60px; }
+            .hero-section { padding-top: 64px; }
+            .story-copy { padding: 28px 22px; }
+            .impact-panel { padding: 28px 20px; }
+            .forum-copy { padding: 28px 22px; }
+            .top-bar { font-size: 0.78rem; }
         }
     </style>
 </head>
@@ -219,9 +594,9 @@
         <div class="container top-bar-flex">
             <div>
                 <span class="emergency-badge">Urgent Care</span>
-                <span>In a sickle cell crisis, keep warm, hydrate, and seek medical support immediately.</span>
+                <span>When a crisis hits, stay warm, stay hydrated, and seek medical help immediately.</span>
             </div>
-            <div class="top-bar-partner">Clinical partner: <strong>Afya Medicare</strong></div>
+            <div>Compassionate support for every family</div>
         </div>
     </div>
 
@@ -245,15 +620,21 @@
         <div class="container hero-grid">
             <div class="hero-content">
                 <span class="hero-tag">AFYA • Care • Hope • Action</span>
-                <h1>Supporting every <span>sickle cell warrior</span> with dignity, care, and opportunity.</h1>
-                <p class="hero-lead">AFYA Sickle Cell Foundation is building a stronger, healthier future for families across Uganda through clinical support, awareness, advocacy, and direct community care.</p>
+                <h1>Every child deserves to <span>breathe easy</span> and dream big.</h1>
+                <p class="hero-lead">AFYA Sickle Cell Foundation stands with families across Uganda, offering practical care, emotional support, knowledge, and a community that never gives up on a child’s future.</p>
                 <div class="hero-actions">
-                    <a href="donate.html" class="btn btn-primary">Donate Now</a>
-                    <a href="programs.html" class="btn btn-outline-light">Explore Programs</a>
+                    <a href="donate.html" class="btn btn-primary">Support a Warrior</a>
+                    <a href="programs.html" class="btn btn-light">Explore Programs</a>
                 </div>
             </div>
-            <div>
-                <img src="assets/hero-image.jpg" alt="AFYA warrior support" class="hero-img">
+            <div class="hero-visual">
+                <div class="hero-image-card">
+                    <img src="assets/hero-warrior.jpg" alt="Sickle cell warrior support">
+                </div>
+                <div class="floating-message">
+                    <strong>Because every day matters</strong>
+                    We make care visible, affordable, and deeply human.
+                </div>
             </div>
         </div>
     </section>
@@ -263,106 +644,160 @@
             <div class="stats-grid">
                 <div class="stat-card">
                     <span class="stat-number">1,000+</span>
-                    <span class="stat-label">Warriors Supported</span>
+                    <span class="stat-label">Warriors supported</span>
                 </div>
                 <div class="stat-card">
                     <span class="stat-number">24/7</span>
-                    <span class="stat-label">Clinical Guidance</span>
+                    <span class="stat-label">Care guidance</span>
                 </div>
                 <div class="stat-card">
                     <span class="stat-number">40+</span>
-                    <span class="stat-label">Community Outreach Sessions</span>
+                    <span class="stat-label">Outreach sessions</span>
                 </div>
                 <div class="stat-card">
                     <span class="stat-number">100%</span>
-                    <span class="stat-label">Compassion-Driven Care</span>
+                    <span class="stat-label">Compassion-led care</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="founders-section">
+    <section class="story-section">
         <div class="container">
-            <div class="section-title-wrap">
-                <span class="sub-tag">Our Story</span>
-                <h2>Rooted in love, built for lasting impact.</h2>
+            <div class="section-head">
+                <span class="section-tag">Our Story</span>
+                <h2>Rooted in love, shaped by resilience.</h2>
             </div>
-            <div class="founders-card">
-                <div>
-                    <img src="assets/founders.jpg" alt="AFYA founder portrait" class="founders-img">
-                </div>
-                <div class="founders-text-wrap">
-                    <p>AFYA began with a personal journey of love, worry, and determination. When founder <strong>Nanyonjo Noeline</strong> saw the daily struggles families face around sickle cell disease, she made a promise: no child would walk this road alone.</p>
-                    <p>From clinic guidance and early screening to school advocacy and family support, AFYA is turning pain into purpose and uncertainty into hope.</p>
-                    <p>Today, our work is powered by compassion, community trust, and collaborations with medical professionals who understand the realities of sickle cell care.</p>
-                    <div class="clinical-partner-pill">Clinical partner: Afya Medicare Clinic</div>
+            <div class="story-card">
+                <img src="assets/anabel.jpg" alt="Anabel's story">
+                <div class="story-copy">
+                    <p>AFYA began with a mother’s love and a child’s courage. What started as one family’s search for answers became a movement of hope for many families living with sickle cell disease.</p>
+                    <p>Every painful crisis, every missed school day, every sleepless night reminded us that care must be more than treatment—it must be understanding, dignity, and support that reaches the heart of the family.</p>
+                    <p>Today, AFYA exists to make sure no child feels alone, no parent feels helpless, and no dream is delayed by fear or lack of access.</p>
+                    <div class="mini-quote">“Our mission is simple: protect childhood, restore hope, and help every warrior keep living with strength.”</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="pillars-section">
+    <section class="programs-section">
         <div class="container">
-            <div class="section-title-wrap">
-                <span class="sub-tag">What we do</span>
-                <h2>Care, education, and community support in one mission.</h2>
+            <div class="section-head">
+                <span class="section-tag">What We Do</span>
+                <h2>Care, awareness, and action in one mission.</h2>
             </div>
             <div class="pillars-grid">
                 <article class="pillar-card">
-                    <div class="card-img-container">
-                        <img src="assets/clinical-care.jpg" alt="Routine medical support" class="card-img">
+                    <div class="card-img-wrap">
+                        <img src="assets/clinical-care.jpg" alt="Clinical care">
                     </div>
-                    <div class="card-body">
-                        <span class="pillar-num">01</span>
-                        <h3>Clinical Care</h3>
-                        <p>Routine reviews, monitoring, and guidance that reduce crisis frequency and improve long-term health outcomes.</p>
+                    <div class="pillar-body">
+                        <span class="pillar-index">01 • Clinical Care</span>
+                        <h3>Routine monitoring</h3>
+                        <p>We support regular health reviews and practical guidance that reduce crisis frequency and strengthen family confidence.</p>
                         <a href="programs.html" class="card-link">Learn more →</a>
                     </div>
                 </article>
-
                 <article class="pillar-card">
-                    <div class="card-img-container">
-                        <img src="assets/community-outreach.jpg" alt="Community outreach" class="card-img">
+                    <div class="card-img-wrap">
+                        <img src="assets/community-outreach.jpg" alt="Awareness outreach">
                     </div>
-                    <div class="card-body">
-                        <span class="pillar-num">02</span>
-                        <h3>Awareness & Screening</h3>
-                        <p>School and community outreach that breaks stigma, supports testing, and empowers families with knowledge.</p>
+                    <div class="pillar-body">
+                        <span class="pillar-index">02 • Awareness</span>
+                        <h3>Screening & education</h3>
+                        <p>Through schools and communities, we share knowledge that reduces fear, stigma, and late diagnosis.</p>
                         <a href="programs.html" class="card-link">Learn more →</a>
                     </div>
                 </article>
-
                 <article class="pillar-card">
-                    <div class="card-img-container">
-                        <img src="assets/parent-circle.jpg" alt="Parent support group" class="card-img">
+                    <div class="card-img-wrap">
+                        <img src="assets/parent-circle.jpg" alt="Family support">
                     </div>
-                    <div class="card-body">
-                        <span class="pillar-num">03</span>
-                        <h3>Warrior Support</h3>
-                        <p>Safe spaces for families and young warriors to connect, heal, and grow with confidence, support, and practical guidance.</p>
+                    <div class="pillar-body">
+                        <span class="pillar-index">03 • Family Support</span>
+                        <h3>Community & hope</h3>
+                        <p>We build safe spaces where families can share, learn, and find emotional encouragement through each stage of care.</p>
                         <a href="stories.html" class="card-link">Learn more →</a>
                     </div>
                 </article>
             </div>
+        </div>
+    </section>
 
-            <div class="donation-spotlight">
-                <div>
-                    <h3>Help us keep care accessible.</h3>
-                    <p>Your support helps fund routine screening, family resources, education, and urgent support for sickle cell warriors across Uganda.</p>
-                </div>
-                <div class="donation-actions">
-                    <span class="donation-chip">Medical Support</span>
-                    <span class="donation-chip">Screening</span>
-                    <span class="donation-chip">Family Care</span>
-                    <a href="donate.html" class="btn btn-primary">Donate Now</a>
+    <section class="impact-section">
+        <div class="container">
+            <div class="impact-panel">
+                <div class="impact-grid">
+                    <div>
+                        <span class="section-tag" style="background: rgba(255,255,255,0.08); color: #fecdd3;">Why it matters</span>
+                        <h3>Because a child’s smile is worth protecting.</h3>
+                        <p>Behind every treatment plan are families trying to keep their children safe, hopeful, and alive. AFYA exists to lift that burden with real, practical support.</p>
+                        <div class="impact-tags">
+                            <span>Hydration</span>
+                            <span>Awareness</span>
+                            <span>Screening</span>
+                            <span>Compassion</span>
+                        </div>
+                    </div>
+                    <ul class="impact-points">
+                        <li>
+                            <div class="impact-number">1</div>
+                            <div>
+                                <strong>Early care</strong>
+                                <span>Helps prevent crises and reduces fear for families.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="impact-number">2</div>
+                            <div>
+                                <strong>Local support</strong>
+                                <span>Strengthens the community around each warrior.</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="impact-number">3</div>
+                            <div>
+                                <strong>Long-term hope</strong>
+                                <span>Helps children stay in school, active, and full of possibilities.</span>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="quote-banner-section">
+    <section class="forum-section">
         <div class="container">
-            <div class="quote-card">
+            <div class="section-head">
+                <span class="section-tag">Affordable access</span>
+                <h2>Hydroxyurea support for a healthier tomorrow.</h2>
+            </div>
+            <div class="forum-card">
+                <div class="forum-image">
+                    <img src="assets/warrior-grace.jpg" alt="Hydroxyurea support and hope">
+                </div>
+                <div class="forum-copy">
+                    <span class="price-badge">UGX 10,000 Access Support</span>
+                    <h3>Helping families buy Hydroxyurea with dignity and hope.</h3>
+                    <p>For many families, the challenge isn’t only the illness—it’s the cost of continuing treatment. We believe every child deserves access to the medicine that helps reduce pain crises and protect a better future.</p>
+                    <ul class="forum-list">
+                        <li>Affordable treatment support for families in need.</li>
+                        <li>Simple guidance and compassionate follow-up.</li>
+                        <li>Built around care, not fear or shame.</li>
+                    </ul>
+                    <div class="forum-actions">
+                        <a href="donate.html" class="btn btn-primary">Buy or Support</a>
+                        <a href="contact.html" class="btn btn-light" style="color: var(--navy-deep); border-color: rgba(15,23,42,0.12); background: rgba(15,23,42,0.04);">Speak with Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quote-banner">
+        <div class="container">
+            <div class="quote-box">
                 <h2>“Sickle cell is not the end of the story. With care, knowledge, and community, every child can still dream boldly.”</h2>
                 <p>— AFYA Sickle Cell Foundation</p>
             </div>
@@ -375,7 +810,7 @@
                 <div class="footer-brand">
                     <img src="assets/logo.png" alt="AFYA logo" class="logo-img">
                     <h3>AFYA Sickle Cell Foundation</h3>
-                    <p>Empowering sickle cell warriors with compassionate care, knowledge, and practical support across Uganda.</p>
+                    <p>Transforming care through compassion, education, and community for sickle cell warriors across Uganda.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
@@ -383,14 +818,17 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html">About Founder</a></li>
                         <li><a href="programs.html">Programs</a></li>
-                        <li><a href="stories.html">Warrior Stories</a></li>
+                        <li><a href="stories.html">Stories</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Clinical Partner</h4>
-                    <p>Afya Medicare Clinic</p>
-                    <p>Routine reviews, crisis guidance, and screening support.</p>
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="contact.html">Volunteer</a></li>
+                        <li><a href="programs.html">Care Programs</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="footer-bottom">© 2026 AFYA Sickle Cell Foundation. All rights reserved.</div>
@@ -398,4 +836,3 @@
     </footer>
 </body>
 </html>
-
