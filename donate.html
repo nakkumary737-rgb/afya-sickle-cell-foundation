@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donate to AFYA | Support Sickle Cell Care</title>
+    <title>Donate to AFYA | Transform Lives with Purpose</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -22,6 +22,7 @@
             --mtn-dark: #332b00;
             --airtel-red: #e40000;
             --bank-blue: #003399;
+            --green-accent: #22c55e;
             --font-main: 'Plus Jakarta Sans', -apple-system, sans-serif;
         }
 
@@ -126,120 +127,141 @@
             overflow: hidden;
             background: linear-gradient(135deg, rgba(127, 29, 29, 0.92), rgba(15,23,42,0.96));
             color: #fff;
-            padding: 72px 0 84px;
+            padding: 80px 0 90px;
         }
         .page-hero::before {
             content: "";
             position: absolute;
-            width: 440px;
-            height: 440px;
+            width: 480px;
+            height: 480px;
             border-radius: 50%;
-            right: -120px;
-            top: -120px;
-            background: radial-gradient(circle, rgba(255,255,255,0.18), rgba(255,255,255,0));
+            right: -150px;
+            top: -150px;
+            background: radial-gradient(circle, rgba(255,255,255,0.15), rgba(255,255,255,0));
+        }
+        .page-hero::after {
+            content: "";
+            position: absolute;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            left: -80px;
+            bottom: -80px;
+            background: radial-gradient(circle, rgba(251, 146, 60, 0.12), rgba(255,255,255,0));
         }
         .page-hero .container {
             position: relative;
             z-index: 1;
         }
         .page-hero h1 {
-            font-size: clamp(2.4rem, 3.5vw, 3.6rem);
-            line-height: 1.1;
+            font-size: clamp(2.6rem, 3.8vw, 4rem);
+            line-height: 1.08;
             letter-spacing: -0.05em;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             font-weight: 800;
         }
         .page-hero p {
             color: #e2e8f0;
-            font-size: 1.1rem;
-            max-width: 760px;
+            font-size: 1.12rem;
+            max-width: 800px;
+            line-height: 1.7;
         }
 
         .donate-main {
-            padding: 82px 0 80px;
+            padding: 90px 0 90px;
         }
         .donation-layout {
             display: grid;
             grid-template-columns: 1.15fr 0.85fr;
-            gap: 30px;
+            gap: 34px;
             align-items: start;
         }
 
         .section-card {
-            background: rgba(255,255,255,0.82);
-            border: 1px solid rgba(255,255,255,0.5);
+            background: rgba(255,255,255,0.86);
+            border: 1px solid rgba(255,255,255,0.52);
             border-radius: 28px;
             box-shadow: var(--shadow-soft);
-            padding: 30px;
-            margin-bottom: 26px;
+            padding: 32px;
+            margin-bottom: 28px;
+            backdrop-filter: blur(8px);
         }
         .section-title {
-            font-size: 1.3rem;
+            font-size: 1.35rem;
             color: var(--navy-deep);
             margin-bottom: 8px;
             font-weight: 800;
+            letter-spacing: -0.02em;
         }
         .section-text {
-            font-size: 0.96rem;
+            font-size: 0.98rem;
             color: var(--slate-muted);
-            margin-bottom: 22px;
+            margin-bottom: 24px;
+            line-height: 1.65;
         }
 
         .impact-banner {
-            background: linear-gradient(135deg, rgba(15,23,42,0.96), rgba(31,45,61,0.96));
+            background: linear-gradient(135deg, rgba(15,23,42,0.96), rgba(31,45,61,0.95));
             color: #fff;
             border-radius: 28px;
-            padding: 30px;
-            box-shadow: var(--shadow-soft);
-            margin-bottom: 26px;
+            padding: 36px;
+            box-shadow: 0 24px 60px rgba(15,23,42,0.12);
+            margin-bottom: 28px;
+            border: 1px solid rgba(255,255,255,0.06);
         }
         .impact-banner h3 {
-            font-size: clamp(1.9rem, 2.5vw, 2.5rem);
-            margin-bottom: 12px;
-            line-height: 1.15;
+            font-size: clamp(2rem, 2.6vw, 2.7rem);
+            margin-bottom: 14px;
+            line-height: 1.12;
             letter-spacing: -0.04em;
+            font-weight: 800;
         }
         .impact-banner p {
             color: #dbeafe;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
+            font-size: 1rem;
+            line-height: 1.7;
         }
         .impact-tags {
             display: flex;
-            gap: 10px;
+            gap: 11px;
             flex-wrap: wrap;
         }
         .impact-tags span {
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.14);
+            background: rgba(255,255,255,0.09);
+            border: 1px solid rgba(255,255,255,0.15);
             color: #fff;
             font-weight: 700;
             border-radius: 999px;
-            padding: 9px 14px;
+            padding: 10px 15px;
+            font-size: 0.88rem;
         }
 
         .donation-choices {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 16px;
+            gap: 18px;
+            margin-bottom: 24px;
         }
         .pay-card {
-            border-radius: 20px;
-            padding: 20px;
+            border-radius: 22px;
+            padding: 22px;
             border-left: 6px solid transparent;
             border: 1px solid rgba(15,23,42,0.08);
-            background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(255,255,255,0.9));
+            background: linear-gradient(135deg, rgba(255,255,255,0.82), rgba(255,255,255,0.92));
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 8px 24px rgba(15,23,42,0.04);
         }
         .pay-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 16px 26px rgba(15,23,42,0.07);
+            transform: translateY(-6px);
+            box-shadow: 0 18px 36px rgba(15,23,42,0.08);
         }
         .pay-card.mtn {
-            background: linear-gradient(135deg, #fffdf0, #fff7cc);
+            background: linear-gradient(135deg, #fffef5, #fff9d9);
             border-left-color: var(--mtn-yellow);
         }
         .pay-card.airtel {
-            background: linear-gradient(135deg, #fff5f5, #ffe6e6);
+            background: linear-gradient(135deg, #fff6f6, #ffebeb);
             border-left-color: var(--airtel-red);
         }
         .pay-header {
@@ -247,10 +269,10 @@
             align-items: center;
             justify-content: space-between;
             gap: 10px;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
         .provider-name {
-            font-size: 1rem;
+            font-size: 1.05rem;
             font-weight: 800;
             color: var(--navy-deep);
         }
@@ -258,7 +280,7 @@
             font-size: 0.68rem;
             font-weight: 800;
             border-radius: 8px;
-            padding: 4px 7px;
+            padding: 4px 8px;
             text-transform: uppercase;
         }
         .mtn .provider-badge {
@@ -271,202 +293,301 @@
         }
         .code-label {
             font-size: 0.72rem;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
             color: var(--slate-muted);
             font-weight: 800;
-            margin-bottom: 3px;
+            margin-bottom: 4px;
         }
         .detail-box {
-            background: rgba(255,255,255,0.7);
-            border: 1px solid rgba(15,23,42,0.06);
-            border-radius: 12px;
-            padding: 10px 12px;
+            background: rgba(255,255,255,0.75);
+            border: 1px solid rgba(15,23,42,0.08);
+            border-radius: 14px;
+            padding: 12px 14px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 8px;
+            gap: 10px;
         }
         .detail-value {
             font-weight: 800;
             color: var(--navy-deep);
             letter-spacing: 0.04em;
             font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+            font-size: 0.96rem;
         }
         .copy-btn {
             border: none;
             border-radius: 8px;
-            background: rgba(215, 38, 56, 0.08);
+            background: rgba(215, 38, 56, 0.1);
             color: var(--dark-red);
             font-weight: 800;
-            padding: 6px 8px;
+            padding: 6px 10px;
             cursor: pointer;
+            font-size: 0.78rem;
+            transition: background 0.2s ease;
+        }
+        .copy-btn:hover {
+            background: rgba(215, 38, 56, 0.2);
         }
         .account-name {
-            margin-top: 10px;
+            margin-top: 11px;
             font-size: 0.8rem;
             color: var(--slate-muted);
         }
-        .account-name strong { color: var(--navy-deep); }
+        .account-name strong { 
+            color: var(--navy-deep);
+            display: block;
+            margin-top: 2px;
+        }
 
         .bank-card {
             border: 1px solid rgba(15,23,42,0.08);
             border-left: 5px solid var(--bank-blue);
-            background: linear-gradient(135deg, #f8fafc, #edf2f7);
-            border-radius: 20px;
-            padding: 22px;
+            background: linear-gradient(135deg, #f8fafc, #eef2f7);
+            border-radius: 22px;
+            padding: 24px;
+            box-shadow: 0 8px 24px rgba(15,23,42,0.04);
         }
         .bank-grid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 14px;
-            margin-top: 12px;
+            margin-top: 14px;
         }
         .bank-item {
-            background: rgba(255,255,255,0.8);
+            background: rgba(255,255,255,0.85);
             border: 1px solid rgba(15,23,42,0.06);
-            border-radius: 12px;
-            padding: 10px 12px;
+            border-radius: 14px;
+            padding: 12px 14px;
         }
         .bank-item.full { grid-column: 1 / -1; }
         .bank-item strong {
             display: block;
             color: var(--navy-deep);
             font-size: 0.96rem;
+            margin-top: 4px;
         }
 
         .stepper {
             list-style: none;
             display: grid;
-            gap: 16px;
+            gap: 18px;
+            margin-top: 18px;
         }
         .step-item {
             display: flex;
             align-items: flex-start;
-            gap: 14px;
+            gap: 16px;
         }
         .step-num {
-            width: 28px;
-            height: 28px;
+            width: 32px;
+            height: 32px;
             display: grid;
             place-items: center;
-            border-radius: 50%;
-            background: var(--navy-deep);
+            border-radius: 999px;
+            background: linear-gradient(135deg, var(--primary-red), #ef4444);
             color: #fff;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: 800;
             flex-shrink: 0;
+            box-shadow: 0 8px 20px rgba(215,38,56,0.2);
         }
         .step-text {
             color: var(--slate-text);
-            font-size: 0.94rem;
+            font-size: 0.96rem;
+            padding-top: 4px;
         }
         .step-text code {
-            background: rgba(148, 163, 184, 0.12);
+            background: rgba(148, 163, 184, 0.14);
             color: var(--navy-deep);
-            padding: 2px 6px;
+            padding: 3px 7px;
             border-radius: 6px;
             font-weight: 800;
         }
 
         .support-box {
-            background: rgba(255,255,255,0.8);
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 26px;
+            background: rgba(255,255,255,0.84);
+            border: 1px solid rgba(255,255,255,0.48);
+            border-radius: 28px;
+            padding: 28px;
             box-shadow: var(--shadow-soft);
-            margin-bottom: 20px;
+            margin-bottom: 22px;
+            backdrop-filter: blur(8px);
         }
         .support-list {
             list-style: none;
             display: grid;
-            gap: 14px;
+            gap: 16px;
         }
         .support-list li {
             display: flex;
-            gap: 14px;
+            gap: 16px;
             align-items: flex-start;
+            padding: 16px;
+            border-radius: 16px;
+            background: rgba(255,255,255,0.4);
+            border: 1px solid rgba(15,23,42,0.04);
         }
         .support-number {
-            width: 36px;
-            height: 36px;
+            width: 40px;
+            height: 40px;
             display: grid;
             place-items: center;
-            border-radius: 12px;
+            border-radius: 14px;
             background: linear-gradient(135deg, var(--primary-red), #ef4444);
             color: #fff;
             font-weight: 800;
             flex-shrink: 0;
+            box-shadow: 0 8px 20px rgba(215,38,56,0.18);
         }
         .support-list strong {
             display: block;
             color: var(--navy-deep);
-            margin-bottom: 4px;
+            margin-bottom: 3px;
+            font-size: 0.96rem;
         }
         .support-list span {
             color: var(--slate-muted);
             font-size: 0.88rem;
+            line-height: 1.6;
         }
 
         .visit-box {
-            background: linear-gradient(135deg, rgba(34, 197, 94, 0.08), rgba(34, 197, 94, 0.04));
-            border: 1.5px solid rgba(34, 197, 94, 0.2);
-            border-radius: 24px;
-            padding: 24px;
-            box-shadow: var(--shadow-soft);
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.12), rgba(34, 197, 94, 0.06));
+            border: 1.5px solid rgba(34, 197, 94, 0.25);
+            border-radius: 28px;
+            padding: 28px;
+            box-shadow: 0 12px 32px rgba(34, 197, 94, 0.08);
+            margin-bottom: 22px;
+            backdrop-filter: blur(8px);
         }
         .visit-icon {
-            font-size: 2.4rem;
-            margin-bottom: 12px;
+            font-size: 2.8rem;
+            margin-bottom: 14px;
         }
         .visit-box h3 {
             color: var(--navy-deep);
             margin-bottom: 8px;
             font-weight: 800;
+            font-size: 1.25rem;
         }
         .visit-box p {
             color: var(--slate-text);
-            margin-bottom: 12px;
+            margin-bottom: 14px;
+            font-size: 0.96rem;
+            line-height: 1.7;
         }
         .location-address {
-            background: rgba(34, 197, 94, 0.1);
-            border-left: 3px solid #22c55e;
-            border-radius: 8px;
-            padding: 12px;
-            margin: 16px 0;
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.08), rgba(34, 197, 94, 0.04));
+            border-left: 4px solid var(--green-accent);
+            border-radius: 10px;
+            padding: 14px 16px;
+            margin: 18px 0;
         }
         .location-address strong {
             display: block;
             color: var(--navy-deep);
             margin-bottom: 4px;
+            font-weight: 800;
         }
         .location-address span {
             color: var(--slate-text);
             font-size: 0.92rem;
+            line-height: 1.6;
+        }
+        .visit-items {
+            list-style: none;
+            display: grid;
+            gap: 10px;
+            margin: 18px 0;
+            font-size: 0.92rem;
+        }
+        .visit-items li {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+            color: var(--slate-text);
+        }
+        .visit-items li::before {
+            content: "✓";
+            color: var(--green-accent);
+            font-weight: 800;
+            flex-shrink: 0;
+            margin-top: 2px;
         }
         .visit-cta {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 12px 20px;
+            padding: 14px 24px;
             background: linear-gradient(135deg, var(--primary-red), #ef4444);
             color: #fff;
             border-radius: 999px;
             font-weight: 700;
             text-decoration: none;
-            transition: transform 0.2s ease;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 12px 28px rgba(215,38,56,0.2);
+            font-size: 0.96rem;
         }
-        .visit-cta:hover { transform: translateY(-2px); }
+        .visit-cta:hover { 
+            transform: translateY(-3px);
+            box-shadow: 0 16px 36px rgba(215,38,56,0.28);
+        }
+
+        .donor-testimonials {
+            background: rgba(15,23,42,0.04);
+            border: 1px solid var(--border);
+            border-radius: 28px;
+            padding: 28px;
+            margin-bottom: 22px;
+        }
+        .testimonials-head {
+            margin-bottom: 18px;
+        }
+        .testimonials-head h4 {
+            color: var(--navy-deep);
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 14px;
+        }
+        .testimonial-card {
+            background: rgba(255,255,255,0.8);
+            border: 1px solid rgba(15,23,42,0.06);
+            border-radius: 14px;
+            padding: 14px;
+            text-align: center;
+        }
+        .testimonial-stat {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--primary-red);
+        }
+        .testimonial-label {
+            font-size: 0.8rem;
+            color: var(--slate-muted);
+            margin-top: 4px;
+        }
 
         .contact-list {
             list-style: none;
             display: grid;
-            gap: 10px;
+            gap: 12px;
             color: var(--slate-text);
+            font-size: 0.94rem;
         }
         .contact-list a {
             color: var(--dark-red);
             font-weight: 800;
+            text-decoration: none;
+        }
+        .contact-list a:hover {
+            text-decoration: underline;
         }
 
         .site-footer {
@@ -495,6 +616,7 @@
         .footer-links { list-style: none; }
         .footer-links li { margin-bottom: 10px; }
         .footer-links a { color: #cbd5e1; }
+        .footer-links a:hover { color: #fff; }
         .footer-bottom {
             padding-top: 22px;
             text-align: center;
@@ -503,15 +625,16 @@
         }
 
         @media (max-width: 900px) {
-            .donation-layout, .donation-choices, .bank-grid, .footer-grid { grid-template-columns: 1fr; }
+            .donation-layout, .donation-choices, .bank-grid, .footer-grid, .testimonials-grid { grid-template-columns: 1fr; }
             .header-flex { flex-direction: column; align-items: flex-start; padding: 12px 0; }
             .main-nav { gap: 14px; }
         }
 
         @media (max-width: 640px) {
-            .section-card, .support-box, .visit-box, .impact-banner { padding: 22px 18px; }
+            .section-card, .support-box, .visit-box, .impact-banner, .donor-testimonials { padding: 22px 18px; }
             .top-bar { font-size: 0.78rem; }
             .page-hero { padding-top: 58px; }
+            .section-title { font-size: 1.2rem; }
         }
     </style>
 </head>
@@ -544,8 +667,8 @@
 
     <section class="page-hero">
         <div class="container">
-            <h1>Support real care. Restore hope.</h1>
-            <p>Your generosity helps families access screening, clinical guidance, treatment support, and the kind of compassionate care that makes healing possible.</p>
+            <h1>Transform Lives with Purpose.</h1>
+            <p>Every gift creates ripples of hope. Your generosity funds routine screening, clinical guidance, treatment support, and the compassionate care that helps sickle cell families thrive.</p>
         </div>
     </section>
 
@@ -553,50 +676,54 @@
         <div class="container donation-layout">
             <div>
                 <div class="impact-banner">
-                    <h3>Be part of something that changes lives.</h3>
-                    <p>When you give to AFYA, you are helping families stay informed, prepared, supported, and connected to care when it matters most.</p>
+                    <h3>Be part of a movement that restores hope.</h3>
+                    <p>When you contribute to AFYA, you're not just giving money—you're partnering with a community committed to making sure every child feels supported, every family feels heard, and every dream stays alive.</p>
                     <div class="impact-tags">
-                        <span>Screening</span>
-                        <span>Clinical support</span>
-                        <span>Family education</span>
-                        <span>Hydroxyurea aid</span>
+                        <span>✓ Routine Screening</span>
+                        <span>✓ Clinical Care</span>
+                        <span>✓ Family Education</span>
+                        <span>✓ Treatment Access</span>
                     </div>
                 </div>
 
                 <div class="section-card">
-                    <h2 class="section-title">Make a direct contribution</h2>
-                    <p class="section-text">Choose the option that works best for you. Every gift helps reduce the burden on families and moves us closer to consistent care access.</p>
+                    <h2 class="section-title">🌍 Donate in Your Currency</h2>
+                    <p class="section-text">Quick, secure, and seamless. Choose the payment method that works best for you. Every contribution, regardless of size, makes a meaningful difference.</p>
 
                     <div class="donation-choices">
                         <div class="pay-card mtn">
                             <div class="pay-header">
                                 <span class="provider-name">MTN MoMo</span>
-                                <span class="provider-badge">MoMoPay</span>
+                                <span class="provider-badge">Instant Pay</span>
                             </div>
                             <div class="code-label">Merchant Code</div>
                             <div class="detail-box">
                                 <span class="detail-value" id="mtn-code">629104</span>
                                 <button class="copy-btn" onclick="copyText('mtn-code')">Copy</button>
                             </div>
-                            <div class="account-name">Account Name: <strong>AFYA Sickle Cell Foundation</strong></div>
+                            <div class="account-name">
+                                <strong>AFYA Sickle Cell Foundation</strong>
+                            </div>
                         </div>
 
                         <div class="pay-card airtel">
                             <div class="pay-header">
                                 <span class="provider-name">Airtel Money</span>
-                                <span class="provider-badge">Airtel Pay</span>
+                                <span class="provider-badge">Fast & Easy</span>
                             </div>
                             <div class="code-label">Merchant Code</div>
                             <div class="detail-box">
                                 <span class="detail-value" id="airtel-code">4328901</span>
                                 <button class="copy-btn" onclick="copyText('airtel-code')">Copy</button>
                             </div>
-                            <div class="account-name">Account Name: <strong>AFYA Sickle Cell Foundation</strong></div>
+                            <div class="account-name">
+                                <strong>AFYA Sickle Cell Foundation</strong>
+                            </div>
                         </div>
                     </div>
 
-                    <div style="margin-top: 18px;">
-                        <div class="code-label">Direct line</div>
+                    <div style="margin-top: 20px;">
+                        <div class="code-label">📱 Direct Phone Line</div>
                         <div class="detail-box">
                             <span class="detail-value" id="direct-phone">+256 702 238103</span>
                             <button class="copy-btn" onclick="copyText('direct-phone')">Copy</button>
@@ -605,53 +732,53 @@
                 </div>
 
                 <div class="section-card">
-                    <h2 class="section-title">Bank transfer details</h2>
-                    <p class="section-text">For larger contributions, partnerships, or long-term support.</p>
+                    <h2 class="section-title">🏦 Bank Transfer (For Partners & Sponsors)</h2>
+                    <p class="section-text">For larger contributions, monthly commitments, or corporate partnerships. Direct transfer to our registered account.</p>
 
                     <div class="bank-card">
-                        <div class="provider-name" style="margin-bottom: 8px;">Stanbic Bank Uganda</div>
+                        <div class="provider-name" style="margin-bottom: 10px; font-size: 1.05rem;">Stanbic Bank Uganda</div>
                         <div class="bank-grid">
                             <div class="bank-item full">
                                 <div class="code-label">Account Name</div>
-                                <strong id="bank-acc-name">AFYA SICKLE CELL FOUNDATION</strong>
+                                <strong>AFYA SICKLE CELL FOUNDATION</strong>
                             </div>
                             <div class="bank-item">
                                 <div class="code-label">Account Number (UGX)</div>
-                                <strong id="bank-acc-num">9030018274610</strong>
+                                <strong>9030018274610</strong>
                             </div>
                             <div class="bank-item">
-                                <div class="code-label">Branch</div>
-                                <strong>Forest Mall Branch, Kampala</strong>
+                                <div class="code-label">Branch Code</div>
+                                <strong>Forest Mall, Kampala</strong>
                             </div>
                             <div class="bank-item">
                                 <div class="code-label">SWIFT / BIC</div>
                                 <strong>SBICUGKX</strong>
                             </div>
                             <div class="bank-item">
-                                <div class="code-label">Currency</div>
-                                <strong>UGX / USD</strong>
+                                <div class="code-label">Supported Currency</div>
+                                <strong>UGX • USD • EUR</strong>
                             </div>
                         </div>
                     </div>
 
-                    <div style="margin-top: 24px;">
-                        <h3 style="font-size: 1.1rem; color: var(--navy-deep); margin-bottom: 14px; font-weight: 800;">How to complete your gift</h3>
+                    <div style="margin-top: 26px;">
+                        <h3 style="font-size: 1.15rem; color: var(--navy-deep); margin-bottom: 16px; font-weight: 800;">⚡ 4 Simple Steps to Give</h3>
                         <ol class="stepper">
                             <li class="step-item">
                                 <span class="step-num">1</span>
-                                <span class="step-text">Dial <code>*165*3#</code> for MTN or <code>*185*9#</code> for Airtel.</span>
+                                <span class="step-text">Dial <code>*165*3#</code> (MTN) or <code>*185*9#</code> (Airtel) from your phone.</span>
                             </li>
                             <li class="step-item">
                                 <span class="step-num">2</span>
-                                <span class="step-text">Enter the relevant merchant code above and choose the amount you wish to give.</span>
+                                <span class="step-text">Enter the merchant code and select your donation amount.</span>
                             </li>
                             <li class="step-item">
                                 <span class="step-num">3</span>
-                                <span class="step-text">Confirm your Mobile Money PIN to complete the payment.</span>
+                                <span class="step-text">Confirm with your Mobile Money PIN to complete the transaction.</span>
                             </li>
                             <li class="step-item">
                                 <span class="step-num">4</span>
-                                <span class="step-text">Send us a quick WhatsApp message with your receipt so we can acknowledge your support personally.</span>
+                                <span class="step-text">Send us a WhatsApp receipt—we'll acknowledge you personally and show you the impact.</span>
                             </li>
                         </ol>
                     </div>
@@ -660,61 +787,91 @@
 
             <div>
                 <div class="support-box">
-                    <h3 class="section-title" style="font-size: 1.2rem;">Where your support goes</h3>
-                    <p class="section-text">Every contribution helps build stronger, safer futures for sickle cell families.</p>
+                    <h3 class="section-title">💪 Where Your Gift Goes</h3>
+                    <p class="section-text">Every shilling is tracked. Every impact is real. Here's exactly how we use your trust.</p>
                     <ul class="support-list">
                         <li>
                             <div class="support-number">1</div>
                             <div>
-                                <strong>Routine screening</strong>
-                                <span>Helps families identify needs early and plan better care.</span>
+                                <strong>Early Screening & Detection</strong>
+                                <span>Helps families identify needs before they become emergencies, giving children a real chance at a normal childhood.</span>
                             </div>
                         </li>
                         <li>
                             <div class="support-number">2</div>
                             <div>
-                                <strong>Clinical guidance</strong>
-                                <span>Supports checkups, monitoring, and crisis prevention support.</span>
+                                <strong>Clinical Guidance & Monitoring</strong>
+                                <span>Routine checkups, prevention plans, and crisis support that keep families confident and children healthy.</span>
                             </div>
                         </li>
                         <li>
                             <div class="support-number">3</div>
                             <div>
-                                <strong>Hydroxyurea access</strong>
-                                <span>Helps reduce pain crises and improve long-term quality of life.</span>
+                                <strong>Hydroxyurea & Treatment Access</strong>
+                                <span>Affordable medicine that reduces pain crises by up to 50% and helps kids stay in school and playing with friends.</span>
                             </div>
                         </li>
                         <li>
                             <div class="support-number">4</div>
                             <div>
-                                <strong>Parent education</strong>
-                                <span>Provides practical tools, wellness guidance, and community support.</span>
+                                <strong>Family Education & Community</strong>
+                                <span>Practical tools, emotional support, and peer networks that make families feel less alone and more powerful.</span>
                             </div>
                         </li>
                     </ul>
                 </div>
 
+                <div class="donor-testimonials">
+                    <div class="testimonials-head">
+                        <h4>🎯 Impact by Numbers</h4>
+                    </div>
+                    <div class="testimonials-grid">
+                        <div class="testimonial-card">
+                            <div class="testimonial-stat">1000+</div>
+                            <div class="testimonial-label">Warriors Supported</div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-stat">40+</div>
+                            <div class="testimonial-label">Outreach Sessions</div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-stat">24/7</div>
+                            <div class="testimonial-label">Care Guidance</div>
+                        </div>
+                        <div class="testimonial-card">
+                            <div class="testimonial-stat">100%</div>
+                            <div class="testimonial-label">Compassion-Led</div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="visit-box">
                     <div class="visit-icon">📍</div>
-                    <h3>Visit our foundation</h3>
-                    <p>See firsthand what your donation creates. Meet our team, learn about active programs, and connect with the families we serve.</p>
+                    <h3>Visit Our Foundation</h3>
+                    <p>See the work firsthand. Meet families, tour our clinic, and understand the human stories behind every donation.</p>
                     <div class="location-address">
-                        <strong>Kitende, Kajjansi</strong>
+                        <strong>📌 Kitende, Kajjansi</strong>
                         <span>Along Entebbe Road, Mwenda Stage (about 20m off Entebbe Road)</span>
                     </div>
-                    <p style="font-size: 0.9rem; color: var(--slate-muted); margin-bottom: 16px;">Open for visits and partnerships. Contact us to schedule a visit.</p>
-                    <a href="https://wa.me/256702238103" class="visit-cta" target="_blank">
-                        <span>📞 Schedule a Visit</span>
+                    <p style="font-size: 0.92rem; color: var(--slate-muted); margin-bottom: 14px;">What you'll experience during a visit:</p>
+                    <ul class="visit-items">
+                        <li>Meet the families and warriors we serve</li>
+                        <li>See our clinical partnership in action</li>
+                        <li>Understand where donations truly go</li>
+                        <li>Join our community of hope-makers</li>
+                    </ul>
+                    <a href="https://wa.me/256702238103?text=Hi%20AFYA,%20I'd%20like%20to%20schedule%20a%20visit%20to%20your%20foundation." class="visit-cta" target="_blank">
+                        📞 Schedule Your Visit
                     </a>
                 </div>
 
-                <div class="support-box" style="margin-top: 20px;">
-                    <h3 class="section-title" style="font-size: 1.2rem;">Need support or want to partner?</h3>
-                    <p class="section-text">Whether you want to donate, sponsor a child, or work with us, we would love to connect.</p>
+                <div class="support-box" style="margin-top: 22px;">
+                    <h3 class="section-title">💬 Let's Connect</h3>
+                    <p class="section-text">Have questions? Want to sponsor a child? Considering a partnership? We'd love to hear from you.</p>
                     <ul class="contact-list">
                         <li><strong>WhatsApp:</strong> <a href="https://wa.me/256702238103" target="_blank">+256 702 238103</a></li>
                         <li><strong>Email:</strong> <a href="mailto:afyasicklecellfoundation@gmail.com">afyasicklecellfoundation@gmail.com</a></li>
-                        <li><strong>Community:</strong> AFYA works across Uganda to improve access to sickle cell care.</li>
+                        <li><strong>Mission:</strong> Transforming sickle cell care across Uganda, one family at a time.</li>
                     </ul>
                 </div>
             </div>
@@ -727,7 +884,7 @@
                 <div class="footer-brand">
                     <img src="assets/logo.png" alt="AFYA logo" class="logo-img">
                     <h3>AFYA Sickle Cell Foundation</h3>
-                    <p>Creating a more informed, supportive, and hopeful future for sickle cell families across Uganda.</p>
+                    <p>Creating a more informed, supported, and hopeful future for sickle cell families across Uganda.</p>
                 </div>
                 <div class="footer-col">
                     <h4>Quick Links</h4>
@@ -740,15 +897,15 @@
                     </ul>
                 </div>
                 <div class="footer-col">
-                    <h4>Support</h4>
+                    <h4>Get Involved</h4>
                     <ul class="footer-links">
                         <li><a href="donate.html">Donate</a></li>
                         <li><a href="contact.html">Volunteer</a></li>
-                        <li><a href="programs.html">Care Programs</a></li>
+                        <li><a href="programs.html">Partner With Us</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom">© 2026 AFYA Sickle Cell Foundation. All rights reserved.</div>
+            <div class="footer-bottom">© 2026 AFYA Sickle Cell Foundation. All rights reserved. Transforming lives with compassion and care.</div>
         </div>
     </footer>
 
@@ -759,12 +916,12 @@
                 .then(() => {
                     const btn = event.target;
                     const original = btn.textContent;
-                    btn.textContent = 'Copied';
+                    btn.textContent = '✓ Copied';
                     setTimeout(() => btn.textContent = original, 1200);
                 })
                 .catch(() => {
                     const btn = event.target;
-                    btn.textContent = 'Failed';
+                    btn.textContent = '✗ Failed';
                     setTimeout(() => btn.textContent = 'Copy', 1200);
                 });
         }
