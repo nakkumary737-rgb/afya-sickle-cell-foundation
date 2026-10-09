@@ -408,6 +408,56 @@
             font-size: 0.88rem;
         }
 
+        .visit-box {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.08), rgba(34, 197, 94, 0.04));
+            border: 1.5px solid rgba(34, 197, 94, 0.2);
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: var(--shadow-soft);
+        }
+        .visit-icon {
+            font-size: 2.4rem;
+            margin-bottom: 12px;
+        }
+        .visit-box h3 {
+            color: var(--navy-deep);
+            margin-bottom: 8px;
+            font-weight: 800;
+        }
+        .visit-box p {
+            color: var(--slate-text);
+            margin-bottom: 12px;
+        }
+        .location-address {
+            background: rgba(34, 197, 94, 0.1);
+            border-left: 3px solid #22c55e;
+            border-radius: 8px;
+            padding: 12px;
+            margin: 16px 0;
+        }
+        .location-address strong {
+            display: block;
+            color: var(--navy-deep);
+            margin-bottom: 4px;
+        }
+        .location-address span {
+            color: var(--slate-text);
+            font-size: 0.92rem;
+        }
+        .visit-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 20px;
+            background: linear-gradient(135deg, var(--primary-red), #ef4444);
+            color: #fff;
+            border-radius: 999px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+        .visit-cta:hover { transform: translateY(-2px); }
+
         .contact-list {
             list-style: none;
             display: grid;
@@ -459,7 +509,7 @@
         }
 
         @media (max-width: 640px) {
-            .section-card, .support-box, .impact-banner { padding: 22px 18px; }
+            .section-card, .support-box, .visit-box, .impact-banner { padding: 22px 18px; }
             .top-bar { font-size: 0.78rem; }
             .page-hero { padding-top: 58px; }
         }
@@ -644,7 +694,21 @@
                     </ul>
                 </div>
 
-                <div class="support-box">
+                <div class="visit-box">
+                    <div class="visit-icon">📍</div>
+                    <h3>Visit our foundation</h3>
+                    <p>See firsthand what your donation creates. Meet our team, learn about active programs, and connect with the families we serve.</p>
+                    <div class="location-address">
+                        <strong>Kitende, Kajjansi</strong>
+                        <span>Along Entebbe Road, Mwenda Stage (about 20m off Entebbe Road)</span>
+                    </div>
+                    <p style="font-size: 0.9rem; color: var(--slate-muted); margin-bottom: 16px;">Open for visits and partnerships. Contact us to schedule a visit.</p>
+                    <a href="https://wa.me/256702238103" class="visit-cta" target="_blank">
+                        <span>📞 Schedule a Visit</span>
+                    </a>
+                </div>
+
+                <div class="support-box" style="margin-top: 20px;">
                     <h3 class="section-title" style="font-size: 1.2rem;">Need support or want to partner?</h3>
                     <p class="section-text">Whether you want to donate, sponsor a child, or work with us, we would love to connect.</p>
                     <ul class="contact-list">
