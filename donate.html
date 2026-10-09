@@ -3,166 +3,465 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donate to AFYA | AFYA Sickle Cell Foundation</title>
+    <title>Donate to AFYA | Support Sickle Cell Care</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-red: #C8102E;
-            --dark-red: #991B1B;
-            --navy-dark: #0F172A;
+            --primary-red: #d72638;
+            --dark-red: #9d1623;
+            --navy-deep: #0f172a;
+            --navy-soft: #1f2d3d;
             --slate-text: #334155;
-            --slate-muted: #64748B;
+            --slate-muted: #64748b;
             --bg-soft: #f8fafc;
-            --shadow-soft: 0 20px 40px -15px rgba(15, 23, 42, 0.07);
-            --font-main: 'Plus Jakarta Sans', -apple-system, sans-serif;
-            
-            /* Payment Brand Colors */
-            --mtn-yellow: #FFCC00;
-            --mtn-dark: #332B00;
-            --airtel-red: #E40000;
+            --border: rgba(148, 163, 184, 0.22);
+            --shadow-soft: 0 22px 50px rgba(15, 23, 42, 0.08);
+            --mtn-yellow: #ffcc00;
+            --mtn-dark: #332b00;
+            --airtel-red: #e40000;
             --bank-blue: #003399;
+            --font-main: 'Plus Jakarta Sans', -apple-system, sans-serif;
         }
-        * { box-sizing: border-box; margin:0; padding:0; }
-        html { scroll-behavior:smooth; }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
         body {
-            font-family: var(--font-main); color: var(--slate-text); line-height:1.6;
-            background: radial-gradient(circle at top right, #fee2e2 0%, #f8fafc 40%),
-                        radial-gradient(circle at bottom left, #e0f2fe 0%, #f8fafc 40%);
-            min-height: 100vh;
+            font-family: var(--font-main);
+            color: var(--slate-text);
+            background:
+                radial-gradient(circle at top left, rgba(255, 228, 230, 0.8), transparent 28%),
+                linear-gradient(135deg, #f8fbff 0%, #fff7fb 26%, #f8fafc 60%, #eef6ff 100%);
+            line-height: 1.7;
         }
-        a { text-decoration:none; }
-        img { max-width:100%; display:block; }
-        .container { width: min(1140px, 92%); margin: 0 auto; }
 
-        /* Top Bar */
-        .top-bar { background: var(--navy-dark); color:#fff; padding:10px 0; border-bottom:1px solid rgba(255,255,255,.1); font-size:0.88rem; }
-        .top-bar-flex { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
-        .emergency-badge { display:inline-block; background: linear-gradient(135deg, var(--primary-red), #E11D48); color:#fff; font-weight:800; font-size:0.7rem; letter-spacing:.08em; text-transform:uppercase; padding:4px 10px; border-radius:999px; margin-right:8px; }
+        a { text-decoration: none; }
+        img { max-width: 100%; display: block; }
+        .container { width: min(1160px, 90%); margin: 0 auto; }
 
-        /* Header */
+        .top-bar {
+            background: rgba(15, 23, 42, 0.94);
+            color: #fff;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+        }
+        .top-bar-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .emergency-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-red), #ef4444);
+            color: #fff;
+            border-radius: 999px;
+            padding: 4px 10px;
+            font-weight: 800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-right: 10px;
+        }
+
         .site-header {
-            position: sticky; top:0; z-index:1000; background: rgba(255,255,255,0.85); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-            border-bottom: 1px solid rgba(226, 232, 240, 0.8); box-shadow: 0 4px 20px rgba(15,23,42,.03);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.76);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+            box-shadow: 0 10px 30px rgba(15,23,42,0.04);
         }
-        .header-flex { display:flex; justify-content:space-between; align-items:center; min-height: 76px; }
-        .logo-img { max-height:48px; width:auto; }
-        .main-nav { display:flex; align-items:center; gap:24px; }
-        .nav-item { position:relative; color: var(--navy-dark); font-weight:600; font-size: 0.95rem; }
+        .header-flex {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 78px;
+            gap: 28px;
+        }
+        .logo-img { max-height: 54px; width: auto; }
+        .main-nav {
+            display: flex;
+            align-items: center;
+            gap: 26px;
+            flex-wrap: wrap;
+        }
+        .nav-item {
+            position: relative;
+            color: var(--navy-deep);
+            font-weight: 600;
+            font-size: 0.94rem;
+            transition: color 0.2s ease;
+        }
         .nav-item:hover, .nav-item.active { color: var(--primary-red); }
         .nav-item::after {
-            content:''; position:absolute; left:0; bottom:-6px; width:0; height:2px; background: var(--primary-red); transition: width .2s ease;
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -8px;
+            width: 0;
+            height: 2px;
+            background: var(--primary-red);
+            transition: width 0.2s ease;
         }
         .nav-item:hover::after, .nav-item.active::after { width: 100%; }
         .btn-nav {
-            display:inline-flex; align-items:center; justify-content:center; padding:10px 22px; background: linear-gradient(135deg, var(--primary-red), #E11D48);
-            color:#fff !important; border-radius:999px; font-weight:700; box-shadow:0 8px 20px rgba(200,16,46,.25); transition: transform 0.2s, box-shadow 0.2s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 22px;
+            background: linear-gradient(135deg, var(--primary-red), #ef4444);
+            color: #fff !important;
+            border-radius: 999px;
+            font-weight: 700;
+            box-shadow: 0 12px 26px rgba(215, 38, 56, 0.2);
         }
-        .btn-nav:hover { transform: translateY(-1px); box-shadow:0 12px 24px rgba(200,16,46,.35); }
 
-        /* Hero */
         .page-hero {
-            background: linear-gradient(135deg, #7f1d1d, #0f172a); color:#fff; text-align:center; padding:64px 0; position:relative; overflow:hidden;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(127, 29, 29, 0.92), rgba(15,23,42,0.96));
+            color: #fff;
+            padding: 72px 0 84px;
         }
         .page-hero::before {
-            content:''; position:absolute; right:-100px; top:-100px; width:350px; height:350px; border-radius:50%; background: radial-gradient(circle, rgba(225,29,72,.3), transparent 70%);
+            content: "";
+            position: absolute;
+            width: 440px;
+            height: 440px;
+            border-radius: 50%;
+            right: -120px;
+            top: -120px;
+            background: radial-gradient(circle, rgba(255,255,255,0.18), rgba(255,255,255,0));
         }
-        .page-hero h1 { position:relative; z-index:1; font-size: clamp(2rem, 3.5vw, 3.2rem); font-weight:800; margin-bottom: 12px; letter-spacing: -0.02em; }
-        .page-hero p { position:relative; z-index:1; max-width:680px; margin:0 auto; color:#cbd5e1; font-size:1.05rem; }
-
-        /* Main Section Layout */
-        .donate-section { padding: 60px 0 80px; }
-        .donation-layout { display:grid; grid-template-columns: 1.2fr 0.8fr; gap: 32px; align-items: start; }
-
-        /* Glass Cards Base */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.85); border: 1px solid rgba(255, 255, 255, 0.6);
-            border-radius: 24px; padding: 32px; box-shadow: var(--shadow-soft); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-            margin-bottom: 24px;
+        .page-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        .page-hero h1 {
+            font-size: clamp(2.4rem, 3.5vw, 3.6rem);
+            line-height: 1.1;
+            letter-spacing: -0.05em;
+            margin-bottom: 12px;
+            font-weight: 800;
+        }
+        .page-hero p {
+            color: #e2e8f0;
+            font-size: 1.1rem;
+            max-width: 760px;
         }
 
-        .section-heading { font-size: 1.4rem; font-weight:800; color: var(--navy-dark); margin-bottom: 6px; letter-spacing: -0.01em; }
-        .section-desc { font-size: 0.92rem; color: var(--slate-muted); margin-bottom: 24px; }
-
-        /* Mobile Money Grid */
-        .momo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
-        
-        .momo-card {
-            border-radius: 18px; padding: 20px; position: relative; overflow: hidden;
-            border: 1px solid rgba(0,0,0,0.06); transition: transform 0.2s;
+        .donate-main {
+            padding: 82px 0 80px;
         }
-        .momo-card:hover { transform: translateY(-2px); }
-        .momo-card.mtn { background: linear-gradient(135deg, #fffdf0, #fff7cc); border-left: 5px solid var(--mtn-yellow); }
-        .momo-card.airtel { background: linear-gradient(135deg, #fff5f5, #ffe6e6); border-left: 5px solid var(--airtel-red); }
+        .donation-layout {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 30px;
+            align-items: start;
+        }
 
-        .momo-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
-        .provider-title { font-weight: 800; font-size: 1rem; color: var(--navy-dark); }
-        .momo-badge { font-size: 0.68rem; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; }
-        .mtn .momo-badge { background: var(--mtn-yellow); color: var(--mtn-dark); }
-        .airtel .momo-badge { background: var(--airtel-red); color: #fff; }
+        .section-card {
+            background: rgba(255,255,255,0.82);
+            border: 1px solid rgba(255,255,255,0.5);
+            border-radius: 28px;
+            box-shadow: var(--shadow-soft);
+            padding: 30px;
+            margin-bottom: 26px;
+        }
+        .section-title {
+            font-size: 1.3rem;
+            color: var(--navy-deep);
+            margin-bottom: 8px;
+            font-weight: 800;
+        }
+        .section-text {
+            font-size: 0.96rem;
+            color: var(--slate-muted);
+            margin-bottom: 22px;
+        }
 
-        .code-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--slate-muted); font-weight: 700; margin-bottom: 2px; }
-        .code-box { display: flex; align-items: center; justify-content: space-between; background: rgba(255, 255, 255, 0.7); padding: 8px 12px; border-radius: 10px; border: 1px solid rgba(0,0,0,0.05); margin-bottom: 10px; }
-        .code-value { font-family: monospace; font-size: 1.15rem; font-weight: 800; color: var(--navy-dark); letter-spacing: 0.05em; }
-        
+        .impact-banner {
+            background: linear-gradient(135deg, rgba(15,23,42,0.96), rgba(31,45,61,0.96));
+            color: #fff;
+            border-radius: 28px;
+            padding: 30px;
+            box-shadow: var(--shadow-soft);
+            margin-bottom: 26px;
+        }
+        .impact-banner h3 {
+            font-size: clamp(1.9rem, 2.5vw, 2.5rem);
+            margin-bottom: 12px;
+            line-height: 1.15;
+            letter-spacing: -0.04em;
+        }
+        .impact-banner p {
+            color: #dbeafe;
+            margin-bottom: 20px;
+        }
+        .impact-tags {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .impact-tags span {
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.14);
+            color: #fff;
+            font-weight: 700;
+            border-radius: 999px;
+            padding: 9px 14px;
+        }
+
+        .donation-choices {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+        .pay-card {
+            border-radius: 20px;
+            padding: 20px;
+            border-left: 6px solid transparent;
+            border: 1px solid rgba(15,23,42,0.08);
+            background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(255,255,255,0.9));
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .pay-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 26px rgba(15,23,42,0.07);
+        }
+        .pay-card.mtn {
+            background: linear-gradient(135deg, #fffdf0, #fff7cc);
+            border-left-color: var(--mtn-yellow);
+        }
+        .pay-card.airtel {
+            background: linear-gradient(135deg, #fff5f5, #ffe6e6);
+            border-left-color: var(--airtel-red);
+        }
+        .pay-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .provider-name {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--navy-deep);
+        }
+        .provider-badge {
+            font-size: 0.68rem;
+            font-weight: 800;
+            border-radius: 8px;
+            padding: 4px 7px;
+            text-transform: uppercase;
+        }
+        .mtn .provider-badge {
+            background: var(--mtn-yellow);
+            color: var(--mtn-dark);
+        }
+        .airtel .provider-badge {
+            background: var(--airtel-red);
+            color: #fff;
+        }
+        .code-label {
+            font-size: 0.72rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--slate-muted);
+            font-weight: 800;
+            margin-bottom: 3px;
+        }
+        .detail-box {
+            background: rgba(255,255,255,0.7);
+            border: 1px solid rgba(15,23,42,0.06);
+            border-radius: 12px;
+            padding: 10px 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+        }
+        .detail-value {
+            font-weight: 800;
+            color: var(--navy-deep);
+            letter-spacing: 0.04em;
+            font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        }
         .copy-btn {
-            background: none; border: none; color: var(--primary-red); font-size: 0.75rem; font-weight: 700; cursor: pointer;
-            padding: 4px 8px; border-radius: 6px; transition: background 0.2s;
+            border: none;
+            border-radius: 8px;
+            background: rgba(215, 38, 56, 0.08);
+            color: var(--dark-red);
+            font-weight: 800;
+            padding: 6px 8px;
+            cursor: pointer;
         }
-        .copy-btn:hover { background: rgba(200,16,46,0.1); }
+        .account-name {
+            margin-top: 10px;
+            font-size: 0.8rem;
+            color: var(--slate-muted);
+        }
+        .account-name strong { color: var(--navy-deep); }
 
-        .acc-name { font-size: 0.8rem; color: var(--slate-muted); }
-        .acc-name strong { color: var(--navy-dark); display: block; }
-
-        /* Bank Wire Card */
         .bank-card {
-            background: linear-gradient(135deg, #f8fafc, #edf2f7); border-radius: 18px; padding: 22px;
-            border: 1px solid rgba(203, 213, 225, 0.8); border-left: 5px solid var(--bank-blue); margin-bottom: 24px;
+            border: 1px solid rgba(15,23,42,0.08);
+            border-left: 5px solid var(--bank-blue);
+            background: linear-gradient(135deg, #f8fafc, #edf2f7);
+            border-radius: 20px;
+            padding: 22px;
         }
-        .bank-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 12px; }
-        .bank-item { background: #fff; padding: 10px 14px; border-radius: 10px; border: 1px solid #e2e8f0; }
-        .bank-item.full { grid-column: span 2; }
+        .bank-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+            margin-top: 12px;
+        }
+        .bank-item {
+            background: rgba(255,255,255,0.8);
+            border: 1px solid rgba(15,23,42,0.06);
+            border-radius: 12px;
+            padding: 10px 12px;
+        }
+        .bank-item.full { grid-column: 1 / -1; }
+        .bank-item strong {
+            display: block;
+            color: var(--navy-deep);
+            font-size: 0.96rem;
+        }
 
-        /* Guide Stepper */
-        .stepper { list-style: none; display: grid; gap: 16px; margin-top: 16px; }
-        .step-item { display: flex; gap: 14px; align-items: flex-start; }
+        .stepper {
+            list-style: none;
+            display: grid;
+            gap: 16px;
+        }
+        .step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
         .step-num {
-            min-width: 28px; height: 28px; border-radius: 50%; background: var(--navy-dark); color: #fff;
-            display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 0.8rem; margin-top: 2px;
+            width: 28px;
+            height: 28px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: var(--navy-deep);
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 800;
+            flex-shrink: 0;
         }
-        .step-text { font-size: 0.9rem; color: var(--slate-text); }
-        .step-text code { background: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-weight: 700; color: var(--navy-dark); }
-
-        /* Sidebars */
-        .impact-list { list-style:none; display:grid; gap: 14px; }
-        .impact-item {
-            display:flex; gap: 14px; padding: 16px; border-radius: 16px; background: rgba(255,255,255,0.6); border:1px solid rgba(226, 232, 240, 0.8);
+        .step-text {
+            color: var(--slate-text);
+            font-size: 0.94rem;
         }
-        .impact-number {
-            min-width: 40px; height:40px; border-radius:10px; display:flex; align-items:center; justify-content:center; background: linear-gradient(135deg, var(--primary-red), #E11D48); color:#fff; font-weight:800; font-size: 0.9rem;
+        .step-text code {
+            background: rgba(148, 163, 184, 0.12);
+            color: var(--navy-deep);
+            padding: 2px 6px;
+            border-radius: 6px;
+            font-weight: 800;
         }
-        .impact-item strong { display:block; color: var(--navy-dark); font-size:0.95rem; margin-bottom: 2px; }
-        .impact-item span { font-size: 0.85rem; color: var(--slate-muted); }
 
-        .contact-list { list-style:none; display:grid; gap: 10px; font-size: 0.9rem; }
-        .contact-list a { color: var(--dark-red); font-weight:700; }
+        .support-box {
+            background: rgba(255,255,255,0.8);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 26px;
+            box-shadow: var(--shadow-soft);
+            margin-bottom: 20px;
+        }
+        .support-list {
+            list-style: none;
+            display: grid;
+            gap: 14px;
+        }
+        .support-list li {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+        .support-number {
+            width: 36px;
+            height: 36px;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary-red), #ef4444);
+            color: #fff;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+        .support-list strong {
+            display: block;
+            color: var(--navy-deep);
+            margin-bottom: 4px;
+        }
+        .support-list span {
+            color: var(--slate-muted);
+            font-size: 0.88rem;
+        }
 
-        /* Footer */
-        .site-footer { background: var(--navy-dark); color:#cbd5e1; padding:60px 0 30px; border-top:1px solid rgba(255,255,255,.08); }
-        .footer-grid { display:grid; grid-template-columns: 2fr 1fr 1fr; gap:40px; padding-bottom:32px; border-bottom:1px solid rgba(255,255,255,.08); }
-        .footer-brand h3 { color:#fff; margin:10px 0 12px; }
-        .footer-col h4 { color:#fff; margin-bottom:12px; }
-        .footer-links { list-style:none; }
-        .footer-links li { margin-bottom:8px; font-size:0.9rem; }
-        .footer-links a { color:#cbd5e1; }
-        .footer-bottom { padding-top:20px; text-align:center; color:#94a3b8; font-size: .85rem; }
+        .contact-list {
+            list-style: none;
+            display: grid;
+            gap: 10px;
+            color: var(--slate-text);
+        }
+        .contact-list a {
+            color: var(--dark-red);
+            font-weight: 800;
+        }
+
+        .site-footer {
+            background: rgba(15,23,42,0.96);
+            color: #cbd5e1;
+            padding: 60px 0 28px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 40px;
+            padding-bottom: 36px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .footer-brand h3 {
+            margin: 12px 0 10px;
+            color: #fff;
+            font-size: 1.1rem;
+        }
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 12px;
+            font-size: 1rem;
+        }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { color: #cbd5e1; }
+        .footer-bottom {
+            padding-top: 22px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #94a3b8;
+        }
 
         @media (max-width: 900px) {
-            .donation-layout, .footer-grid, .momo-grid, .bank-grid { grid-template-columns: 1fr; }
-            .bank-item.full { grid-column: span 1; }
-            .header-flex { flex-direction:column; align-items:flex-start; padding: 12px 0; }
-            .main-nav { flex-wrap:wrap; margin-top: 10px; }
+            .donation-layout, .donation-choices, .bank-grid, .footer-grid { grid-template-columns: 1fr; }
+            .header-flex { flex-direction: column; align-items: flex-start; padding: 12px 0; }
+            .main-nav { gap: 14px; }
+        }
+
+        @media (max-width: 640px) {
+            .section-card, .support-box, .impact-banner { padding: 22px 18px; }
+            .top-bar { font-size: 0.78rem; }
+            .page-hero { padding-top: 58px; }
         }
     </style>
 </head>
@@ -171,15 +470,17 @@
         <div class="container top-bar-flex">
             <div>
                 <span class="emergency-badge">Urgent Care</span>
-                <span>In a sickle cell crisis, keep warm, hydrate, and seek medical support immediately.</span>
+                <span>When a crisis hits, stay warm, stay hydrated, and seek medical help immediately.</span>
             </div>
-            <div>Clinical partner: <strong>Afya Medicare</strong></div>
+            <div>Compassionate support for every family</div>
         </div>
     </div>
 
     <header class="site-header">
         <div class="container header-flex">
-            <a href="index.html" class="brand-logo"><img src="assets/logo.png" alt="AFYA" class="logo-img"></a>
+            <a href="index.html" class="brand-logo">
+                <img src="assets/logo.png" alt="AFYA Sickle Cell Foundation" class="logo-img">
+            </a>
             <nav class="main-nav">
                 <a href="index.html" class="nav-item">Home</a>
                 <a href="about.html" class="nav-item">About Founder</a>
@@ -193,149 +494,216 @@
 
     <section class="page-hero">
         <div class="container">
-            <h1>Support Sickle Cell Warriors</h1>
-            <p>Your contributions fund routine screening, emergency crisis care, family education packs, and community outreach across Uganda.</p>
+            <h1>Support real care. Restore hope.</h1>
+            <p>Your generosity helps families access screening, clinical guidance, treatment support, and the kind of compassionate care that makes healing possible.</p>
         </div>
     </section>
 
-    <section class="donate-section">
+    <section class="donate-main">
         <div class="container donation-layout">
-            <!-- Left Column: Payment Details -->
             <div>
-                <div class="glass-card">
-                    <h2 class="section-heading">Mobile Money Giving</h2>
-                    <p class="section-desc">Donate quickly using MTN MoMo Pay or Airtel Merchant Pay channels.</p>
-
-                    <div class="momo-grid">
-                        <!-- MTN Card -->
-                        <div class="momo-card mtn">
-                            <div class="momo-header">
-                                <span class="provider-title">MTN MoMo</span>
-                                <span class="momo-badge">MoMoPay</span>
-                            </div>
-                            <div class="code-label">Merchant Code</div>
-                            <div class="code-box">
-                                <span class="code-value" id="mtn-code">629104</span>
-                                <button class="copy-btn" onclick="copyText('mtn-code')">Copy</button>
-                            </div>
-                            <div class="acc-name">Account Name: <strong>AFYA Sickle Cell Foundation</strong></div>
-                        </div>
-
-                        <!-- Airtel Card -->
-                        <div class="momo-card airtel">
-                            <div class="momo-header">
-                                <span class="provider-title">Airtel Money</span>
-                                <span class="momo-badge">Airtel Pay</span>
-                            </div>
-                            <div class="code-label">Merchant Code</div>
-                            <div class="code-box">
-                                <span class="code-value" id="airtel-code">4328901</span>
-                                <button class="copy-btn" onclick="copyText('airtel-code')">Copy</button>
-                            </div>
-                            <div class="acc-name">Account Name: <strong>AFYA Sickle Cell Foundation</strong></div>
-                        </div>
-                    </div>
-
-                    <!-- Direct Line -->
-                    <div class="code-label">Direct Line (MTN & Airtel Transfers)</div>
-                    <div class="code-box" style="margin-bottom:0;">
-                        <span class="code-value" id="direct-phone">+256 702 238103</span>
-                        <button class="copy-btn" onclick="copyText('direct-phone')">Copy Number</button>
+                <div class="impact-banner">
+                    <h3>Be part of something that changes lives.</h3>
+                    <p>When you give to AFYA, you are helping families stay informed, prepared, supported, and connected to care when it matters most.</p>
+                    <div class="impact-tags">
+                        <span>Screening</span>
+                        <span>Clinical support</span>
+                        <span>Family education</span>
+                        <span>Hydroxyurea aid</span>
                     </div>
                 </div>
 
-                <div class="glass-card">
-                    <h2 class="section-heading">Bank Transfer Details</h2>
-                    <p class="section-desc">For larger donations, wire transfers, or international contributions.</p>
+                <div class="section-card">
+                    <h2 class="section-title">Make a direct contribution</h2>
+                    <p class="section-text">Choose the option that works best for you. Every gift helps reduce the burden on families and moves us closer to consistent care access.</p>
+
+                    <div class="donation-choices">
+                        <div class="pay-card mtn">
+                            <div class="pay-header">
+                                <span class="provider-name">MTN MoMo</span>
+                                <span class="provider-badge">MoMoPay</span>
+                            </div>
+                            <div class="code-label">Merchant Code</div>
+                            <div class="detail-box">
+                                <span class="detail-value" id="mtn-code">629104</span>
+                                <button class="copy-btn" onclick="copyText('mtn-code')">Copy</button>
+                            </div>
+                            <div class="account-name">Account Name: <strong>AFYA Sickle Cell Foundation</strong></div>
+                        </div>
+
+                        <div class="pay-card airtel">
+                            <div class="pay-header">
+                                <span class="provider-name">Airtel Money</span>
+                                <span class="provider-badge">Airtel Pay</span>
+                            </div>
+                            <div class="code-label">Merchant Code</div>
+                            <div class="detail-box">
+                                <span class="detail-value" id="airtel-code">4328901</span>
+                                <button class="copy-btn" onclick="copyText('airtel-code')">Copy</button>
+                            </div>
+                            <div class="account-name">Account Name: <strong>AFYA Sickle Cell Foundation</strong></div>
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 18px;">
+                        <div class="code-label">Direct line</div>
+                        <div class="detail-box">
+                            <span class="detail-value" id="direct-phone">+256 702 238103</span>
+                            <button class="copy-btn" onclick="copyText('direct-phone')">Copy</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-card">
+                    <h2 class="section-title">Bank transfer details</h2>
+                    <p class="section-text">For larger contributions, partnerships, or long-term support.</p>
 
                     <div class="bank-card">
-                        <div class="provider-title" style="margin-bottom: 8px;">Stanbic Bank Uganda</div>
+                        <div class="provider-name" style="margin-bottom: 8px;">Stanbic Bank Uganda</div>
                         <div class="bank-grid">
                             <div class="bank-item full">
                                 <div class="code-label">Account Name</div>
-                                <div style="font-weight:700; color:var(--navy-dark);" id="bank-acc-name">AFYA SICKLE CELL FOUNDATION</div>
+                                <strong id="bank-acc-name">AFYA SICKLE CELL FOUNDATION</strong>
                             </div>
                             <div class="bank-item">
                                 <div class="code-label">Account Number (UGX)</div>
-                                <div style="font-weight:800; font-family:monospace; font-size:1.05rem;" id="bank-acc-num">9030018274610</div>
+                                <strong id="bank-acc-num">9030018274610</strong>
                             </div>
                             <div class="bank-item">
                                 <div class="code-label">Branch</div>
-                                <div style="font-weight:700; color:var(--navy-dark);">Forest Mall Branch, Kampala</div>
+                                <strong>Forest Mall Branch, Kampala</strong>
                             </div>
                             <div class="bank-item">
-                                <div class="code-label">SWIFT / BIC Code</div>
-                                <div style="font-weight:800; font-family:monospace;">SBICUGKX</div>
+                                <div class="code-label">SWIFT / BIC</div>
+                                <strong>SBICUGKX</strong>
                             </div>
                             <div class="bank-item">
                                 <div class="code-label">Currency</div>
-                                <div style="font-weight:700; color:var(--navy-dark);">UGX / USD</div>
+                                <strong>UGX / USD</strong>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Steps Instructions -->
-                    <h3 style="font-size: 1.1rem; color: var(--navy-dark); font-weight: 700; margin-top: 24px;">How to Complete Your Payment:</h3>
-                    <ol class="stepper">
-                        <li class="step-item">
-                            <span class="step-num">1</span>
-                            <span class="step-text">For MTN dial <code>*165*3#</code> or Airtel dial <code>*185*9#</code> on your phone.</span>
-                        </li>
-                        <li class="step-item">
-                            <span class="step-num">2</span>
-                            <span class="step-text">Enter the respective <strong>Merchant Code</strong> above and your chosen donation amount.</span>
-                        </li>
-                        <li class="step-item">
-                            <span class="step-num">3</span>
-                            <span class="step-text">Confirm payment with your Mobile Money PIN.</span>
-                        </li>
-                        <li class="step-item">
-                            <span class="step-num">4</span>
-                            <span class="step-text">Kindly send us a quick WhatsApp message at <strong>+256 702 238103</strong> with your receipt so we can properly acknowledge your gift!</span>
-                        </li>
-                    </ol>
+                    <div style="margin-top: 24px;">
+                        <h3 style="font-size: 1.1rem; color: var(--navy-deep); margin-bottom: 14px; font-weight: 800;">How to complete your gift</h3>
+                        <ol class="stepper">
+                            <li class="step-item">
+                                <span class="step-num">1</span>
+                                <span class="step-text">Dial <code>*165*3#</code> for MTN or <code>*185*9#</code> for Airtel.</span>
+                            </li>
+                            <li class="step-item">
+                                <span class="step-num">2</span>
+                                <span class="step-text">Enter the relevant merchant code above and choose the amount you wish to give.</span>
+                            </li>
+                            <li class="step-item">
+                                <span class="step-num">3</span>
+                                <span class="step-text">Confirm your Mobile Money PIN to complete the payment.</span>
+                            </li>
+                            <li class="step-item">
+                                <span class="step-num">4</span>
+                                <span class="step-text">Send us a quick WhatsApp message with your receipt so we can acknowledge your support personally.</span>
+                            </li>
+                        </ol>
+                    </div>
                 </div>
             </div>
 
-            <!-- Right Column: Impact & Contact -->
             <div>
-                <div class="glass-card">
-                    <h3 class="section-heading" style="font-size: 1.2rem;">Where Your Money Goes</h3>
-                    <p class="section-desc">Every shilling directly impacts warriors in Uganda.</p>
-                    <ul class="impact-list">
-                        <li class="impact-item">
-                            <div class="impact-number">01</div>
+                <div class="support-box">
+                    <h3 class="section-title" style="font-size: 1.2rem;">Where your support goes</h3>
+                    <p class="section-text">Every contribution helps build stronger, safer futures for sickle cell families.</p>
+                    <ul class="support-list">
+                        <li>
+                            <div class="support-number">1</div>
                             <div>
-                                <strong>Routine Genotype Screening</strong>
-                                <span>Covers early testing and ongoing blood wellness checks.</span>
+                                <strong>Routine screening</strong>
+                                <span>Helps families identify needs early and plan better care.</span>
                             </div>
                         </li>
-                        <li class="impact-item">
-                            <div class="impact-number">02</div>
+                        <li>
+                            <div class="support-number">2</div>
                             <div>
-                                <strong>Clinical Crisis Support</strong>
-                                <span>Helps provide immediate crisis relief guidance & hydration packs.</span>
+                                <strong>Clinical guidance</strong>
+                                <span>Supports checkups, monitoring, and crisis prevention support.</span>
                             </div>
                         </li>
-                        <li class="impact-item">
-                            <div class="impact-number">03</div>
+                        <li>
+                            <div class="support-number">3</div>
                             <div>
-                                <strong>School Awareness Sessions</strong>
-                                <span>Teaches teachers & students how to prevent crisis triggers.</span>
+                                <strong>Hydroxyurea access</strong>
+                                <span>Helps reduce pain crises and improve long-term quality of life.</span>
                             </div>
                         </li>
-                        <li class="impact-item">
-                            <div class="impact-number">04</div>
+                        <li>
+                            <div class="support-number">4</div>
                             <div>
-                                <strong>Family Care Care Kits</strong>
-                                <span>Provides nutrition guidelines and essential pain supplements.</span>
+                                <strong>Parent education</strong>
+                                <span>Provides practical tools, wellness guidance, and community support.</span>
                             </div>
                         </li>
                     </ul>
                 </div>
 
-                <div class="glass-card">
-                    <h3 class="section-heading" style="font-size: 1.2rem;">Need Assistance?</h3>
-                    <p class="section-desc">Reach out directly to coordinate physical donations or sponsorships.</p>
+                <div class="support-box">
+                    <h3 class="section-title" style="font-size: 1.2rem;">Need support or want to partner?</h3>
+                    <p class="section-text">Whether you want to donate, sponsor a child, or work with us, we would love to connect.</p>
                     <ul class="contact-list">
-                        <li><strong>WhatsApp:</strong> <a href="https://wa.me/256702238103" target="_blank">+256 702 2
+                        <li><strong>WhatsApp:</strong> <a href="https://wa.me/256702238103" target="_blank">+256 702 238103</a></li>
+                        <li><strong>Email:</strong> <a href="mailto:afyasicklecellfoundation@gmail.com">afyasicklecellfoundation@gmail.com</a></li>
+                        <li><strong>Community:</strong> AFYA works across Uganda to improve access to sickle cell care.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <img src="assets/logo.png" alt="AFYA logo" class="logo-img">
+                    <h3>AFYA Sickle Cell Foundation</h3>
+                    <p>Creating a more informed, supportive, and hopeful future for sickle cell families across Uganda.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Founder</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="stories.html">Warrior Stories</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="contact.html">Volunteer</a></li>
+                        <li><a href="programs.html">Care Programs</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">© 2026 AFYA Sickle Cell Foundation. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <script>
+        function copyText(elementId) {
+            const text = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(text.replace(/\s+/g, ' ').trim())
+                .then(() => {
+                    const btn = event.target;
+                    const original = btn.textContent;
+                    btn.textContent = 'Copied';
+                    setTimeout(() => btn.textContent = original, 1200);
+                })
+                .catch(() => {
+                    const btn = event.target;
+                    btn.textContent = 'Failed';
+                    setTimeout(() => btn.textContent = 'Copy', 1200);
+                });
+        }
+    </script>
+</body>
+</html>
