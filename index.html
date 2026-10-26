@@ -23,7 +23,6 @@
             --shadow-soft: 0 22px 50px rgba(15, 23, 42, 0.08);
             --font-main: 'Plus Jakarta Sans', -apple-system, sans-serif;
         }
-
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body {
@@ -34,7 +33,6 @@
                 linear-gradient(135deg, #f8fbff 0%, #fff7fb 26%, #f8fafc 60%, #eef6ff 100%);
             line-height: 1.7;
         }
-
         a { text-decoration: none; }
         img { max-width: 100%; display: block; }
         .container { width: min(1160px, 90%); margin: 0 auto; }
@@ -70,7 +68,6 @@
             border: 1px solid rgba(255,255,255,0.28);
             color: #fff;
         }
-
         .top-bar {
             background: rgba(15, 23, 42, 0.92);
             color: #fff;
@@ -96,7 +93,6 @@
             text-transform: uppercase;
             margin-right: 10px;
         }
-
         .site-header {
             position: sticky;
             top: 0;
@@ -151,7 +147,6 @@
             font-weight: 700;
             box-shadow: 0 12px 26px rgba(215, 38, 56, 0.2);
         }
-
         .hero-section {
             position: relative;
             overflow: hidden;
@@ -216,11 +211,7 @@
             margin-bottom: 28px;
         }
         .hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
-        .hero-visual {
-            position: relative;
-            display: grid;
-            place-items: center;
-        }
+        .hero-visual { position: relative; display: grid; place-items: center; }
         .hero-image-card {
             position: relative;
             overflow: hidden;
@@ -249,359 +240,71 @@
             box-shadow: 0 22px 40px rgba(15, 23, 42, 0.15);
         }
         .floating-message strong { display: block; margin-bottom: 4px; color: #f9a8d4; }
-
-        .values-section {
-            padding: 100px 0;
-            background: linear-gradient(135deg, rgba(248, 251, 255, 0.5), rgba(248, 250, 255, 0.5));
-        }
-        .values-head {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        .values-head h2 {
-            font-size: clamp(2.2rem, 3vw, 2.8rem);
-            color: var(--navy-deep);
-            margin-top: 12px;
-            margin-bottom: 16px;
-        }
-        .values-head p {
-            max-width: 620px;
-            margin: 0 auto;
-            color: var(--slate-muted);
-            font-size: 1.06rem;
-        }
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 32px;
-        }
-        .value-card {
-            background: rgba(255,255,255,0.8);
-            border: 1px solid var(--border);
-            border-radius: 24px;
-            padding: 36px 28px;
-            text-align: center;
-            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.04);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .value-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
-        }
-        .value-icon {
-            font-size: 3.2rem;
-            margin-bottom: 16px;
-        }
-        .value-card h3 {
-            font-size: 1.4rem;
-            color: var(--navy-deep);
-            margin-bottom: 12px;
-            font-weight: 800;
-        }
-        .value-card p {
-            color: var(--slate-text);
-            line-height: 1.7;
-        }
-
-        .story-section, .programs-section, .impact-section, .forum-section {
-            padding: 90px 0;
-        }
-        .section-head {
-            margin-bottom: 36px;
-        }
-        .section-head h2 {
-            font-size: clamp(2.1rem, 3vw, 2.9rem);
-            color: var(--navy-deep);
-            margin-top: 12px;
-            line-height: 1.15;
-            letter-spacing: -0.04em;
-        }
-        .story-card {
-            display: grid;
-            grid-template-columns: 0.95fr 1.05fr;
-            background: rgba(255,255,255,0.7);
-            border: 1px solid rgba(255,255,255,0.4);
-            border-radius: 26px;
-            overflow: hidden;
-            box-shadow: var(--shadow-soft);
-        }
-        .story-card img {
-            width: 100%;
-            height: 100%;
-            min-height: 340px;
-            object-fit: cover;
-        }
-        .story-copy {
-            padding: 44px 38px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .story-copy p {
-            margin-bottom: 16px;
-            color: var(--slate-text);
-        }
-        .mini-quote {
-            margin-top: 8px;
-            border-left: 4px solid var(--primary-red);
-            padding: 16px 18px;
-            background: linear-gradient(135deg, rgba(215,38,56,0.06), rgba(168, 218, 220, 0.08));
-            border-radius: 0 14px 14px 0;
-            font-style: italic;
-            color: var(--dark-red);
-            font-weight: 700;
-        }
-
-        .pillars-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 26px;
-        }
-        .pillar-card {
-            background: rgba(255,255,255,0.76);
-            border: 1px solid var(--border);
-            border-radius: 23px;
-            overflow: hidden;
-            box-shadow: var(--shadow-soft);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .pillar-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 24px 48px rgba(15,23,42,0.12);
-        }
+        .values-section { padding: 100px 0; background: linear-gradient(135deg, rgba(248, 251, 255, 0.5), rgba(248, 250, 255, 0.5)); }
+        .values-head { text-align: center; margin-bottom: 50px; }
+        .values-head h2 { font-size: clamp(2.2rem, 3vw, 2.8rem); color: var(--navy-deep); margin-top: 12px; margin-bottom: 16px; }
+        .values-head p { max-width: 620px; margin: 0 auto; color: var(--slate-muted); font-size: 1.06rem; }
+        .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; }
+        .value-card { background: rgba(255,255,255,0.8); border: 1px solid var(--border); border-radius: 24px; padding: 36px 28px; text-align: center; box-shadow: 0 12px 28px rgba(15, 23, 42, 0.04); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .value-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08); }
+        .value-icon { font-size: 3.2rem; margin-bottom: 16px; }
+        .value-card h3 { font-size: 1.4rem; color: var(--navy-deep); margin-bottom: 12px; font-weight: 800; }
+        .value-card p { color: var(--slate-text); line-height: 1.7; }
+        .story-section, .programs-section, .impact-section, .forum-section { padding: 90px 0; }
+        .section-head { margin-bottom: 36px; }
+        .section-head h2 { font-size: clamp(2.1rem, 3vw, 2.9rem); color: var(--navy-deep); margin-top: 12px; line-height: 1.15; letter-spacing: -0.04em; }
+        .story-card { display: grid; grid-template-columns: 0.95fr 1.05fr; background: rgba(255,255,255,0.7); border: 1px solid rgba(255,255,255,0.4); border-radius: 26px; overflow: hidden; box-shadow: var(--shadow-soft); }
+        .story-card img { width: 100%; height: 100%; min-height: 340px; object-fit: cover; }
+        .story-copy { padding: 44px 38px; display: flex; flex-direction: column; justify-content: center; }
+        .story-copy p { margin-bottom: 16px; color: var(--slate-text); }
+        .mini-quote { margin-top: 8px; border-left: 4px solid var(--primary-red); padding: 16px 18px; background: linear-gradient(135deg, rgba(215,38,56,0.06), rgba(168, 218, 220, 0.08)); border-radius: 0 14px 14px 0; font-style: italic; color: var(--dark-red); font-weight: 700; }
+        .pillars-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 26px; }
+        .pillar-card { background: rgba(255,255,255,0.76); border: 1px solid var(--border); border-radius: 23px; overflow: hidden; box-shadow: var(--shadow-soft); transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .pillar-card:hover { transform: translateY(-8px); box-shadow: 0 24px 48px rgba(15,23,42,0.12); }
         .card-img-wrap { height: 210px; overflow: hidden; }
-        .card-img-wrap img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.25s ease;
-        }
+        .card-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.25s ease; }
         .pillar-card:hover .card-img-wrap img { transform: scale(1.04); }
-        .pillar-body {
-            padding: 26px 22px 24px;
-        }
-        .pillar-index {
-            font-size: 0.73rem;
-            color: var(--primary-red);
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            font-weight: 800;
-        }
-        .pillar-card h3 {
-            margin: 10px 0 10px;
-            font-size: 1.4rem;
-            color: var(--navy-deep);
-        }
-        .pillar-card p {
-            color: var(--slate-muted);
-            margin-bottom: 18px;
-        }
-        .card-link {
-            color: var(--dark-red);
-            font-weight: 700;
-        }
-
-        .impact-panel {
-            background: linear-gradient(135deg, rgba(15,23,42,0.96), rgba(31,45,61,0.96));
-            border-radius: 28px;
-            padding: 42px 30px;
-            color: #fff;
-            box-shadow: 0 24px 48px rgba(15,23,42,0.12);
-        }
-        .impact-grid {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 28px;
-            align-items: center;
-        }
-        .impact-panel h3 {
-            font-size: clamp(2rem, 2.4vw, 2.6rem);
-            line-height: 1.2;
-            margin-bottom: 12px;
-        }
-        .impact-panel p {
-            color: #dbeafe;
-            margin-bottom: 20px;
-        }
-        .impact-tags {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-        .impact-tags span {
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.14);
-            color: #fff;
-            padding: 10px 14px;
-            border-radius: 999px;
-            font-weight: 700;
-        }
-        .impact-points {
-            list-style: none;
-            display: grid;
-            gap: 14px;
-        }
-        .impact-points li {
-            display: flex;
-            gap: 14px;
-            align-items: flex-start;
-            padding: 14px 16px;
-            border-radius: 16px;
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.08);
-        }
-        .impact-number {
-            width: 34px;
-            height: 34px;
-            border-radius: 10px;
-            background: linear-gradient(135deg, var(--primary-red), #ef4444);
-            color: #fff;
-            display: grid;
-            place-items: center;
-            font-weight: 800;
-            flex-shrink: 0;
-        }
+        .pillar-body { padding: 26px 22px 24px; }
+        .pillar-index { font-size: 0.73rem; color: var(--primary-red); letter-spacing: 0.16em; text-transform: uppercase; font-weight: 800; }
+        .pillar-card h3 { margin: 10px 0 10px; font-size: 1.4rem; color: var(--navy-deep); }
+        .pillar-card p { color: var(--slate-muted); margin-bottom: 18px; }
+        .card-link { color: var(--dark-red); font-weight: 700; }
+        .impact-panel { background: linear-gradient(135deg, rgba(15,23,42,0.96), rgba(31,45,61,0.96)); border-radius: 28px; padding: 42px 30px; color: #fff; box-shadow: 0 24px 48px rgba(15,23,42,0.12); }
+        .impact-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 28px; align-items: center; }
+        .impact-panel h3 { font-size: clamp(2rem, 2.4vw, 2.6rem); line-height: 1.2; margin-bottom: 12px; }
+        .impact-panel p { color: #dbeafe; margin-bottom: 20px; }
+        .impact-tags { display: flex; gap: 12px; flex-wrap: wrap; }
+        .impact-tags span { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); color: #fff; padding: 10px 14px; border-radius: 999px; font-weight: 700; }
+        .impact-points { list-style: none; display: grid; gap: 14px; }
+        .impact-points li { display: flex; gap: 14px; align-items: flex-start; padding: 14px 16px; border-radius: 16px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); }
+        .impact-number { width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(135deg, var(--primary-red), #ef4444); color: #fff; display: grid; place-items: center; font-weight: 800; flex-shrink: 0; }
         .impact-points strong { display: block; margin-bottom: 4px; }
         .impact-points span { color: #dbeafe; font-size: 0.9rem; }
-
-        .forum-card {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            background: rgba(255,255,255,0.76);
-            border: 1px solid var(--border);
-            border-radius: 26px;
-            overflow: hidden;
-            box-shadow: var(--shadow-soft);
-        }
-        .forum-image {
-            min-height: 300px;
-            background: linear-gradient(135deg, #fef2f2, #f0fdf4);
-        }
-        .forum-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .forum-copy {
-            padding: 36px 30px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .price-badge {
-            display: inline-flex;
-            align-items: center;
-            width: fit-content;
-            padding: 8px 16px;
-            border-radius: 999px;
-            background: #ecfdf5;
-            color: #166534;
-            font-weight: 800;
-            border: 1px solid rgba(34,197,94,0.18);
-            margin-bottom: 18px;
-        }
-        .forum-copy h3 {
-            font-size: clamp(2rem, 3vw, 2.6rem);
-            color: var(--navy-deep);
-            line-height: 1.15;
-            letter-spacing: -0.04em;
-            margin-bottom: 12px;
-        }
-        .forum-copy p {
-            margin-bottom: 18px;
-            color: var(--slate-text);
-        }
-        .forum-list {
-            list-style: none;
-            display: grid;
-            gap: 10px;
-            margin-bottom: 24px;
-        }
-        .forum-list li {
-            position: relative;
-            padding-left: 18px;
-            color: var(--slate-text);
-        }
-        .forum-list li::before {
-            content: "•";
-            position: absolute;
-            left: 0;
-            color: var(--primary-red);
-            font-weight: 800;
-        }
+        .forum-card { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; background: rgba(255,255,255,0.76); border: 1px solid var(--border); border-radius: 26px; overflow: hidden; box-shadow: var(--shadow-soft); }
+        .forum-image { min-height: 300px; background: linear-gradient(135deg, #fef2f2, #f0fdf4); }
+        .forum-image img { width: 100%; height: 100%; object-fit: cover; }
+        .forum-copy { padding: 36px 30px; display: flex; flex-direction: column; justify-content: center; }
+        .price-badge { display: inline-flex; align-items: center; width: fit-content; padding: 8px 16px; border-radius: 999px; background: #ecfdf5; color: #166534; font-weight: 800; border: 1px solid rgba(34,197,94,0.18); margin-bottom: 18px; }
+        .forum-copy h3 { font-size: clamp(2rem, 3vw, 2.6rem); color: var(--navy-deep); line-height: 1.15; letter-spacing: -0.04em; margin-bottom: 12px; }
+        .forum-copy p { margin-bottom: 18px; color: var(--slate-text); }
+        .forum-list { list-style: none; display: grid; gap: 10px; margin-bottom: 24px; }
+        .forum-list li { position: relative; padding-left: 18px; color: var(--slate-text); }
+        .forum-list li::before { content: "•"; position: absolute; left: 0; color: var(--primary-red); font-weight: 800; }
         .forum-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-
-        .quote-banner {
-            padding: 0 0 90px;
-        }
-        .quote-box {
-            background: linear-gradient(135deg, rgba(15,23,42,0.96), rgba(31,45,61,0.96));
-            border-radius: 28px;
-            padding: 52px 34px;
-            color: #fff;
-            text-align: center;
-            box-shadow: 0 20px 45px rgba(15,23,42,0.12);
-        }
-        .quote-box h2 {
-            font-size: clamp(1.8rem, 2.6vw, 2.6rem);
-            max-width: 800px;
-            margin: 0 auto 12px;
-            line-height: 1.35;
-            letter-spacing: -0.03em;
-        }
-        .quote-box p {
-            color: #fca5a5;
-            font-weight: 700;
-        }
-
-        .site-footer {
-            background: rgba(15,23,42,0.96);
-            color: #cbd5e1;
-            padding: 60px 0 28px;
-            border-top: 1px solid rgba(255,255,255,0.08);
-        }
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 40px;
-            padding-bottom: 36px;
-            border-bottom: 1px solid rgba(255,255,255,0.08);
-        }
-        .footer-brand h3 {
-            margin: 12px 0 10px;
-            color: #fff;
-            font-size: 1.1rem;
-        }
-        .footer-col h4 {
-            color: #fff;
-            margin-bottom: 12px;
-            font-size: 1rem;
-        }
+        .quote-banner { padding: 0 0 90px; }
+        .quote-box { background: linear-gradient(135deg, rgba(15,23,42,0.96), rgba(31,45,61,0.96)); border-radius: 28px; padding: 52px 34px; color: #fff; text-align: center; box-shadow: 0 20px 45px rgba(15,23,42,0.12); }
+        .quote-box h2 { font-size: clamp(1.8rem, 2.6vw, 2.6rem); max-width: 800px; margin: 0 auto 12px; line-height: 1.35; letter-spacing: -0.03em; }
+        .quote-box p { color: #fca5a5; font-weight: 700; }
+        .site-footer { background: rgba(15,23,42,0.96); color: #cbd5e1; padding: 60px 0 28px; border-top: 1px solid rgba(255,255,255,0.08); }
+        .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 40px; padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .footer-brand h3 { margin: 12px 0 10px; color: #fff; font-size: 1.1rem; }
+        .footer-col h4 { color: #fff; margin-bottom: 12px; font-size: 1rem; }
         .footer-links { list-style: none; }
         .footer-links li { margin-bottom: 10px; }
         .footer-links a { color: #cbd5e1; }
-        .footer-bottom {
-            padding-top: 22px;
-            text-align: center;
-            font-size: 0.85rem;
-            color: #94a3b8;
-        }
-
-        @media (max-width: 900px) {
-            .hero-grid, .story-card, .impact-grid, .forum-card, .footer-grid { grid-template-columns: 1fr; }
-            .header-flex { flex-direction: column; align-items: flex-start; padding: 12px 0; }
-            .main-nav { gap: 14px; }
-            .hero-image-card img { height: 350px; }
-        }
-
-        @media (max-width: 640px) {
-            .hero-section { padding-top: 64px; }
-            .story-copy { padding: 28px 22px; }
-            .impact-panel { padding: 28px 20px; }
-            .forum-copy { padding: 28px 22px; }
-            .top-bar { font-size: 0.78rem; }
-        }
+        .footer-bottom { padding-top: 22px; text-align: center; font-size: 0.85rem; color: #94a3b8; }
+        @media (max-width: 900px) { .hero-grid, .story-card, .impact-grid, .forum-card, .footer-grid { grid-template-columns: 1fr; } .header-flex { flex-direction: column; align-items: flex-start; padding: 12px 0; } .main-nav { gap: 14px; } .hero-image-card img { height: 350px; } }
+        @media (max-width: 640px) { .hero-section { padding-top: 64px; } .story-copy { padding: 28px 22px; } .impact-panel { padding: 28px 20px; } .forum-copy { padding: 28px 22px; } .top-bar { font-size: 0.78rem; } }
     </style>
 </head>
 <body>
@@ -636,7 +339,7 @@
             <div class="hero-content">
                 <span class="hero-tag">AFYA • Care • Hope • Action</span>
                 <h1>Every child deserves to <span>breathe easy</span> and dream big.</h1>
-                <p class="hero-lead">AFYA Sickle Cell Foundation stands with families across Uganda, offering practical care, emotional support, knowledge, and a community that never gives up on a child's future.</p>
+                <p class="hero-lead">AFYA Sickle Cell Foundation stands with families across Uganda, offering practical care, emotional support, knowledge, and a community that never gives up on every child fighting sickle cell disease.</p>
                 <div class="hero-actions">
                     <a href="donate.html" class="btn btn-primary">Support a Warrior</a>
                     <a href="programs.html" class="btn btn-light">Explore Programs</a>
@@ -691,7 +394,7 @@
                 <img src="assets/anabel.jpg" alt="Anabel's story">
                 <div class="story-copy">
                     <p>AFYA began with a mother's love and a child's courage. What started as one family's search for answers became a movement of hope for many families living with sickle cell disease.</p>
-                    <p>Every painful crisis, every missed school day, every sleepless night reminded us that care must be more than treatment—it must be understanding, dignity, and support that reaches the heart of the family.</p>
+                    <p>Every painful crisis, every missed school day, every sleepless night reminded us that care must be more than treatment—it must be understanding, dignity, and support that transforms fear into confidence.</p>
                     <p>Today, AFYA exists to make sure no child feels alone, no parent feels helpless, and no dream is delayed by fear or lack of access.</p>
                     <div class="mini-quote">"Our mission is simple: protect childhood, restore hope, and help every warrior keep living with strength."</div>
                 </div>
@@ -799,7 +502,7 @@
                 <div class="forum-copy">
                     <span class="price-badge">UGX 10,000 Access Support</span>
                     <h3>Helping families buy Hydroxyurea with dignity and hope.</h3>
-                    <p>For many families, the challenge isn't only the illness—it's the cost of continuing treatment. We believe every child deserves access to the medicine that helps reduce pain crises and protect a better future.</p>
+                    <p>For many families, the challenge isn't only the illness—it's the cost of continuing treatment. We believe every child deserves access to the medicine that helps reduce pain and crisis frequency.</p>
                     <ul class="forum-list">
                         <li>Affordable treatment support for families in need.</li>
                         <li>Simple guidance and compassionate follow-up.</li>
@@ -853,5 +556,7 @@
             <div class="footer-bottom">© 2026 AFYA Sickle Cell Foundation. All rights reserved.</div>
         </div>
     </footer>
+
+    <script src="main.js"></script>
 </body>
 </html>
