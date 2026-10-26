@@ -15,10 +15,10 @@
             --slate-text: #334155;
             --slate-muted: #64748B;
             --bg-soft: #f8fafc;
-            --glass-bg: rgba(255,255,255,0.72);
             --shadow-soft: 0 16px 40px rgba(15, 23, 42, 0.08);
             --font-main: 'Plus Jakarta Sans', -apple-system, sans-serif;
         }
+
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body {
@@ -26,11 +26,10 @@
             background: linear-gradient(135deg, #eff6ff 0%, #fdf2f8 25%, #f8fafc 60%, #eef2ff 100%);
         }
         a { text-decoration: none; }
-        img { max-width: 100%; display: block; }
         .container { width: min(1140px, 90%); margin: 0 auto; }
 
         .top-bar {
-            background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            background: rgba(15, 23, 42, 0.8);
             color: #fff; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.12);
         }
         .top-bar-flex { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap: wrap; }
@@ -68,16 +67,12 @@
 
         .stories-section { padding: 80px 0; }
         .story-card {
-            display:grid; grid-template-columns: .9fr 1.1fr; background: rgba(255,255,255,.74); border:1px solid rgba(255,255,255,.4);
-            border-radius: 24px; overflow:hidden; box-shadow: var(--shadow-soft); margin-bottom: 36px; backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+            background: rgba(255,255,255,.74); border:1px solid rgba(255,255,255,.4); border-radius: 24px; overflow:hidden; box-shadow: var(--shadow-soft);
+            margin-bottom: 36px; backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+            padding: 32px 30px;
         }
-        .story-img-wrap { position:relative; min-height: 380px; background: #e2e8f0; }
-        .story-img { width:100%; height:100%; object-fit:cover; }
-        .warrior-tag {
-            position:absolute; left:20px; bottom:20px; background: rgba(15,23,42,.82); color:#fff; padding:8px 14px; border-radius:999px; font-size:.82rem; font-weight:700;
-            border:1px solid rgba(255,255,255,.18);
-        }
-        .story-content { padding: 42px 36px; display:flex; flex-direction:column; justify-content:center; }
+
+        .story-content { display:flex; flex-direction:column; justify-content:center; }
         .mini-tag { color: var(--primary-red); font-size: .74rem; letter-spacing:.14em; text-transform:uppercase; font-weight:800; }
         .story-content h2 { margin-top:10px; font-size: clamp(1.6rem, 2vw, 2.1rem); color: var(--navy-dark); }
         .warrior-location { color: var(--dark-red); font-weight:700; margin: 14px 0 18px; border-bottom:2px solid rgba(200,16,46,.12); padding-bottom: 10px; }
@@ -105,7 +100,7 @@
         .footer-bottom { padding-top: 20px; font-size: .86rem; text-align:center; color:#94a3b8; }
 
         @media (max-width: 900px) {
-            .story-card, .footer-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
             .header-flex { align-items:flex-start; flex-direction:column; }
             .main-nav { flex-wrap:wrap; }
         }
@@ -146,46 +141,34 @@
     <section class="stories-section">
         <div class="container">
             <div class="story-card">
-                <div class="story-img-wrap">
-                    <img src="assets/warrior-brian.jpg" alt="Brian story" class="story-img">
-                    <span class="warrior-tag">12 Years Old • Student</span>
-                </div>
                 <div class="story-content">
                     <span class="mini-tag">Back to school</span>
                     <h2>Brian’s journey from frequent admissions to top of class</h2>
                     <p class="warrior-location">📍 Wakiso District, Uganda</p>
                     <p class="story-text">For years, Brian missed much of each school term due to sudden, severe painful crises. His mother spent nights worrying and hoping for a better rhythm.</p>
-                    <p class="story-text">When he joined the AFYA support network, his routine reviews, hydration guidance, and family education changed everything. He is now more stable, stronger, and reclaiming his place in school.</p>
+                    <p class="story-text">When he joined the AFYA support network, his routine reviews, hydration guidance, and family education changed everything. He is now more stable, stronger, and performing better in class.</p>
                     <div class="warrior-quote">“Before AFYA, I thought I would never finish primary school. Now I want to become a doctor and help other warriors.” — Brian</div>
                 </div>
             </div>
 
             <div class="story-card">
-                <div class="story-img-wrap">
-                    <img src="assets/warrior-grace.jpg" alt="Grace story" class="story-img">
-                    <span class="warrior-tag">Mother of Warrior Twins</span>
-                </div>
                 <div class="story-content">
                     <span class="mini-tag">Family support</span>
                     <h2>Grace’s voice: overcoming stigma and finding strength</h2>
                     <p class="warrior-location">📍 Mukono District, Uganda</p>
                     <p class="story-text">Grace was overwhelmed after learning her twin daughters had sickle cell disease. Social stigma and isolation made each day heavier.</p>
-                    <p class="story-text">Joining AFYA’s parent support circle helped her rediscover confidence and courage. Today, she is a vocal advocate for understanding, care, and dignity for families navigating similar experiences.</p>
+                    <p class="story-text">Joining AFYA’s parent support circle helped her rediscover confidence and courage. Today, she is a vocal advocate for understanding, care, and dignity for families living with sickle cell.</p>
                     <div class="warrior-quote">“AFYA gave my daughters care—and gave me my confidence back as a mother.” — Grace</div>
                 </div>
             </div>
 
             <div class="story-card">
-                <div class="story-img-wrap">
-                    <img src="assets/warrior-emmanuel.jpg" alt="Emmanuel story" class="story-img">
-                    <span class="warrior-tag">19 Years Old • Youth Ambassador</span>
-                </div>
                 <div class="story-content">
                     <span class="mini-tag">Living beyond boundaries</span>
                     <h2>Emmanuel: championing awareness in schools</h2>
                     <p class="warrior-location">📍 Kampala, Uganda</p>
                     <p class="story-text">Growing up, Emmanuel hid his diagnosis from classmates for fear of being mocked or excluded. The emotional burden was heavy.</p>
-                    <p class="story-text">Through AFYA’s advocacy and peer support, he embraced his story and began speaking in schools, helping young people understand sickle cell with compassion instead of fear.</p>
+                    <p class="story-text">Through AFYA’s advocacy and peer support, he embraced his story and began speaking in schools, helping young people understand sickle cell with compassion and clarity.</p>
                     <div class="warrior-quote">“Sickle cell is part of my journey, but it is not my destiny.” — Emmanuel</div>
                 </div>
             </div>
@@ -227,4 +210,3 @@
     </footer>
 </body>
 </html>
-
