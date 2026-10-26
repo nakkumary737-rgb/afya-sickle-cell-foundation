@@ -12,8 +12,8 @@
     
     <style>
         /* ==========================================
-           RESET & CORE STYLES
-           ========================================== */
+            RESET & CORE STYLES
+            ========================================== */
         *, *::before, *::after {
             margin: 0;
             padding: 0;
@@ -30,8 +30,10 @@
             --slate-muted: #718096;
             --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #c9d6ff 100%);
             --font-main: 'Plus Jakarta Sans', -apple-system, sans-serif;
-            --glass-bg: rgba(255, 255, 255, 0.7);
-            --glass-border: rgba(255, 255, 255, 0.2);
+            --glass-bg: rgba(255, 255, 255, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.25);
+            --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.08);
+            --shadow-strong: 0 25px 60px rgba(15, 23, 42, 0.12);
         }
 
         body {
@@ -52,10 +54,10 @@
         .text-center { text-align: center; }
 
         /* ==========================================
-           TOP EMERGENCY BAR - GLASSMORPHIC
-           ========================================== */
+            TOP EMERGENCY BAR - GLASSMORPHIC
+            ========================================== */
         .top-bar {
-            background: rgba(29, 53, 87, 0.8);
+            background: rgba(29, 53, 87, 0.83);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.15);
@@ -85,8 +87,8 @@
         }
 
         /* ==========================================
-           HEADER NAVIGATION - GLASSMORPHIC
-           ========================================== */
+            HEADER NAVIGATION - GLASSMORPHIC
+            ========================================== */
         .site-header {
             background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(15px);
@@ -162,8 +164,8 @@
         }
 
         /* ==========================================
-           PAGE HERO BANNER
-           ========================================== */
+            PAGE HERO BANNER
+            ========================================== */
         .page-hero {
             background: linear-gradient(135deg, rgba(230, 57, 70, 0.9), rgba(29, 53, 87, 0.9));
             backdrop-filter: blur(8px);
@@ -181,7 +183,7 @@
             right: -10%;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(230, 57, 70, 0.1), transparent);
+            background: radial-gradient(circle, rgba(230, 57, 70, 0.14), transparent 50%);
             border-radius: 50%;
             filter: blur(40px);
         }
@@ -204,10 +206,10 @@
         }
 
         /* ==========================================
-           ABOUT CONTENT & STORY SECTION - GLASSMORPHIC
-           ========================================== */
+            ABOUT CONTENT & STORY SECTION - PROFESSIONAL UPDATE
+            ========================================== */
         .about-section {
-            padding: 80px 0;
+            padding: 80px 0 30px;
         }
 
         .section-tag {
@@ -220,14 +222,50 @@
             margin-bottom: 8px;
         }
 
-        /* FEATURE CARD: ANABEL */
+        .story-intro {
+            max-width: 760px;
+            margin: 0 auto 40px;
+            color: var(--slate-muted);
+            font-size: 1.02rem;
+            text-align: center;
+        }
+
+        .stat-strip {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(180px, 1fr));
+            gap: 18px;
+            margin-bottom: 42px;
+        }
+
+        .stat-box {
+            background: rgba(255,255,255,0.85);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 18px;
+            box-shadow: var(--shadow-soft);
+            padding: 24px 18px;
+            text-align: center;
+        }
+
+        .stat-box strong {
+            display: block;
+            font-size: 1.75rem;
+            color: var(--secondary);
+            margin-bottom: 5px;
+        }
+
+        .stat-box span {
+            color: var(--slate-muted);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
         .hero-story-card {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            border-radius: 20px;
+            border-radius: 22px;
             border: 1px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-soft);
             display: grid;
             grid-template-columns: 0.9fr 1.1fr;
             overflow: hidden;
@@ -235,15 +273,17 @@
             transition: all 0.3s ease;
         }
 
-        .hero-story-card:hover {
+        .hero-story-card:hover,
+        .founders-card:hover,
+        .family-card:hover {
             transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+            box-shadow: var(--shadow-strong);
         }
 
         .hero-story-img-wrap {
             position: relative;
             background-color: #E8F0F8;
-            min-height: 400px;
+            min-height: 420px;
         }
 
         .hero-story-img {
@@ -311,28 +351,115 @@
             backdrop-filter: blur(10px);
         }
 
-        /* FOUNDERS CARD */
+        .family-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 22px;
+            border: 1px solid rgba(255,255,255,0.3);
+            box-shadow: var(--shadow-soft);
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            overflow: hidden;
+            margin-bottom: 52px;
+            transition: all 0.3s ease;
+        }
+
+        .family-portrait {
+            background: linear-gradient(135deg, rgba(29,53,87,0.95), rgba(230,57,70,0.85));
+            min-height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .portrait-badge {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            border: 3px solid rgba(255,255,255,0.7);
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: #FFFFFF;
+            font-weight: 800;
+            letter-spacing: 1px;
+            line-height: 1.2;
+            font-size: 1.1rem;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .family-content {
+            padding: 40px 42px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .family-content h2 {
+            font-size: 2rem;
+            color: var(--navy);
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .role-label {
+            display: inline-block;
+            background: rgba(230,57,70,0.1);
+            color: var(--primary);
+            border: 1px solid rgba(230,57,70,0.18);
+            border-radius: 999px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1.1px;
+            text-transform: uppercase;
+            padding: 8px 12px;
+            margin-bottom: 18px;
+            width: fit-content;
+        }
+
+        .info-list {
+            margin-top: 18px;
+            list-style: none;
+            display: grid;
+            gap: 10px;
+        }
+
+        .info-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: var(--slate-text);
+            font-size: 0.98rem;
+        }
+
+        .info-list li::before {
+            content: '•';
+            color: var(--primary);
+            font-size: 1.6rem;
+            line-height: 1;
+            margin-top: -2px;
+        }
+
         .founders-card {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            border-radius: 20px;
+            border-radius: 22px;
             border: 1px solid rgba(255, 255, 255, 0.3);
             display: grid;
             grid-template-columns: 1fr 1.1fr;
             overflow: hidden;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--shadow-soft);
             margin-bottom: 50px;
             transition: all 0.3s ease;
         }
 
-        .founders-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-        }
-
         .founders-img-wrap {
-            min-height: 350px;
+            min-height: 360px;
             background-color: #E8F0F8;
         }
 
@@ -370,8 +497,8 @@
         }
 
         /* ==========================================
-           FOOTER - GLASSMORPHIC
-           ========================================== */
+            FOOTER - GLASSMORPHIC
+            ========================================== */
         .site-footer {
             background: rgba(41, 69, 99, 0.9);
             backdrop-filter: blur(15px);
@@ -429,17 +556,22 @@
 
         /* RESPONSIVE BREAKPOINTS */
         @media (max-width: 850px) {
-            .hero-story-card, .founders-card, .footer-grid {
+            .hero-story-card, .family-card, .founders-card, .footer-grid, .stat-strip {
                 grid-template-columns: 1fr;
             }
-            .hero-story-img-wrap, .founders-img-wrap {
+            .hero-story-img-wrap, .founders-img-wrap, .family-portrait {
                 min-height: 280px;
             }
-            .hero-story-content, .founders-content {
+            .hero-story-content, .founders-content, .family-content {
                 padding: 25px;
             }
             .page-hero h1 {
                 font-size: 2.2rem;
+            }
+            .main-nav {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
             }
         }
 
@@ -492,6 +624,24 @@
     <!-- About Content Section -->
     <section class="about-section">
         <div class="container">
+            <p class="story-intro">
+                AFYA Sickle Cell Foundation was born out of lived experience, faith, compassion, and a sincere commitment to protecting children and families affected by sickle cell disease.
+            </p>
+
+            <div class="stat-strip">
+                <div class="stat-box">
+                    <strong>1</strong>
+                    <span>Deeply personal story</span>
+                </div>
+                <div class="stat-box">
+                    <strong>7+</strong>
+                    <span>Years of community care</span>
+                </div>
+                <div class="stat-box">
+                    <strong>100%</strong>
+                    <span>Driven by hope and dignity</span>
+                </div>
+            </div>
             
             <!-- Anabel's Story (The Inspiration) -->
             <div class="hero-story-card">
@@ -508,15 +658,40 @@
                         Every powerful movement is born from a quiet, deeply personal moment. For the AFYA Sickle Cell Foundation, that spark is <strong>Anabel Esther</strong>.
                     </p>
                     <p class="story-p">
-                        Diagnosed with sickle cell disease at a young age, Anabel showed extraordinary strength through early hospital visits and painful crises. Today, as a joyful 7-year-old student, she represents the hope that inspired this foundation.
+                        Diagnosed with sickle cell disease at a young age, Anabel showed extraordinary strength through early hospital visits and painful crises. Today, as a joyful 7-year-old pupil, she continues to inspire her family and community with resilience, courage, and a remarkable sense of hope.
                     </p>
                     <p class="story-p">
-                        Anabel represents every child living with sickle cell in Uganda—showing that with early detection, continuous clinical monitoring, and overwhelming family support, a diagnosis is not a destiny.
+                        Anabel represents every child living with sickle cell in Uganda—showing that with early detection, continuous clinical monitoring, and overwhelming family support, a diagnosis does not define the future.
                     </p>
 
                     <div class="quote-box">
                         "Anabel taught us that fighting sickle cell isn't just about managing pain—it's about protecting the childhood, dreams, and future of every warrior."
                     </div>
+                </div>
+            </div>
+
+            <!-- Father Kittengo Aloysius -->
+            <div class="family-card">
+                <div class="family-portrait">
+                    <div class="portrait-badge">FR.<br>KITTENGO<br>ALOYSIUS</div>
+                </div>
+                <div class="family-content">
+                    <span class="section-tag">SPIRITUAL GUIDANCE & LEADERSHIP</span>
+                    <h2>Fr. Kittengo Aloysius</h2>
+                    <span class="role-label">Faith, compassion, and community leadership</span>
+
+                    <p class="story-p">
+                        <strong>Father Kittengo Aloysius</strong> has been a deeply respected figure in the lives of many families touched by illness, hardship, and uncertainty. His leadership reflects a strong pastoral commitment to serving people with dignity, compassion, and hope.
+                    </p>
+                    <p class="story-p">
+                        In the journey of the AFYA Sickle Cell Foundation, Father Kittengo's influence has been a source of spiritual strength and practical encouragement. He reminds the community that caring for the sick is not only a medical mission, but also a moral and compassionate calling rooted in love for humanity.
+                    </p>
+
+                    <ul class="info-list">
+                        <li>Guides the foundation with faith-driven encouragement and strong moral leadership.</li>
+                        <li>Encourages families to respond with empathy, dignity, and hope in moments of crisis.</li>
+                        <li>Represents the foundation's belief that care must be both clinical and human-centered.</li>
+                    </ul>
                 </div>
             </div>
 
@@ -529,13 +704,13 @@
                     <span class="section-tag">THE FOUNDER</span>
                     <h2>Nanyonjo Noeline</h2>
                     <p class="story-p">
-                        When founder <strong>Nanyonjo Noeline</strong> first received Anabel's diagnosis, she faced the fear, medical uncertainty, and social stigma that confronts countless families across Uganda.
+                        When founder <strong>Nanyonjo Noeline</strong> first received Anabel's diagnosis, she faced the fear, medical uncertainty, and social stigma that confronts countless families affected by sickle cell disease.
                     </p>
                     <p class="story-p">
-                        Driven by unconditional love for her daughter, she chose to turn personal adversity into a life-saving mission. She founded the <strong>AFYA Sickle Cell Foundation</strong> with a singular vision: to ensure that no warrior walks this journey alone.
+                        Driven by unconditional love for her daughter, she chose to turn personal adversity into a life-saving mission. She founded the <strong>AFYA Sickle Cell Foundation</strong> to create awareness, improve health literacy, and support families through access to care, early diagnosis, and ongoing encouragement.
                     </p>
                     <p class="story-p">
-                        By establishing an official medical partnership with <strong>Afya Medicare Clinic</strong>, she built an ecosystem of routine doctor reviews, genotype screening drives, and peer support circles that now reaches over 1,000 warriors across Uganda.
+                        By establishing an official medical partnership with <strong>Afya Medicare Clinic</strong>, she built an ecosystem of routine doctor reviews, genotype screening drives, emotional support, and health education for sickle cell warriors and their caregivers.
                     </p>
 
                     <div class="partner-pill">
@@ -579,5 +754,4 @@
     </footer>
 
 </body>
-    </html>
-    
+</html>
