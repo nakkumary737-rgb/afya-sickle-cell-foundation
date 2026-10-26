@@ -8,102 +8,48 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-red: #C8102E;
-            --dark-red: #991B1B;
-            --navy-dark: #0F172A;
-            --slate-text: #334155;
-            --slate-muted: #64748B;
-            --bg-soft: #f8fafc;
-            --shadow-soft: 0 16px 40px rgba(15, 23, 42, 0.08);
-            --font-main: 'Plus Jakarta Sans', -apple-system, sans-serif;
-        }
-
+        :root { --primary-red: #C8102E; --dark-red: #991B1B; --navy-dark: #0F172A; --slate-text: #334155; --slate-muted: #64748B; --bg-soft: #f8fafc; --shadow-soft: 0 16px 40px rgba(15,23,42,0.08); --font-main: 'Plus Jakarta Sans', -apple-system, sans-serif; }
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
-        body {
-            font-family: var(--font-main); color: var(--slate-text); line-height: 1.6;
-            background: linear-gradient(135deg, #eff6ff 0%, #fdf2f8 25%, #f8fafc 60%, #eef2ff 100%);
-        }
+        body { font-family: var(--font-main); color: var(--slate-text); line-height: 1.6; background: linear-gradient(135deg, #eff6ff 0%, #fdf2f8 25%, #f8fafc 60%, #eef2ff 100%); }
         a { text-decoration: none; }
         .container { width: min(1140px, 90%); margin: 0 auto; }
-
-        .top-bar {
-            background: rgba(15, 23, 42, 0.8);
-            color: #fff; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.12);
-        }
-        .top-bar-flex { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap: wrap; }
-        .emergency-badge {
-            display:inline-block; background: linear-gradient(135deg, var(--primary-red), #E11D48); color:#fff; font-weight:800; font-size: 0.72rem;
-            letter-spacing: .08em; text-transform: uppercase; padding: 4px 12px; border-radius:999px; margin-right: 10px;
-        }
-
-        .site-header {
-            position: sticky; top:0; z-index: 1000; background: rgba(255,255,255,0.74); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
-            border-bottom: 1px solid rgba(148,163,184,0.2); box-shadow: 0 8px 24px rgba(15,23,42,.06);
-        }
+        .top-bar { background: rgba(15,23,42,0.8); color: #fff; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.12); }
+        .top-bar-flex { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+        .emergency-badge { display:inline-block; background: linear-gradient(135deg, var(--primary-red), #E11D48); color:#fff; font-weight:800; font-size: 0.72rem; letter-spacing: .08em; text-transform: uppercase; padding: 4px 12px; border-radius:999px; margin-right: 10px; }
+        .site-header { position: sticky; top:0; z-index: 1000; background: rgba(255,255,255,0.74); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border-bottom: 1px solid rgba(148,163,184,0.2); box-shadow: 0 8px 24px rgba(15,23,42,.06); }
         .header-flex { display:flex; justify-content:space-between; align-items:center; min-height: 78px; }
         .logo-img { max-height: 52px; width: auto; }
         .main-nav { display:flex; align-items:center; gap:24px; }
         .nav-item { position:relative; color: var(--navy-dark); font-weight:600; }
         .nav-item:hover, .nav-item.active { color: var(--primary-red); }
-        .nav-item::after {
-            content: ''; position:absolute; left: 0; bottom: -7px; width:0; height:2px; background: var(--primary-red); transition: width .2s ease;
-        }
-        .nav-item:hover::after, .nav-item.active::after { width: 100%; }
-        .btn-nav {
-            display:inline-flex; align-items:center; justify-content:center; padding:10px 22px; background: linear-gradient(135deg, var(--primary-red), #E11D48);
-            color:#fff !important; border-radius:999px; font-weight:700; box-shadow:0 10px 24px rgba(200,16,46,.28);
-        }
-
-        .page-hero {
-            background: linear-gradient(135deg, rgba(127,29,29,.88), rgba(15,23,42,.92)); color:#fff; text-align:center; padding:68px 0 70px; position:relative; overflow:hidden;
-        }
-        .page-hero::before {
-            content:''; position:absolute; right:-180px; top:-160px; width:420px; height:420px; border-radius:50%; background: radial-gradient(circle, rgba(255,255,255,.12), rgba(255,255,255,0));
-        }
-        .page-hero h1 { position:relative; z-index:1; font-size: clamp(2.2rem, 3vw, 3.5rem); margin-bottom: 12px; }
-        .page-hero p { position:relative; z-index:1; max-width:700px; margin:0 auto; color: #e2e8f0; font-size:1.08rem; }
-
+        .nav-item::after { content:''; position:absolute; left:0; bottom:-7px; width:0; height:2px; background: var(--primary-red); transition: width .2s ease; }
+        .nav-item:hover::after, .nav-item.active::after { width:100%; }
+        .btn-nav { display:inline-flex; align-items:center; justify-content:center; padding:10px 22px; background: linear-gradient(135deg, var(--primary-red), #E11D48); color:#fff !important; border-radius:999px; font-weight:700; box-shadow: 0 10px 24px rgba(200,16,46,.28); }
+        .page-hero { background: linear-gradient(135deg, rgba(127,29,29,.88), rgba(15,23,42,.92)); color: #fff; text-align: center; padding: 68px 0 70px; position: relative; overflow: hidden; }
+        .page-hero::before { content:''; position:absolute; right:-180px; top:-160px; width:420px; height:420px; border-radius:50%; background: radial-gradient(circle, rgba(255,255,255,.12), rgba(255,255,255,0)); }
+        .page-hero h1 { position: relative; z-index: 1; font-size: clamp(2.2rem, 3vw, 3.5rem); margin-bottom: 12px; }
+        .page-hero p { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; color: #e2e8f0; font-size: 1.08rem; }
         .stories-section { padding: 80px 0; }
-        .story-card {
-            background: rgba(255,255,255,.74); border:1px solid rgba(255,255,255,.4); border-radius: 24px; overflow:hidden; box-shadow: var(--shadow-soft);
-            margin-bottom: 36px; backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
-            padding: 32px 30px;
-        }
-
+        .story-card { background: rgba(255,255,255,.74); border: 1px solid rgba(255,255,255,.4); border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-soft); margin-bottom: 36px; backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); padding: 32px 30px; }
         .story-content { display:flex; flex-direction:column; justify-content:center; }
         .mini-tag { color: var(--primary-red); font-size: .74rem; letter-spacing:.14em; text-transform:uppercase; font-weight:800; }
         .story-content h2 { margin-top:10px; font-size: clamp(1.6rem, 2vw, 2.1rem); color: var(--navy-dark); }
         .warrior-location { color: var(--dark-red); font-weight:700; margin: 14px 0 18px; border-bottom:2px solid rgba(200,16,46,.12); padding-bottom: 10px; }
         .story-text { color: var(--slate-text); margin-bottom:14px; }
-        .warrior-quote {
-            margin-top: 10px; background: linear-gradient(135deg, rgba(200,16,46,.08), rgba(30,41,59,.04)); border-left: 4px solid var(--primary-red);
-            border-radius: 0 14px 14px 0; padding: 18px 20px; font-style: italic; color: var(--dark-red); font-weight: 700;
-        }
-
-        .share-banner {
-            background: linear-gradient(135deg, rgba(15,23,42,.96), rgba(30,41,59,.96)); color:#fff; border-radius:26px; padding: 52px 36px; text-align:center; box-shadow: var(--shadow-soft);
-        }
-        .share-banner h3 { font-size: clamp(1.8rem, 2.5vw, 2.5rem); margin-bottom: 12px; }
-        .share-banner p { color: #dbeafe; max-width: 680px; margin: 0 auto 24px; }
-
-        .site-footer {
-            margin-top: 72px; background: rgba(15,23,42,.92); color: #cbd5e1; padding: 60px 0 30px; border-top:1px solid rgba(255,255,255,.08);
-        }
-        .footer-grid { display:grid; grid-template-columns: 2fr 1fr 1fr; gap:40px; padding-bottom:32px; border-bottom:1px solid rgba(255,255,255,.08); }
-        .footer-brand h3 { color:#fff; margin: 10px 0 12px; }
+        .warrior-quote { margin-top:10px; background: linear-gradient(135deg, rgba(200,16,46,.08), rgba(30,41,59,.04)); border-left:4px solid var(--primary-red); border-radius:0 14px 14px 0; padding:18px 20px; font-style:italic; color: var(--dark-red); font-weight:700; }
+        .share-banner { background: linear-gradient(135deg, rgba(15,23,42,.96), rgba(30,41,59,.96)); color: #fff; border-radius: 26px; padding: 52px 36px; text-align:center; box-shadow: var(--shadow-soft); }
+        .share-banner h3 { font-size: clamp(1.8rem,2.5vw,2.5rem); margin-bottom:12px; }
+        .share-banner p { color:#dbeafe; max-width:680px; margin:0 auto 24px; }
+        .site-footer { margin-top:72px; background: rgba(15,23,42,.92); color:#cbd5e1; padding:60px 0 30px; border-top:1px solid rgba(255,255,255,.08); }
+        .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr; gap:40px; padding-bottom:32px; border-bottom:1px solid rgba(255,255,255,.08); }
+        .footer-brand h3 { color:#fff; margin:10px 0 12px; }
         .footer-col h4 { color:#fff; margin-bottom:12px; }
         .footer-links { list-style:none; }
-        .footer-links li { margin-bottom: 10px; }
+        .footer-links li { margin-bottom:10px; }
         .footer-links a { color:#cbd5e1; }
-        .footer-bottom { padding-top: 20px; font-size: .86rem; text-align:center; color:#94a3b8; }
-
-        @media (max-width: 900px) {
-            .footer-grid { grid-template-columns: 1fr; }
-            .header-flex { align-items:flex-start; flex-direction:column; }
-            .main-nav { flex-wrap:wrap; }
-        }
+        .footer-bottom { padding-top:20px; font-size:.86rem; text-align:center; color:#94a3b8; }
+        @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr; } .header-flex { align-items:flex-start; flex-direction:column; } .main-nav { flex-wrap:wrap; } }
     </style>
 </head>
 <body>
@@ -208,5 +154,7 @@
             <div class="footer-bottom">© 2026 AFYA Sickle Cell Foundation. All rights reserved.</div>
         </div>
     </footer>
+
+    <script src="main.js"></script>
 </body>
 </html>
